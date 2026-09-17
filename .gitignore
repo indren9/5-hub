@@ -1,0 +1,83 @@
+# Python cache and tooling
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Local runtime files
+tmp/
+logs/
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+secrets*.json
+
+# Heavy GIS / spatial databases
+*.gpkg
+*.gdb/
+*.mdb
+*.sqlite
+*.sqlite3
+*.db
+*.shp
+*.shx
+*.dbf
+*.sbn
+*.sbx
+*.qix
+*.fgb
+*.mbtiles
+
+# Raster / point-cloud data
+*.tif
+*.tiff
+*.vrt
+*.img
+*.asc
+*.jp2
+*.ecw
+*.las
+*.laz
+
+# Large binary datasets and generated outputs
+*.parquet
+*.feather
+*.npy
+*.npz
+*.zip
+*.7z
+*.rar
+build/
+dist/
+output/
+outputs/
+exports/
+
+# Editor / OS noise
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
