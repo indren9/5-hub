@@ -2,7 +2,7 @@
 
 **Versione:** v01
 **Data:** 2026-09-18
-**Stato:** REVIEW — tutte le decisioni F2-D1…F2-D8 ACCEPTED; NON FROZEN / NON CLOSED
+**Stato:** FROZEN — FASE 2 PASS / CLOSED / FROZEN
 **Baseline vincolante:** `docs/FASE_1_HUB_DEFINITION_CONSOLIDATED_v02.md` — FROZEN
 
 ## 1. Scopo
@@ -13,7 +13,7 @@ La specifica consolida le decisioni approvate dall’utente F2-D1…F2-D8. Non c
 
 ## 2. Definizione dell’unità elementare
 
-**F2-D1 — ACCEPTED.**
+**F2-D1 — FROZEN.**
 
 L’unità elementare del modello è una **area/poligono fisicamente localizzabile**.
 
@@ -22,7 +22,7 @@ Il candidato non coincide con un comune, con un semplice punto o con un impianto
 Punto rappresentativo, accessi stradali, road anchor e connector sono geometrie ausiliarie distinte e non sostituiscono l’identità areale del candidato.
 ## 3. Multipart e continuità fisica
 
-**F2-D2 — ACCEPTED.**
+**F2-D2 — FROZEN.**
 
 Le geometrie multipart con componenti spazialmente disconnesse vengono separate di default in candidati distinti.
 
@@ -30,7 +30,7 @@ Un’eccezione è ammessa solo quando esiste continuità operativa reale e docum
 
 ## 4. Punto rappresentativo
 
-**F2-D3 — ACCEPTED.**
+**F2-D3 — FROZEN.**
 
 Il punto rappresentativo è una geometria ausiliaria per usi descrittivi, visualizzazione o calcoli che richiedano necessariamente un singolo punto.
 
@@ -40,7 +40,7 @@ Il punto rappresentativo non è un accesso stradale implicito e non costituisce 
 
 ## 5. Accessi stradali
 
-**F2-D4 — ACCEPTED.**
+**F2-D4 — FROZEN.**
 
 Un candidato può mantenere più accessi stradali potenziali o validati.
 
@@ -49,7 +49,7 @@ Il routing parte dagli accessi e utilizza road anchor distinti sulla rete strada
 Ogni futuro indicatore basato sugli accessi dovrà dichiarare esplicitamente la propria regola di aggregazione.
 ## 6. Sovrapposizioni e duplicati
 
-**F2-D5 — ACCEPTED.**
+**F2-D5 — FROZEN.**
 
 Lo stesso sito fisico non deve essere contato più volte solo perché compare in più dataset o layer sorgente.
 
@@ -64,7 +64,7 @@ Le soglie quantitative di overlap non sono fissate in Fase 2.
 
 ## 7. Identità e versionamento
 
-**F2-D6 — ACCEPTED.**
+**F2-D6 — FROZEN.**
 
 L’identità logica del candidato è distinta dalla versione della geometria.
 
@@ -78,7 +78,7 @@ Ogni candidato avrà almeno:
 Una correzione geometrica non genera automaticamente un nuovo candidato se l’alternativa fisica resta la stessa. Una modifica sostanziale che rappresenta un sito fisicamente diverso può invece richiedere un nuovo `candidate_id`.
 ## 8. Confini comunali
 
-**F2-D7 — ACCEPTED.**
+**F2-D7 — FROZEN.**
 
 Un candidato non viene spezzato automaticamente quando attraversa un confine comunale.
 
@@ -86,7 +86,7 @@ I comuni interessati sono attributi o relazioni territoriali del candidato. Uno 
 
 ## 9. Tolleranze geometriche
 
-**F2-D8 — ACCEPTED.**
+**F2-D8 — FROZEN.**
 
 In Fase 2 non viene fissato alcun valore numerico per snap, merge, micro-gap, equivalenza geometrica o overlap.
 
@@ -136,11 +136,11 @@ La Fase 3 dovrà verificare che le fonti candidate forniscano geometrie poligona
 La Fase 4 dovrà produrre candidati areali tracciabili, applicare regole riproducibili di split/merge/canonicalizzazione, associare geometrie ausiliarie e creare ID/versioni stabili senza introdurre punteggi.
 ## 13. Stato decisionale
 
-Le decisioni F2-D1…F2-D8 sono **ACCEPTED** su approvazione esplicita dell’utente del 2026-09-18.
+Le decisioni F2-D1…F2-D8 sono **FROZEN** su approvazione esplicita dell’utente del 2026-09-18.
 
-Il presente consolidato è in stato **REVIEW** e non è ancora FROZEN.
+Il presente consolidato costituisce la **baseline metodologica FROZEN della FASE 2**.
 
-La FASE 2 resta **IN CORSO** fino ad approvazione esplicita del consolidato da parte dell’utente. Solo dopo tale approvazione potrà essere dichiarata PASS / CLOSED / FROZEN e potrà essere aperta la FASE 3.
+FASE 2: **PASS / CLOSED / FROZEN**. Qualsiasi modifica futura richiede una nuova versione e una nuova approvazione esplicita dell’utente. La FASE 3 resta NON AVVIATA fino ad autorizzazione esplicita dell’utente.
 
 ## 14. Riferimenti
 
