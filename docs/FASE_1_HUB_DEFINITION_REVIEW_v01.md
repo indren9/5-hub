@@ -1,7 +1,7 @@
 # FASE 1 — Definizione operativa dell’Hub Energetico Green
 
 **Chat:** 1.1 — Definizione operativa dell’Hub Energetico Green
-**Data:** 2026-09-17
+**Data:** 2026-09-18
 **Stato del documento:** REVIEW — proposta per decisione della Chat Madre
 **Stato metodologico:** NON FROZEN
 
@@ -24,6 +24,7 @@ Le fonti sono classificate come segue:
 3. La comunicazione pubblica di FVG Energia del 22/07/2026 descrive la futura rete regionale come rete di “stazioni multienergia” e richiama elettrico, idrogeno, biocarburanti e altri vettori; cita inoltre il modello Apt Gorizia con idrogeno, fotovoltaico ed elettrificazione. Non prova che ogni singolo Hub debba contenere tutti i vettori.
 4. Non esiste nelle fonti verificate una **superficie minima universale in m²** per un Hub di questo tipo. La superficie va derivata dal layout della configurazione minima e dalle distanze di sicurezza effettivamente applicabili.
 5. L’AFIR non richiede, come condizione generale della stazione H₂, che l’idrogeno erogato sia “verde/rinnovabile”. Se il progetto vuole attribuire al termine “Green” un requisito sul vettore H₂, questo deve essere deciso e documentato separatamente.
+6. In Friuli Venezia Giulia l’idrogeno rientra espressamente tra i “carburanti” della LR 19/2012. Per un nuovo impianto stradale di distribuzione ricadente in tale disciplina esistono quindi requisiti minimi di accesso e fronte strada reali (art. 51), da distinguere dalle future scelte del modello.
 
 ## 3. Definizione operativa proposta
 
@@ -56,7 +57,7 @@ La co-localizzazione H₂ + elettrico è una **scelta metodologica proposta**, n
 | Elettrolizzatore H₂ in sito | **OPZIONALE** | METH | Non necessario per una HRS alimentata da H₂ prodotto altrove; se presente, si applica la regola VVF del DM 07/07/2023 e aumenta fabbisogni/spazi. |
 | Trattamento/acqua per elettrolisi | **OPZIONALE / dipendente** | METH | Necessario solo nella configurazione con produzione H₂ in sito, secondo tecnologia e qualità acqua. |
 | Sistemi di pagamento, informazione e gestione per servizi pubblici | **OBBLIGATORIA dove applicabile AFIR** | NORM | I punti accessibili al pubblico devono rispettare gli obblighi AFIR applicabili a ricarica/rifornimento. |
-| Aree di accesso, manovra, sosta/ricarica, rifornimento e approvvigionamento H₂ | **OBBLIGATORIA** | METH + sicurezza | Parte fisica indispensabile del sito; geometria dipendente dai veicoli serviti e dalla supply H₂. |
+| Aree di accesso, manovra, sosta/ricarica, rifornimento e approvvigionamento H₂ | **OBBLIGATORIA** | NORM + METH + sicurezza | Parte fisica indispensabile del sito. Per i nuovi impianti stradali di distribuzione ricadenti nella LR FVG 19/2012 si applicano anche i requisiti minimi dell’art. 51; le ulteriori geometrie dipendono dai veicoli serviti e dalla supply H₂. |
 | Distanze/aree di sicurezza e sistemi antincendio H₂ | **OBBLIGATORIA** | NORM | Da determinare sulla configurazione concreta secondo DM 23/10/2018 e norme correlate. |
 | Biocarburanti / altri vettori | **OPZIONALE** | PROJ + METH | Richiamati nel concetto pubblico regionale di stazione multienergia, ma non verificati come requisito minimo di ogni Hub. |
 | Servizi accessori (ristoro, officina, parcheggi aggiuntivi, servizi logistici) | **OPZIONALE** | METH | Non necessari per definire l’oggetto energetico minimo. |
@@ -82,7 +83,9 @@ L’Allegato II AFIR contiene inoltre specifiche tecniche di interoperabilità e
 
 **NORM — Regolamento (UE) 2023/1804.**
 
-AFIR impone target differenti in funzione della rete e della categoria di veicolo. Ad esempio, lungo la TEN-T core per veicoli leggeri i gruppi di ricarica devono essere disposti in ciascun senso di marcia a intervalli massimi di 60 km; dal 31/12/2027 il gruppo deve offrire almeno 600 kW e almeno due punti da 150 kW. Questi sono requisiti del **gruppo di ricarica nel contesto AFIR**, non automaticamente una specifica minima del singolo Hub di questo progetto.
+AFIR impone target differenti in funzione della rete e della categoria di veicolo. Ad esempio, lungo la TEN-T core per veicoli leggeri i gruppi di ricarica devono essere disposti in ciascun senso di marcia a intervalli massimi di 60 km; dal 31/12/2027 il gruppo deve offrire almeno 600 kW e almeno due punti da 150 kW.
+
+Per i **veicoli pesanti**, l’art. 4 prevede dal 31/12/2030, lungo la TEN-T core, gruppi pubblici in ciascun senso di marcia a distanza massima di 60 km, con almeno **3.600 kW** complessivi e almeno **due punti da 350 kW**; sulla TEN-T comprehensive, distanza massima 100 km, almeno **1.500 kW** complessivi e almeno **un punto da 350 kW**. Anche questi sono target AFIR di copertura della rete posti agli Stati membri, non automaticamente la specifica minima di ciascun Hub del progetto.
 
 Ai fini AFIR, per la ricarica elettrica “lungo la rete stradale TEN-T” significa ubicazione sulla rete oppure entro **3 km di distanza stradale** dall’uscita TEN-T più vicina.
 
@@ -112,24 +115,40 @@ La norma aggiunge tra le funzioni di FVG Energia l’analisi e l’elaborazione 
 
 Questo supporta il carattere **multienergia + rinnovabili** dell’oggetto di studio, ma non stabilisce numero di colonnine, potenza, capacità H₂, presenza obbligatoria di FV/BESS/elettrolisi o superficie minima del singolo Hub.
 
-### 5.6 Significato di “idrogeno verde/rinnovabile”
+### 5.6 Distribuzione carburanti e accesso stradale — LR FVG 19/2012
 
-Il DM MASE 5 giugno 2026 disciplina un meccanismo di sostegno alla produzione di idrogeno di origine rinnovabile. È utile per distinguere una dichiarazione di “H₂ rinnovabile” dal semplice fatto che una stazione eroghi idrogeno, ma **non è il fondamento dell’obbligo AFIR di installare HRS**.
+**NORM condizionata — LR FVG 11 ottobre 2012, n. 19, testo vigente dal 01/01/2026.**
 
-**METH proposta:** nel modello non usare “idrogeno verde” come sinonimo automatico di “idrogeno”. Se in futuro il progetto richiede H₂ rinnovabile, dovranno essere fissati e verificati i criteri di origine/certificazione applicabili alla specifica filiera.
+L’art. 34 include espressamente l’**idrogeno** tra i carburanti e definisce l’impianto di distribuzione come complesso unitario dotato di uno o più apparecchi di erogazione con relative attrezzature e accessori. Per i nuovi impianti stradali ricadenti nella disciplina regionale, l’art. 51 prescrive inoltre requisiti minimi di accesso: fronte strada di almeno **40 m** in via generale; almeno **25 m** nei Comuni richiamati dall’art. 35, comma 7, secondo periodo; almeno **100 m** lungo strade a quattro o più corsie, con idonee corsie di accelerazione e decelerazione. Gli accessi di entrata e uscita devono essere distinti e separati da aiuola spartitraffico; il piazzale deve essere separato dalla sede stradale e non sono ammessi accessi su due o più strade pubbliche.
+
+**Conseguenza metodologica:** questi valori non sono indicatori né preferenze del modello. Dove applicabili sono condizioni normative di fattibilità del modulo H₂ stradale e dovranno essere recepite nella successiva verifica territoriale senza trasformarle ora in criteri di ranking.
+
+### 5.7 Significato di “idrogeno verde/rinnovabile”
+
+Il Regolamento delegato (UE) 2023/1184 definisce la metodologia europea per qualificare come rinnovabili i combustibili liquidi e gassosi di origine non biologica, incluso l’idrogeno quando ricade nel relativo regime RFNBO. Il DM MASE 5 giugno 2026 disciplina inoltre un meccanismo nazionale di sostegno alla produzione di idrogeno di origine rinnovabile. Queste fonti servono a qualificare l’origine del vettore, ma **non sono il fondamento dell’obbligo AFIR di installare HRS**.
+
+**METH proposta:** nel modello non usare “idrogeno verde” come sinonimo automatico di “idrogeno”. Se il progetto richiederà H₂ rinnovabile, dovranno essere fissati e verificati i criteri di origine/certificazione applicabili alla specifica filiera.
+
+### 5.8 Ricarica elettrica — prevenzione incendi
+
+**NORM/indirizzo tecnico condizionato.** La Circolare VVF n. 2 del 05/11/2018 contiene linee guida di prevenzione incendi per infrastrutture di ricarica dei veicoli elettrici installate nell’ambito di attività soggette ai controlli di prevenzione incendi ai sensi del DPR 151/2011. Non introduce una potenza minima dell’Hub, ma la configurazione EV dovrà essere verificata rispetto alle prescrizioni antincendio effettivamente applicabili al sito.
+
+### 5.9 Produzione FV e accumulo BESS
+
+**NORM/indirizzo tecnico condizionato.** Se il layout include impianti fotovoltaici o accumulo elettrochimico, la valutazione antincendio deve considerare le regole tecniche applicabili all’attività principale e le linee guida VVF vigenti. La Nota VVF n. 14030 del 01/09/2025 chiarisce che l’inserimento del fotovoltaico in un’attività soggetta può costituire modifica da valutare ai fini antincendio e richiama, per i sistemi di accumulo, la Circolare DCPREV n. 21021 del 23/12/2024. Per gli impianti FER resta inoltre applicabile, secondo il caso concreto e la disciplina regionale, il quadro dei regimi amministrativi del D.Lgs. 190/2024 e successive modifiche.
+
+Poiché FV e BESS non sono proposti come componenti minimi obbligatori, tali requisiti sono **condizionati alla loro presenza** e non devono generare automaticamente esclusioni o sovradimensionamenti in FASE 1.
 
 ## 6. Requisiti minimi di accesso
 
-Per la configurazione minima proposta:
+Per la configurazione minima proposta occorre distinguere i **minimi normativi** dalle geometrie che dipenderanno dal layout:
 
-- accessibilità al pubblico dei moduli H₂ ed EV, se devono essere conteggiati ai fini AFIR;
-- collegamento stradale effettivamente utilizzabile dai veicoli target;
-- spazio per ingresso, uscita, manovra, sosta/rifornimento/ricarica senza conflitti incompatibili con la sicurezza;
-- accesso tecnico per manutenzione e, nella configurazione con H₂ consegnato, per il mezzo di approvvigionamento;
-- separazioni e distanze di sicurezza richieste dalla configurazione H₂ reale;
-- verifica della relazione con TEN-T solo quando il modello attribuirà al sito una funzione AFIR: 10 km stradali per H₂ e 3 km per ricarica elettrica secondo le definizioni del regolamento.
+- **NORM condizionata — LR FVG 19/2012, art. 51:** per il nuovo impianto stradale di distribuzione ricadente nella disciplina regionale, fronte strada minimo 40 m; 25 m nei casi territoriali richiamati dalla legge; 100 m su strade a quattro o più corsie, con corsie di accelerazione/decelerazione. Entrata e uscita distinte e separate da spartitraffico; piazzale separato dalla sede stradale; nessun accesso su due o più strade pubbliche;
+- **NORM condizionata — AFIR:** se il modulo deve concorrere ai target AFIR, accessibilità al pubblico; ai fini della definizione “lungo la TEN-T”, massimo 10 km stradali dall’uscita più vicina per H₂ e 3 km per la ricarica elettrica;
+- **METH/tecnica:** collegamento stradale effettivamente utilizzabile dai veicoli target; spazio per ingresso, uscita, manovra, sosta/rifornimento/ricarica; accesso tecnico per manutenzione e, con H₂ consegnato, per il mezzo di approvvigionamento;
+- **NORM + tecnica:** separazioni e distanze di sicurezza della configurazione H₂ reale e percorso di approvvigionamento compatibile con la regola antincendio.
 
-Non vengono fissati in FASE 1 raggi di svolta, larghezze o geometrie arbitrarie: dipendono dalla classe dei veicoli da servire e dal layout di riferimento che la Chat Madre dovrà approvare.
+Oltre ai minimi normativi sopra riportati, non vengono inventati in FASE 1 raggi di svolta, larghezze interne o geometrie di manovra: dipenderanno dalla classe dei veicoli da servire e dal layout tecnico di riferimento che dovrà essere approvato.
 
 ## 7. Requisiti energetici
 
@@ -161,6 +180,7 @@ Per stimarla servono almeno questi input, da fissare prima di applicare qualsias
 - classe dimensionale dei veicoli e geometrie di manovra;
 - aree di attesa e di approvvigionamento H₂;
 - distanze di sicurezza H₂ e interferenze con elettrodotti/usi sensibili;
+- fronte strada, schema di accesso e ulteriori prescrizioni viabilistiche normative applicabili;
 - eventuali moduli FER, BESS ed elettrolisi;
 - servizi tecnici indispensabili.
 
@@ -175,6 +195,8 @@ Questi elementi sono stati usati soltanto per individuare temi da verificare. In
 - la co-localizzazione H₂ + Hub non viene trattata come requisito del committente finché non esiste evidenza autorevole nel nuovo progetto;
 - il tube trailer non viene assunto automaticamente come architettura obbligatoria;
 - elettrolisi, accumulo e FER non vengono ereditati come componenti obbligatorie;
+- la soglia storica di **5.000 m²** era dichiarata nella baseline come taglio metodologico di pulizia, non come requisito normativo, e non viene riutilizzata;
+- l’“ingombro minimo” storico di **2.025 m²**, derivato nella baseline da una configurazione H₂ semplificata con ingombro delle apparecchiature assunto nullo, non viene assunto come superficie minima normativa né come soglia del nuovo modello;
 - le soglie AFIR sono state ricontrollate su EUR-Lex aggiornato.
 
 ## 10. Proposta di configurazione minima da congelare
@@ -209,38 +231,53 @@ Questa configurazione è sufficientemente definita per stabilire che cosa debba 
 
 **S1 — NORM. Regolamento (UE) 2023/1804 (AFIR), versione consolidata corrente 08/01/2026.**
 EUR-Lex: https://eur-lex.europa.eu/eli/reg/2023/1804/2026-01-08
-Usata per definizioni TEN-T, target H₂, target EV e specifiche tecniche.
+Definizioni “lungo TEN-T”, target H₂/EV, accessibilità pubblica e specifiche tecniche.
 
 **S2 — NORM. Regolamento (UE) 2024/1679 sulla rete TEN-T.**
 EUR-Lex: https://eur-lex.europa.eu/eli/reg/2024/1679/oj
-Riferimento per l’assetto della rete TEN-T richiamata da AFIR; nessun sito viene analizzato in questa fase.
+Riferimento per la rete TEN-T richiamata da AFIR; nessun sito viene analizzato in questa fase.
 
-**S3 — NORM / mandato regionale. LR FVG 9 giugno 2026, n. 5, art. 152.**
+**S3 — NORM / mandato istituzionale. LR FVG 9 giugno 2026, n. 5, art. 152.**
 BUR FVG, I Supplemento ordinario n. 14 del 10/06/2026: https://bur.regione.fvg.it/newbur/visionaBUR?bnum=2026%2F06%2F10%2F14
-Usata per il mandato relativo a fornitura integrata di vettori energetici e uso diretto di energie rinnovabili.
+Mandato a FVG Energia su strutture innovative di fornitura integrata di vettori energetici e uso diretto di rinnovabili.
 
 **S4 — PROJ / contesto pubblico. FVG Energia, 22/07/2026, “Mobilità sostenibile, incontro con Apt Gorizia sullo sviluppo delle stazioni multienergia”.**
 https://prod-energia.regione.fvg.it/notizie/article/Mobilita-sostenibile-incontro-con-Apt-Goriziabr--sullo-sviluppo-delle-stazioni-multienergia/
-Usata solo per documentare l’indirizzo pubblico multienergia; non come capitolato tecnico.
+Usata come indirizzo pubblico multienergia, non come capitolato tecnico.
 
 **S5 — NORM. DM Ministero dell’Interno 23/10/2018 — impianti di distribuzione H₂ per autotrazione.**
-Indice VVF: https://www.vigilfuoco.it/servizi-le-aziende-e-i-professionisti/prevenzione-incendi/norme-di-prevenzione-incendi
-Testo coordinato: https://anniversario-sca.vigilfuoco.it/sites/default/files/testiCoordinati/COORD_DM_23_10_2018.pdf
+Portale ufficiale VVF, sezione “Distributori di idrogeno”: https://www.vigilfuoco.it/servizi-le-aziende-e-i-professionisti/prevenzione-incendi/testi-coordinati-di-prevenzione/testi-coordinati-di-prevenzione-regole-tecniche-suddivise-per-attivita
+Usato per componenti impiantistiche, separazioni, distanze di sicurezza e approvvigionamento.
 
 **S6 — NORM. Lettera Circolare VVF 06/03/2019 n. 3300 — distanze da linee elettriche aeree.**
 https://www.vigilfuoco.it/sites/default/files/coordinated-text/COORD_LC_06_03_2019_n_3300_LINEE_ELETTRICHE_AEREE.pdf
-Usata per verifica esplicita del vincolo 45 m relativo al distributore stradale di idrogeno.
 
 **S7 — NORM condizionata. DM Ministero dell’Interno 07/07/2023 — produzione H₂ mediante elettrolisi e relativo stoccaggio.**
-Pagina VVF regole tecniche: https://www.vigilfuoco.it/servizi-le-aziende-e-i-professionisti/prevenzione-incendi/testi-coordinati-di-prevenzione/testi-coordinati-di-prevenzione-regole-tecniche-suddivise-per-attivita
-Testo coordinato: https://www.vigilfuoco.it/sites/default/files/2023-08/COORD_DM_07_07_2023_produzione_idrogeno.pdf
+Portale ufficiale VVF: https://www.vigilfuoco.it/servizi-le-aziende-e-i-professionisti/prevenzione-incendi/testi-coordinati-di-prevenzione/testi-coordinati-di-prevenzione-regole-tecniche-suddivise-per-attivita
 
-**S8 — NORM / contesto H₂ rinnovabile. DM MASE 5 giugno 2026, “Meccanismo di sostegno alla produzione di idrogeno di origine rinnovabile”.**
+**S8 — NORM. LR FVG 11 ottobre 2012, n. 19, artt. 34 e 51, testo vigente dal 01/01/2026.**
+Art. 34: https://lexview-int.regione.fvg.it/FontiNormative/xml/scarico.aspx?ANN=2012&LEX=0019&id=art34&lang=ita&tip=2&vig=
+Art. 51: https://lexview-int.regione.fvg.it/FontiNormative/xml/scarico.aspx?ANN=2012&LEX=0019&id=art51&lang=ita&tip=2&vig=
+Usata per qualificazione dell’idrogeno come carburante e requisiti tecnici di accesso dei nuovi impianti stradali.
+
+**S9 — NORM. Regolamento delegato (UE) 2023/1184, versione consolidata corrente 10/06/2024.**
+EUR-Lex: https://eur-lex.europa.eu/eli/reg_del/2023/1184/2024-06-10
+Usato per distinguere l’H₂ rinnovabile/RFNBO dal semplice vettore H₂.
+
+**S10 — NORM / contesto H₂ rinnovabile. DM MASE 5 giugno 2026, “Meccanismo di sostegno alla produzione di idrogeno di origine rinnovabile”.**
 Gazzetta Ufficiale n. 182 del 07/08/2026: https://www.gazzettaufficiale.it/eli/id/2026/08/07/26A03843/SG
-Usata per mantenere distinta la qualificazione dell’H₂ rinnovabile dagli obblighi infrastrutturali AFIR.
 
-**S9 — BASE. Baseline storica Claude.**
-Pacchetto: `21624001 FVG Energia Spa – Studio mobilità sostenibile.zip`, in particolare `deliverable/relazione_generale.docx`.
+**S11 — INDIRIZZO TECNICO VVF. Circolare n. 2/2018 del 05/11/2018 — ricarica dei veicoli elettrici.**
+Portale ufficiale VVF: https://www.vigilfuoco.it/servizi-le-aziende-e-i-professionisti/prevenzione-incendi/testi-coordinati-di-prevenzione/testi-coordinati-di-prevenzione-incendi-disposizioni-generali
+
+**S12 — INDIRIZZO TECNICO VVF. Nota n. 14030 del 01/09/2025 — impianti fotovoltaici; richiamo alla Circolare DCPREV n. 21021 del 23/12/2024 per BESS.**
+https://www.vigilfuoco.it/sites/default/files/2025-09/COORD_NOTA_01_09_2025_n_14030_linee_guida_FV.pdf
+
+**S13 — NORM condizionata. D.Lgs. 25/11/2024, n. 190, come modificato dal D.Lgs. 26/11/2025, n. 178 — regimi amministrativi per impianti FER, accumuli ed elettrolizzatori.**
+Normattiva / G.U. 12/12/2024 n. 291 e G.U. 26/11/2025 n. 275. L’effettivo regime autorizzativo dipende dalla configurazione e dalla disciplina regionale applicabile.
+
+**S14 — BASE. Baseline storica Claude.**
+Pacchetto: `21624001 FVG Energia Spa – Studio mobilità sostenibile.zip`, in particolare `deliverable/relazione_generale.docx` e `deliverable/schede_candidati.docx`.
 Stato: HISTORICAL / NON_AUTHORITATIVE; nessuna prescrizione è stata accettata sulla sola base di questa fonte.
 
 ## 13. Questioni aperte
