@@ -2,7 +2,7 @@
 
 **Versione:** v02
 **Data:** 2026-09-18
-**Stato:** PROPOSED / NON FROZEN
+**Stato:** FROZEN
 **Base:** Chat 1.1 + decisioni utente F1-D1…F1-D7
 
 ## 1. Scopo
@@ -109,11 +109,11 @@ Non vengono fissati ora:
 - biocarburanti o altri vettori obbligatori.
 ## 6. Stato decisionale
 
-F1-D1…F1-D7 sono **ACCEPTED** dall’utente.
+F1-D1…F1-D7 sono **FROZEN** su approvazione esplicita dell’utente del 2026-09-18.
 
-Il presente consolidamento è ancora **PROPOSED / NON FROZEN**.
+Il presente consolidamento costituisce la **baseline metodologica FROZEN della FASE 1**.
 
-La FASE 1 può essere portata a FROZEN/CLOSED solo dopo approvazione esplicita dell’utente di questa formulazione consolidata.
+FASE 1: **PASS / CLOSED**. Qualsiasi modifica futura richiede una nuova versione e una nuova approvazione esplicita dell’utente.
 
 ## 7. Riferimenti principali
 
