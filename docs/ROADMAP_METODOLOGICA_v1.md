@@ -4,8 +4,9 @@ STATO OPERATIVO — 2026-09-18
 
 - FASE 0 — INIZIALIZZAZIONE DEL PROGETTO: PASS / CLOSED.
 - FASE 1 — DEFINIZIONE DELL’OGGETTO “HUB ENERGETICO GREEN”: PASS / CLOSED / FROZEN.
-- FASI 2–15: NON AVVIATE.
-- Prossima fase prevista dalla roadmap: FASE 2 — DEFINIZIONE DELL’UNITÀ ELEMENTARE DI ANALISI.
+- FASE 2 — DEFINIZIONE DELL’UNITÀ ELEMENTARE DI ANALISI: IN CORSO — Chat 2.1 autorizzata.
+- FASI 3–15: NON AVVIATE.
+- Attività corrente: Chat 2.1 — Definizione dell’unità elementare di analisi.
 
 Nota: questo aggiornamento modifica esclusivamente lo stato di avanzamento. La metodologia della ROADMAP METODOLOGICA v1 resta invariata.
 
