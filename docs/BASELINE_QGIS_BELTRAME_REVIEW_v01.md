@@ -4,7 +4,7 @@
 **Stato:** HISTORICAL / NON_AUTHORITATIVE
 **Pacchetto:** `QGZ_Beltrame.zip`
 **SHA256:** `AB2591E6DED67D7B165E0702400DF7270EB8EF1966EF80B68C966F0F4459E614`
-**Archivio ufficiale:** `project_storage\00_baseline\claude_qgis\QGZ_Beltrame_20260918\QGZ_Beltrame.zip`
+**Archivio ufficiale:** `5_HUB_FVG\00_baseline\claude_qgis\QGZ_Beltrame_20260918\QGZ_Beltrame.zip`
 
 ## 1. Scopo della review
 
