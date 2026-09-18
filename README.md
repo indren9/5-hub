@@ -4,7 +4,7 @@ Repository locale di sviluppo del progetto per la localizzazione dei 5 Hub Energ
 
 ## Ruolo di questa cartella
 
-`C:\Tesi\dev` contiene codice, configurazioni, test, script, notebook, documentazione tecnica e file leggeri necessari alla riproducibilità.
+`C:\dev\5-hub` contiene codice, configurazioni, test, script, notebook, documentazione tecnica e file leggeri necessari alla riproducibilità.
 
 I dati pesanti e gli output voluminosi devono vivere in:
 `C:\Users\visen\OneDrive\Università\UniUD\Tesi\project_storage`

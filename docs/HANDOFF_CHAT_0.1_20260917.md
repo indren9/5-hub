@@ -3,6 +3,8 @@
 Data: 2026-09-17
 Stato: PASS
 
+> **Nota di governance successiva (2026-09-18):** il percorso `C:\Tesi\dev` qui riportato descrive correttamente lo stato al momento della Chat 0.1, ma è stato successivamente **SUPERSEDED**. Il repository ufficiale è stato migrato in `C:\dev\5-hub` su approvazione dell’utente; riferimento: DEC-0014 e `docs/ARCHITECTURE_MIGRATION_20260918.md`.
+
 ## Obiettivo ricevuto
 Predisporre struttura locale `dev`, struttura OneDrive `project_storage`, repository Git locale, `.gitignore` e primo commit coerente, senza incorporare o modificare materiale storico.
 
