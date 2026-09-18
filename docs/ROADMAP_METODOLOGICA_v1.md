@@ -5,9 +5,9 @@ STATO OPERATIVO — 2026-09-18
 - FASE 0 — INIZIALIZZAZIONE DEL PROGETTO: PASS / CLOSED.
 - FASE 1 — DEFINIZIONE DELL’OGGETTO “HUB ENERGETICO GREEN”: PASS / CLOSED / FROZEN.
 - FASE 2 — DEFINIZIONE DELL’UNITÀ ELEMENTARE DI ANALISI: PASS / CLOSED / FROZEN.
-- FASE 3 — INVENTARIO E VALIDAZIONE DEI DATI: IN CORSO — Chat 3.1 autorizzata.
+- FASE 3 — INVENTARIO E VALIDAZIONE DEI DATI: IN CORSO — Chat 3.1 PASS tecnico-operativo; Chat 3.2 e Chat 3.3 autorizzate.
 - FASI 4–15: NON AVVIATE.
-- Attività corrente: Chat 3.1 — Inventario master e gap analysis dei dati.
+- Attività corrente: Chat 3.2 — Urbanistica, poligoni sorgente e disponibilità; Chat 3.3 — Rete stradale, accessi e TEN-T.
 
 Nota: questo aggiornamento modifica esclusivamente lo stato di avanzamento. La metodologia della ROADMAP METODOLOGICA v1 resta invariata.
 
