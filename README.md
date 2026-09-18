@@ -11,6 +11,9 @@ I dati pesanti e gli output voluminosi devono vivere in:
 
 La governance viva e i documenti autorevoli restano su Google Drive.
 
+Repository remoto GitHub privato:
+`https://github.com/indren9/5-hub`
+
 ## Struttura
 
 - `src/` — codice principale
