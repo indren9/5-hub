@@ -341,8 +341,8 @@ Stato proposto: **OPEN — P1 / urbanistica**.
 | proprietà, disponibilità e urbanistica distinte | **PASS** | §11 |
 | gap residui espliciti | **PASS** | §§13–14 |
 | evidenze materializzate con hash | **PASS** | §12 + manifest |
-| registri aggiornati e riletti | **PENDING SESSION CLOSE** | da completare |
-| Git commit tracciabile | **PENDING SESSION CLOSE** | da completare |
+| registri aggiornati e riletti | **PASS** | DATA_REGISTRY + ISSUES riletti dopo scrittura |
+| Git commit tracciabile | **PASS** | commit tecnico `e46ed56` |
 
 ### Esito tecnico
 
