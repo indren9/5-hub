@@ -1,0 +1,27 @@
+{
+  "technical_quality_gate": "PASS",
+  "baseline_sha256_expected": "EEDFD368D1B1182E73124D6C816383E25EE178E5B81FB0051F2A15EC4FC9D2C6",
+  "baseline_sha256_observed": "EEDFD368D1B1182E73124D6C816383E25EE178E5B81FB0051F2A15EC4FC9D2C6",
+  "scope_rows": 43,
+  "scope_unique_istat": 43,
+  "coverage_rows": 215,
+  "coverage_unique_istat": 215,
+  "outside_scope_changes": [],
+  "counts_before": {
+    "CURRENT_SOURCE_FOUND_LINEAGE_INCOMPLETE": 167,
+    "TO_VERIFY": 43,
+    "CURRENT_VECTOR_VERIFIED": 4,
+    "CURRENT_PLAN_VERIFIED_NO_VECTOR": 1
+  },
+  "counts_after": {
+    "CURRENT_SOURCE_FOUND_LINEAGE_INCOMPLETE": 207,
+    "CURRENT_VECTOR_VERIFIED": 4,
+    "CURRENT_PLAN_VERIFIED_NO_VECTOR": 4
+  },
+  "residual_to_verify": 0,
+  "materialized_sources": 34,
+  "source_fetch_failures": 9,
+  "preservation_hash_failures": 0,
+  "phase_4_readiness_assessment": "NOT_READY",
+  "phase_4_reason": "Residual lineage gaps remain for 207 municipalities and current vector gaps remain; Chat 3.9 cannot open Phase 4."
+}
