@@ -1,8 +1,8 @@
 # DISPATCH — Chat 3.4 — Vincoli territoriali, ambientali e paesaggistici
 
-**Fase:** 3 — Inventario e validazione dei dati  
-**Data:** 2026-09-19  
-**Stato mandato:** AUTHORIZED  
+**Fase:** 3 — Inventario e validazione dei dati
+**Data:** 2026-09-19
+**Stato mandato:** AUTHORIZED
 **Regia metodologica:** Chat Madre 5 HUB
 
 ## 1. Obiettivo
