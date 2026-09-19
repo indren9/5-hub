@@ -5,9 +5,9 @@ STATO OPERATIVO — 2026-09-19
 - FASE 0 — INIZIALIZZAZIONE DEL PROGETTO: PASS / CLOSED.
 - FASE 1 — DEFINIZIONE DELL’OGGETTO “HUB ENERGETICO GREEN”: PASS / CLOSED / FROZEN.
 - FASE 2 — DEFINIZIONE DELL’UNITÀ ELEMENTARE DI ANALISI: PASS / CLOSED / FROZEN.
-- FASE 3 — INVENTARIO E VALIDAZIONE DEI DATI: IN CORSO — Chat 3.1, Chat 3.2, Chat 3.3, Chat 3.4 e Chat 3.7 PASS tecnico-operativo / review Chat Madre completata. Chat 3.7 ha validato il crosswalk stradale TEN-T FVG corrente; Chat 3.4 ha validato il blocco territoriale/ambientale, con ISS-0008 PPR RESOLVED, ISS-0011 biotopi RESOLVED proceduralmente e ISS-0006 PGRA ancora OPEN. Q-METH-3.4-A — trattamento PGRA — è ACCEPTED con DEC-0039; Q-METH-3.4-B — frane — è ACCEPTED con DEC-0040; Q-METH-3.4-C — Natura 2000 — è ACCEPTED con DEC-0041; Q-METH-3.4-D — parchi, riserve, biotopi e prati stabili — è ACCEPTED con DEC-0042; Q-METH-3.4-E resta da approvare.
+- FASE 3 — INVENTARIO E VALIDAZIONE DEI DATI: IN CORSO — Chat 3.1, Chat 3.2, Chat 3.3, Chat 3.4 e Chat 3.7 PASS tecnico-operativo / review Chat Madre completata. Chat 3.7 ha validato il crosswalk stradale TEN-T FVG corrente; Chat 3.4 ha validato il blocco territoriale/ambientale, con ISS-0008 PPR RESOLVED, ISS-0011 biotopi RESOLVED proceduralmente e ISS-0006 PGRA ancora OPEN. Tutte le questioni metodologiche territoriali Q-METH-3.4-A…E sono ACCEPTED: PGRA DEC-0039; frane DEC-0040; Natura 2000 DEC-0041; parchi/riserve/biotopi/prati stabili DEC-0042; PPR DEC-0043.
 - FASI 4–15: NON AVVIATE.
-- Attività corrente: completamento delle restanti questioni metodologiche territoriali e delle validazioni Fase 3: urbanistica corrente, routing Light/Heavy, energia e dati di domanda.
+- Attività corrente: completamento delle restanti validazioni Fase 3: urbanistica corrente, routing Light/Heavy, energia, dati di domanda e chiusura dei gap tecnici/dati già tracciati.
 
 Nota: questo aggiornamento modifica esclusivamente lo stato di avanzamento. La metodologia della ROADMAP METODOLOGICA v1 resta invariata.
 
