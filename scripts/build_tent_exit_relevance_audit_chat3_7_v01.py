@@ -1,103 +1,211 @@
 from __future__ import annotations
-import csv, hashlib, json
+
+import argparse
+import csv
+import os
+import tempfile
 from pathlib import Path
 
-ROOT=Path(r"C:\Users\visen\OneDrive\Università\UniUD\Tesi\5_HUB_FVG")
-OUT=ROOT/r"05_intermediate_outputs\F3_CHAT_3_7"
-SRC=ROOT/r"02_external_sources\F3_CHAT_3_7"
+EVIDENCE = {
+    "A4": {
+        "files": "Autostrade_Alto_Adriatico_network_20260918.html",
+        "summary": (
+            "Autostrade Alto Adriatico identifies A4 Venezia-Trieste as a "
+            "concession motorway; TENtec classifies the FVG sections as Core."
+        ),
+        "manual_note": (
+            "The two OSM raw non-link adjacencies associated with the Bretella "
+            "di Latisana were reviewed as interchange/link context rather than "
+            "ordinary at-grade intersections of the TEN-T mainline."
+        ),
+        "morphology": "CONTROLLED_ACCESS_GRADE_SEPARATED",
+    },
+    "A23": {
+        "files": (
+            "Autostrade_Alto_Adriatico_network_20260918.html;"
+            "ASPI_A23_Pontebba_confine_20260914.html"
+        ),
+        "summary": (
+            "Autostrade Alto Adriatico identifies A23 Palmanova-Udine as a "
+            "concession motorway; Autostrade per l'Italia current A23 evidence "
+            "for Udine-Tarvisio explicitly refers to stations, entrances, exits "
+            "and svincoli."
+        ),
+        "manual_note": (
+            "The automatic OSM diagnostic found no raw non-link adjacency "
+            "requiring escalation; operator evidence is consistent with access "
+            "through motorway junctions/interchanges."
+        ),
+        "morphology": "CONTROLLED_ACCESS_GRADE_SEPARATED",
+    },
+    "RA13": {
+        "files": "ANAS_soccorso_stradale_unita_FVG_2026.pdf",
+        "summary": (
+            "ANAS official FVG road-rescue documentation describes RA13 through "
+            "named svincoli and motorway/interconnected-motorway operational context."
+        ),
+        "manual_note": (
+            "The automatic OSM diagnostic found no raw non-link adjacency; the "
+            "documentary review did not identify an ordinary at-grade TEN-T "
+            "mainline access replacing a true junction/ramp."
+        ),
+        "morphology": "GRADE_SEPARATED_RAMP_INTERCHANGES",
+    },
+    "RA14": {
+        "files": "ANAS_soccorso_stradale_unita_FVG_2026.pdf",
+        "summary": (
+            "ANAS official FVG road-rescue documentation identifies RA14 between "
+            "the RA13 connection and Fernetti using junction/interchange context."
+        ),
+        "manual_note": (
+            "The automatic OSM diagnostic found no raw non-link adjacency; the "
+            "documentary review is consistent with grade-separated junction access."
+        ),
+        "morphology": "GRADE_SEPARATED_RAMP_INTERCHANGES",
+    },
+    "A/SS202": {
+        "files": "ANAS_soccorso_stradale_unita_FVG_2026.pdf",
+        "summary": (
+            "ANAS official FVG road-rescue documentation describes the SS202/A "
+            "axis through named svincoli and interconnected-road context."
+        ),
+        "manual_note": (
+            "The OSM raw non-link candidate at Via della Rampa was reviewed in "
+            "context as a ramp/link structure of the Nuova Sopraelevata, not an "
+            "ordinary at-grade intersection of the TEN-T mainline."
+        ),
+        "morphology": "GRADE_SEPARATED_RAMP_INTERCHANGES",
+    },
+    "A28": {
+        "files": "Autostrade_Alto_Adriatico_network_20260918.html",
+        "summary": (
+            "Autostrade Alto Adriatico identifies A28 Portogruaro-Conegliano as "
+            "a concession motorway; it is the comprehensive-only FVG axis in the "
+            "current crosswalk."
+        ),
+        "manual_note": (
+            "The automatic OSM diagnostic found no raw non-link adjacency; the "
+            "operator classification and motorway-junction context do not indicate "
+            "an ordinary at-grade TEN-T mainline access."
+        ),
+        "morphology": "CONTROLLED_ACCESS_GRADE_SEPARATED",
+    },
+}
 
-rows=[
-{
-"audit_id":"EXITREL-FVG-001","tent_level":"CORE","fvg_route":"A4",
-"tent_sections":"OID 999 Palmanova–Sistiana; OID 370 Palmanova–Portogruaro",
-"morphology":"CONTROLLED_ACCESS_GRADE_SEPARATED","ordinary_at_grade_intersections_observed":"NO",
-"true_exit_ramp_present":"YES","afir_nearest_exit_interpretation_material":"NO",
-"normative_source":"TENtec TENT_Regulation_2024 Roads/Core; TENtec TYPE=Motorways",
-"operator_source":"Autostrade Alto Adriatico current network/interchange list",
-"topology_support":"Prior Chat 3.7 screening: Bretella di Latisana node resolved through link/ramp structure, not ordinary mainline at-grade intersection",
-"evidence_notes":"Current TEN-T classification plus motorway operator evidence identifies access through motorway interchanges.",
-"validation_status":"VERIFIED_NO_MATERIAL_EXIT_AMBIGUITY"},
-{
-"audit_id":"EXITREL-FVG-002","tent_level":"CORE","fvg_route":"A23",
-"tent_sections":"OID 3632 Palmanova–Udine; OID 4550 Udine–Tarvisio; OID 3640 Tarvisio–AT border",
-"morphology":"CONTROLLED_ACCESS_GRADE_SEPARATED","ordinary_at_grade_intersections_observed":"NO",
-"true_exit_ramp_present":"YES","afir_nearest_exit_interpretation_material":"NO",
-"normative_source":"TENtec TENT_Regulation_2024 Roads/Core; TENtec TYPE=Motorways",
-"operator_source":"Autostrade Alto Adriatico / Autostrade per l'Italia current motorway/exit evidence",
-"topology_support":"Prior screening found no suspicious ordinary at-grade direct connections.",
-"evidence_notes":"Entire FVG TEN-T A23 is motorway; accesses are motorway exits/interchanges.",
-"validation_status":"VERIFIED_NO_MATERIAL_EXIT_AMBIGUITY"},
-{
-"audit_id":"EXITREL-FVG-003","tent_level":"CORE","fvg_route":"RA13",
-"tent_sections":"OID 2416 Sistiana–Villa Opicina; OID 472 Villa Opicina–Padriciano",
-"morphology":"GRADE_SEPARATED_RAMP_INTERCHANGES","ordinary_at_grade_intersections_observed":"NO",
-"true_exit_ramp_present":"YES","afir_nearest_exit_interpretation_material":"NO",
-"normative_source":"TENtec TENT_Regulation_2024 Roads/Core; TENtec TYPE=Rural road with separate directions",
-"operator_source":"ANAS official FVG road-rescue regulation identifies RA13 between named svincoli and as motorway/interconnected motorway section",
-"topology_support":"Frozen OSM support screening found no ordinary at-grade direct connection on RA13.",
-"evidence_notes":"No evidence of a TEN-T mainline segment whose usable connection must be interpreted as an ordinary at-grade intersection.",
-"validation_status":"VERIFIED_NO_MATERIAL_EXIT_AMBIGUITY"},
-{
-"audit_id":"EXITREL-FVG-004","tent_level":"CORE","fvg_route":"RA14",
-"tent_sections":"OID 4504 Fernetti–Villa Opicina",
-"morphology":"GRADE_SEPARATED_RAMP_INTERCHANGES","ordinary_at_grade_intersections_observed":"NO",
-"true_exit_ramp_present":"YES","afir_nearest_exit_interpretation_material":"NO",
-"normative_source":"TENtec TENT_Regulation_2024 Roads/Core; TENtec TYPE=Rural road with separate directions",
-"operator_source":"ANAS official FVG road-rescue regulation identifies RA14 between innesto RA13 and Fernetti and treats it as motorway/interconnected motorway section",
-"topology_support":"Frozen OSM support screening found no ordinary at-grade direct connection on RA14.",
-"evidence_notes":"Access morphology is consistent with genuine interchange/ramp access.",
-"validation_status":"VERIFIED_NO_MATERIAL_EXIT_AMBIGUITY"},
-{
-"audit_id":"EXITREL-FVG-005","tent_level":"CORE","fvg_route":"A/SS202",
-"tent_sections":"OID 862 Rabuiese–Padriciano (Trieste porto R13)",
-"morphology":"GRADE_SEPARATED_RAMP_INTERCHANGES","ordinary_at_grade_intersections_observed":"NO",
-"true_exit_ramp_present":"YES","afir_nearest_exit_interpretation_material":"NO",
-"normative_source":"TENtec TENT_Regulation_2024 Roads/Core; TENtec TYPE=Rural road with separate directions",
-"operator_source":"ANAS official FVG road-rescue regulation describes SS202/A sections by named svincoli and motorway/interconnected-motorway context",
-"topology_support":"Frozen OSM support screening: Nuova Sopraelevata/Via della Rampa connection represented through link/ramp structure, not ordinary at-grade mainline intersection.",
-"evidence_notes":"No ordinary at-grade TEN-T access case was identified on the Trieste axis.",
-"validation_status":"VERIFIED_NO_MATERIAL_EXIT_AMBIGUITY"},
-{
-"audit_id":"EXITREL-FVG-006","tent_level":"COMPREHENSIVE","fvg_route":"A28",
-"tent_sections":"OID 1508 Conegliano–Schiavoi (FVG overlap); OID 2725 Schiavoi–Portogruaro (FVG overlap)",
-"morphology":"CONTROLLED_ACCESS_GRADE_SEPARATED","ordinary_at_grade_intersections_observed":"NO",
-"true_exit_ramp_present":"YES","afir_nearest_exit_interpretation_material":"NO",
-"normative_source":"TENtec TENT_Regulation_2024 Roads/Comprehensive; OID1508 TYPE=Motorways; same national route A28 for OID2725",
-"operator_source":"Autostrade Alto Adriatico current network identifies A28 Portogruaro–Conegliano and lists its motorway interchanges",
-"topology_support":"Not needed to infer TEN-T class; operator evidence independently establishes motorway/interchange morphology.",
-"evidence_notes":"A28 is the only comprehensive-only FVG route identified by the complete current crosswalk and does not create an at-grade exit ambiguity.",
-"validation_status":"VERIFIED_NO_MATERIAL_EXIT_AMBIGUITY"},
-{
-"audit_id":"EXITREL-FVG-007","tent_level":"EXTENDED_CORE","fvg_route":"NONE",
-"tent_sections":"No current TENT_Regulation_2024 Roads/Extended Core feature materially overlaps FVG",
-"morphology":"N/A","ordinary_at_grade_intersections_observed":"N/A",
-"true_exit_ramp_present":"N/A","afir_nearest_exit_interpretation_material":"NO_SEGMENT",
-"normative_source":"TENtec TENT_Regulation_2024 Roads/Extended Core layer 9; FVG query returned empty feature set",
-"operator_source":"N/A","topology_support":"N/A",
-"evidence_notes":"No extended-core FVG road segment exists in the queried current official dataset, so no morphology case arises.",
-"validation_status":"VERIFIED_ABSENCE_IN_CURRENT_FVG_CROSSWALK"}
-]
 
-OUT.mkdir(parents=True,exist_ok=True)
-p=OUT/"TENT_FVG_EXIT_RELEVANCE_AUDIT_v01.csv"
-with p.open("w",newline="",encoding="utf-8-sig") as f:
-    w=csv.DictWriter(f,fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
+def parse_args():
+    p = argparse.ArgumentParser(
+        description="Build the validated TEN-T FVG exit-relevance audit."
+    )
+    p.add_argument("--crosswalk", type=Path, required=True)
+    p.add_argument("--osm-diagnostic", type=Path, required=True)
+    p.add_argument("--operator-evidence-dir", type=Path, required=True)
+    p.add_argument("--output", type=Path, required=True)
+    return p.parse_args()
 
-def sha(path):
-    h=hashlib.sha256()
-    with path.open("rb") as f:
-        for b in iter(lambda:f.read(1048576),b""): h.update(b)
-    return h.hexdigest().upper()
 
-manifest={"scope":"Chat 3.7 TEN-T FVG crosswalk and exit relevance evidence","files":{}}
-for base in [SRC,OUT]:
-    if base.exists():
-        for q in sorted(base.rglob("*")):
-            if q.is_file():
-                manifest["files"][str(q.relative_to(ROOT))]={"bytes":q.stat().st_size,"sha256":sha(q)}
-mp=SRC/"evidence_manifest_v01.json"
-mp.write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding="utf-8")
-print(p)
-print("audit_sha256",sha(p))
-print("manifest_sha256",sha(mp))
-print("rows",len(rows))
+def read_csv(path: Path) -> list[dict]:
+    with path.open("r", newline="", encoding="utf-8-sig") as f:
+        return list(csv.DictReader(f))
+
+
+def atomic_write_csv(path: Path, rows: list[dict], fieldnames: list[str]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, tmp = tempfile.mkstemp(prefix=path.name + ".", suffix=".tmp", dir=path.parent)
+    os.close(fd)
+    tmp_path = Path(tmp)
+    try:
+        with tmp_path.open("w", newline="", encoding="utf-8-sig") as f:
+            w = csv.DictWriter(f, fieldnames=fieldnames)
+            w.writeheader()
+            w.writerows(rows)
+        os.replace(tmp_path, path)
+    finally:
+        if tmp_path.exists():
+            tmp_path.unlink()
+
+
+def main():
+    a = parse_args()
+    if a.output.name != "TENT_FVG_EXIT_RELEVANCE_AUDIT_v01.csv":
+        raise ValueError(
+            "This script is the sole authoritative writer for "
+            "TENT_FVG_EXIT_RELEVANCE_AUDIT_v01.csv"
+        )
+    crosswalk = read_csv(a.crosswalk)
+    osm_rows = read_csv(a.osm_diagnostic)
+
+    if len(crosswalk) != 6:
+        raise RuntimeError(f"Expected 6 crosswalk route-axis records, got {len(crosswalk)}")
+    official_sections = sum(int(r["official_section_count"]) for r in crosswalk)
+    if official_sections != 11:
+        raise RuntimeError(
+            f"Expected 11 official TENtec sections aggregated in crosswalk, got {official_sections}"
+        )
+    if len(osm_rows) != 6:
+        raise RuntimeError(f"Expected 6 OSM diagnostic records, got {len(osm_rows)}")
+
+    osm_by_route = {r["tent_route_axis"]: r for r in osm_rows}
+    if set(osm_by_route) != set(EVIDENCE):
+        raise RuntimeError(
+            f"OSM diagnostic route set mismatch: {sorted(osm_by_route)}"
+        )
+
+    for info in EVIDENCE.values():
+        for filename in info["files"].split(";"):
+            path = a.operator_evidence_dir / filename
+            if not path.exists():
+                raise FileNotFoundError(f"Missing operator evidence: {path}")
+
+    audit_rows = []
+    for cw in crosswalk:
+        route = cw["tent_route_axis"]
+        info = EVIDENCE[route]
+        osm = osm_by_route[route]
+        audit_rows.append(
+            {
+                "tent_tier": cw["tent_tier"],
+                "tent_route_axis": route,
+                "official_section_count": cw["official_section_count"],
+                "tentec_feature_ids": cw["tentec_feature_ids"],
+                "tentec_types": cw["tentec_types"],
+                "automatic_osm_machine_status": osm["machine_status"],
+                "automatic_osm_raw_nonlink_adjacency_count": osm[
+                    "osm_raw_nonlink_adjacency_count"
+                ],
+                "automatic_osm_raw_nonlink_examples": osm[
+                    "osm_raw_nonlink_examples"
+                ],
+                "operator_evidence_files": info["files"],
+                "operator_evidence_summary": info["summary"],
+                "manual_documentary_validation": info["manual_note"],
+                "validated_access_morphology": info["morphology"],
+                "ordinary_at_grade_intersection_validated": "NO",
+                "true_exit_or_ramp_access_validated": "YES",
+                "afir_nearest_exit_issue_materially_relevant_fvg": "NO",
+                "validation_status": "VALIDATED_NO_MATERIAL_EXIT_AMBIGUITY",
+                "lineage": (
+                    "TEN-T membership/tier: TENtec 2024; "
+                    "automatic topology diagnostic: frozen OSM; "
+                    "access morphology: operator/ANAS evidence + manual review; "
+                    "final conclusion: validated audit"
+                ),
+            }
+        )
+
+    audit_rows.sort(
+        key=lambda r: (
+            {"CORE": 0, "EXTENDED_CORE": 1, "COMPREHENSIVE": 2}[r["tent_tier"]],
+            r["tent_route_axis"],
+        )
+    )
+    atomic_write_csv(a.output, audit_rows, list(audit_rows[0].keys()))
+    print(
+        f"wrote={a.output}\n"
+        f"route_axis_records={len(audit_rows)}\n"
+        f"official_tentec_sections={sum(int(r['official_section_count']) for r in audit_rows)}"
+    )
+
+
+if __name__ == "__main__":
+    main()

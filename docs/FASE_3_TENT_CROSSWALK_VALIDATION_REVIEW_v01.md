@@ -1,156 +1,224 @@
-﻿# FASE 3 â€” TEN-T FVG CROSSWALK VALIDATION REVIEW v01
+# FASE 3 — TEN-T FVG CROSSWALK VALIDATION REVIEW v01
 
-**Chat:** 3.7 â€” Crosswalk TEN-T FVG e rilevanza delle uscite AFIR
-**Data:** 2026-09-18
-**Stato:** REVIEW tecnico-operativo
+**Chat:** 3.7 — Crosswalk TEN-T FVG e rilevanza delle uscite AFIR
+**Review correction date:** 2026-09-19
+**Stato:** REWORK COMPLETED — READY FOR NEW CHAT MADRE REVIEW
 **Regia metodologica:** Chat Madre 5 HUB
 **Branch:** `chat-3.7-tent-crosswalk`
 
-## 1. Mandato e perimetro
+## 1. Scopo del rework
 
-Il mandato Ã¨ costruire il crosswalk route-level completo e verificabile tra la rete stradale TEN-T vigente in Friuli Venezia Giulia e le strade reali FVG, distinguendo Core, Extended Core e Comprehensive; quindi verificare se esista almeno un tratto TEN-T FVG privo di vere rampe/svincoli e caratterizzato da intersezioni ordinarie a raso tale da rendere materialmente rilevante il problema interpretativo della â€œnearest TEN-T exitâ€ previsto dallâ€™AFIR.
+La review indipendente della Chat Madre ha confermato come sostanzialmente coerente il contenuto geografico e normativo, ma ha respinto il precedente PASS tecnico-operativo per difetti di riproducibilità degli artifact.
 
-FASE 1 e FASE 2 restano PASS / CLOSED / FROZEN. Nessuna decisione metodologica sostanziale viene chiusa da questa chat. Non sono stati costruiti candidati, distanze candidatoâ€“TEN-T o `TENT_EXIT_SET_v01`.
+Il rework interviene esclusivamente su:
+- unicità dei writer;
+- separazione fra diagnostica automatica OSM e audit validato;
+- ordine deterministico di produzione;
+- rigenerazione finale di manifest e QA;
+- correzione dei conteggi del crosswalk;
+- allineamento di path e hash;
+- chiarezza della lineage probatoria.
 
-## 2. Fonte TEN-T corrente autorevole
+Non sono state riaperte FASE 1 o FASE 2. Non sono stati creati candidati, distanze candidato–TEN-T o `TENT_EXIT_SET_v01`. Nessuna decisione metodologica è stata chiusa.
 
-Ãˆ stato individuato e materializzato il servizio pubblico corrente DG MOVE / TENtec:
+## 2. Correzione dell'architettura degli artifact
 
-`https://tentec.transport.ec.europa.eu/api/public/gis/TENT_Regulation_2024/MapServer`
+La precedente collisione fra due writer dello stesso file è stata eliminata.
 
-Il servizio dichiara esplicitamente il Regolamento (UE) 2024/1679 e separa le strade nei tre livelli correnti:
-- layer 8 â€” Core;
-- layer 9 â€” Extended Core;
-- layer 10 â€” Comprehensive.
+Writer autorevoli correnti:
+- `scripts/build_tent_fvg_crosswalk_chat3_7_v01.py`
+  - `TENT_FVG_ROUTE_MATCH_DIAGNOSTIC_v01.csv`
+  - `TENT_FVG_ROUTE_CROSSWALK_v01.csv`
+  - `TENT_FVG_OSM_ACCESS_DIAGNOSTIC_v01.csv`
+- `scripts/build_tent_exit_relevance_audit_chat3_7_v01.py`
+  - unico writer di `TENT_FVG_EXIT_RELEVANCE_AUDIT_v01.csv`
+- `scripts/finalize_tent_artifacts_chat3_7_v01.py`
+  - `FINAL_EVIDENCE_MANIFEST_v01.json`
+  - `TENT_FVG_CROSSWALK_QA_v01.json`
 
-Questa fonte supera il limite del servizio TENtec legacy usato in Chat 3.3, che esponeva soltanto Core/Comprehensive. OSM non Ã¨ stato utilizzato per stabilire appartenenza o classe TEN-T.
+L'orchestrazione è affidata a:
+`scripts/run_chat3_7_artifact_pipeline_v01.py`
 
-## 3. Metodo del crosswalk
+Ordine obbligatorio:
+1. diagnostica match TEN-T/FVG;
+2. crosswalk per asse;
+3. diagnostica automatica OSM;
+4. audit finale validato;
+5. manifest finale;
+6. QA finale.
 
-Sono stati interrogati i tre layer stradali correnti per lâ€™Italia nel bounding box FVG. La classificazione esclusiva Ã¨ stata ottenuta rispettando la gerarchia dei layer: una feature giÃ  presente nel livello superiore non viene ricontata come â€œcomprehensive-onlyâ€.
+All'avvio della pipeline QA e manifest precedenti vengono rimossi, impedendo che un'esecuzione incompleta lasci indicatori di successo obsoleti.
 
-Per verificare che le sezioni ufficiali intersechino materialmente il territorio FVG e identificare la strada reale corrispondente, le geometrie TENtec sono state campionate ogni 1 km e confrontate con il grafo stradale regionale FVG giÃ  materializzato in Chat 3.3.
+## 3. Package sorgente corrente
 
-La soglia `<=100 m` usata nello script Ã¨ **esclusivamente un parametro tecnico di QA del crosswalk geometrico**. Non Ã¨ una soglia di snap del modello, non Ã¨ un requisito AFIR, non Ã¨ una regola di routing e non costituisce una decisione metodologica futura.
+Package TEN-T corrente:
+`C:\Users\visen\OneDrive\Università\UniUD\Tesi\5_HUB_FVG\02_external_sources\F3_CHAT_3_7\TEN_T_CURRENT_v01`
+
+Il package contiene i metadati del servizio `TENT_Regulation_2024` e i subset materializzati dei layer:
+- 8 — Core;
+- 9 — Extended Core;
+- 10 — Comprehensive.
+
+I package/manifests precedenti `TEN_T`, `TEN_T_2024_API` e `evidence_manifest_v01.json` sono conservati solo nell'archivio pre-rework e non sono più riferimenti correnti.
+
+Manifest corrente:
+`02_external_sources\F3_CHAT_3_7\FINAL_EVIDENCE_MANIFEST_v01.json`
+
+SHA-256:
+`A20D0090C1C71EFBE65BC364B5CE56ACB92657EC90C5A8FD9E5349FAC9DEF642`
+
+## 4. Crosswalk corretto
+
+Il crosswalk corrente rappresenta:
+- **11 sezioni TENtec ufficiali** materialmente rilevanti per il FVG;
+- **aggregate in 6 record di assi stradali FVG**.
+
+Il CSV `TENT_FVG_ROUTE_CROSSWALK_v01.csv` contiene quindi **6 record**, non 11.
+
+| Livello | Asse FVG | Sezioni TENtec aggregate |
+|---|---|---:|
+| CORE | A/SS202 | 1 |
+| CORE | A23 | 3 |
+| CORE | A4 | 2 |
+| CORE | RA13 | 2 |
+| CORE | RA14 | 1 |
+| COMPREHENSIVE | A28 | 2 |
+| **Totale** | **6 assi** | **11 sezioni** |
+
+Non risultano assi Extended Core in FVG nel package corrente.
 
 Artifact:
 `05_intermediate_outputs\F3_CHAT_3_7\TENT_FVG_ROUTE_CROSSWALK_v01.csv`
 
+Record count: **6**
 SHA-256:
-`1AAAAC6EB9E74CF0C86BD6BB31FBF2FD6390547956D5148F958477A54EADFEBF`
+`BFE5985915CA5169E762E66E603334EC1F8DB36AC10EEBC49297C139CDAF3CE9`
 
-## 4. Risultato route-level corrente FVG
+La diagnostica feature-level che identifica le 11 sezioni ufficiali resta separata:
+`TENT_FVG_ROUTE_MATCH_DIAGNOSTIC_v01.csv`
 
-Il crosswalk corrente contiene **11 sezioni TENtec che intersecano materialmente il FVG**:
+Record count: **35 feature esaminate**, di cui **11 marcate come sezioni ufficiali incluse nel crosswalk**.
+SHA-256:
+`A2EABB19748DFB6836279CF8D30E44E2289FF37B39FF1EDE3F97BBB597283CC2`
 
-| Livello esclusivo | Sezioni | Strade FVG |
-|---|---:|---|
-| CORE | 9 | A4, A23, RA13, RA14, A/SS202 |
-| EXTENDED CORE | 0 | nessuna |
-| COMPREHENSIVE-only | 2 | A28 |
-| **Totale** | **11** | |
+## 5. Separazione OSM / evidenza gestore / conclusione validata
 
-Dettaglio:
-1. CORE â€” OID 999 â€” Palmanova (J. A4/A23) â†” Sistiana-Visogliano â€” A4.
-2. CORE â€” OID 2416 â€” Sistiana-Visogliano â†” Villa Opicina (J. RA13/RA14) â€” RA13.
-3. CORE â€” OID 4550 â€” Udine â†” Tarvisio â€” A23.
-4. CORE â€” OID 3632 â€” Palmanova (J. A4/A23) â†” Udine â€” A23.
-5. CORE â€” OID 472 â€” Villa Opicina â†” Padriciano (Trieste porto R13) â€” RA13.
-6. CORE â€” OID 862 â€” Rabuiese â†” Padriciano (Trieste porto R13) â€” A/SS202.
-7. CORE â€” OID 4504 â€” Fernetti â†” Villa Opicina â€” RA14.
-8. CORE â€” OID 370 â€” Palmanova â†” Portogruaro â€” A4.
-9. CORE â€” OID 3640 â€” Tarvisio â†” confine IT/AT â€” A23.
-10. COMPREHENSIVE-only â€” OID 1508 â€” Conegliano â†” Schiavoi, quota FVG â€” A28.
-11. COMPREHENSIVE-only â€” OID 2725 â€” Schiavoi â†” Portogruaro, quota FVG â€” A28.
+### 5.1 Diagnostica automatica OSM
 
-Il layer Extended Core corrente non restituisce alcuna sezione stradale materialmente sovrapposta al FVG.
+Artifact:
+`05_intermediate_outputs\F3_CHAT_3_7\TENT_FVG_OSM_ACCESS_DIAGNOSTIC_v01.csv`
 
-## 5. Audit morfologia accessi
+Record count: **6**
+SHA-256:
+`4F518CE69EC3782EE41490428ED8237C7350C2C358AA4936E4560BBD1B540A9F`
+
+Questo file contiene esclusivamente:
+- riferimento OSM usato;
+- classi mainline;
+- numero di segmenti mainline;
+- numero di link adiacenti;
+- adiacenze non-link grezze;
+- esempi;
+- flag `requires_documentary_review`.
+
+Non contiene una conclusione algoritmica sull'esistenza o meno di intersezioni ordinarie a raso.
+
+### 5.2 Evidenze ufficiali gestori
+
+Package:
+`02_external_sources\F3_CHAT_3_7\operator_evidence`
+
+Principali evidenze:
+- ANAS — `ANAS_soccorso_stradale_unita_FVG_2026.pdf`;
+- Autostrade Alto Adriatico — `Autostrade_Alto_Adriatico_network_20260918.html`;
+- Autostrade per l'Italia — `ASPI_A23_Pontebba_confine_20260914.html`;
+- MIT — `MIT_elenco_strade_TEN_principali_2024.pdf`.
+
+La fonte ASPI è stata materializzata nel rework per rendere riproducibile l'evidenza gestore sul tratto A23 Udine–Tarvisio.
+
+### 5.3 Audit finale validato
 
 Artifact:
 `05_intermediate_outputs\F3_CHAT_3_7\TENT_FVG_EXIT_RELEVANCE_AUDIT_v01.csv`
 
+Record count: **6**
 SHA-256:
-`8FDCA0E64B4A3DB24E4184412E7FC3175C650D371A0633E8B5FDC54B7D34D1A6`
+`153052D726960F798C28933527521956A103740C7B60698BACAE7C8F1F6D6D24`
 
-Esito per asse:
-- **A4 CORE:** TENtec = Motorways; rete gestita come autostrada con svincoli; nessun caso ordinario a raso rilevato.
-- **A23 CORE:** TENtec = Motorways; rete autostradale con uscite/svincoli; nessun caso ordinario a raso rilevato.
-- **RA13 CORE:** TENtec = Rural road with separate directions; documentazione ANAS descrive il tratto attraverso svincoli e contesto autostradale/interconnesso; supporto OSM frozen non evidenzia accessi ordinari diretti a raso.
-- **RA14 CORE:** stesso esito: innesto/svincoli e morfologia a livelli separati; nessun accesso ordinario a raso rilevato.
-- **A/SS202 CORE:** ANAS descrive le sezioni attraverso svincoli; il caso â€œNuova Sopraelevata / Via della Rampaâ€ giÃ  isolato nello screening topologico Ã¨ una struttura link/rampa, non unâ€™intersezione ordinaria di mainline.
-- **A28 COMPREHENSIVE-only:** Ã¨ lâ€™unico asse aggiunto dal crosswalk completo rispetto allo screening core/corridoi. Autostrade Alto Adriatico la identifica come autostrada Portogruaroâ€“Conegliano e pubblica lâ€™elenco degli svincoli autostradali; non introduce quindi un tratto a intersezioni ordinarie a raso.
-- **EXTENDED CORE:** nessun tratto FVG corrente da auditare.
+La lineage del file distingue esplicitamente:
+1. appartenenza/classe TEN-T — TENtec 2024;
+2. diagnostica topologica automatica — OSM frozen;
+3. morfologia/accesso — evidenza ANAS/concessionario + revisione documentale;
+4. conclusione — audit validato.
 
-Il supporto OSM Ã¨ stato usato solo dove utile alla lettura geometrico-topologica e non per classificare TEN-T.
+La conclusione sulla presenza/assenza di intersezioni ordinarie a raso **non è presentata come output dell'algoritmo OSM**.
 
-## 6. Rilevanza materiale di Q-METH-3.3-A
+## 6. Esito tecnico sostanziale
 
-**Esito tecnico osservato:** nel dominio stradale TEN-T corrente FVG completamente crosswalkato non Ã¨ stato identificato alcun tratto in cui lâ€™accesso alla TEN-T debba essere rappresentato da unâ€™intersezione ordinaria a raso in assenza di una vera rampa/uscita/svincolo.
+Il rework non modifica il risultato geografico già sottoposto alla Chat Madre.
 
-Di conseguenza, sulla base delle evidenze correnti, **il problema interpretativo Q-METH-3.3-A non risulta materialmente necessario per il dominio FVG osservato**.
+Nel dominio stradale TEN-T FVG corrente non è stato validato alcun asse in cui l'accesso pertinente alla TEN-T debba essere rappresentato mediante una normale intersezione a raso priva di vera uscita/rampa.
 
-Questa frase Ã¨ un risultato tecnico da sottoporre alla Chat Madre, non una chiusura metodologica autonoma. Non viene proposta nÃ© inventata una definizione alternativa di â€œnearest TEN-T exitâ€.
+Questo resta un **risultato tecnico dell'audit documentale**, non una chiusura metodologica.
 
-## 7. Limiti e cautele
-
-1. Il crosswalk stabilisce appartenenza/classe TEN-T dalla fonte corrente DG MOVE/TENtec; il grafo FVG serve soltanto al riscontro della strada reale.
-2. La verifica morfologica non autorizza ancora la costruzione del definitivo `TENT_EXIT_SET_v01`.
-3. Le storiche 23 uscite Claude/QGIS non sono state promosse nÃ© riutilizzate come fonte corrente.
-4. Il futuro calcolo di distanze stradali resta condizionato da ISS-0004: il routing diretto Light/Heavy non Ã¨ stato validato da Chat 3.3.
-5. Una modifica futura della rete TEN-T o dei tracciati richiede nuova materializzazione/versione; non va sovrascritta questa evidenza.
-
-## 8. Evidenze materializzate
-
-Root:
-`C:\Users\visen\OneDrive\UniversitÃ \UniUD\Tesi\5_HUB_FVG\02_external_sources\F3_CHAT_3_7`
-
-Principali:
-- `TEN_T\TENT_Regulation_2024_MapServer_metadata_20260918.json`
-- subset GeoJSON Core / Extended Core / Comprehensive;
-- metadati dei layer 8 / 9 / 10;
-- `operator_evidence\ANAS_soccorso_stradale_unita_FVG_2026.pdf`
-- `operator_evidence\Autostrade_Alto_Adriatico_network_20260918.html`
-- `operator_evidence\MIT_elenco_strade_TEN_principali_2024.pdf`
-- `evidence_manifest_v01.json`
-
-Hash rilevanti:
-- TENtec service metadata: `908E76799CCCEB2D1DE05A91CCCA2A5A236D37A349BA3F54D942B4B06A3493E4`
-- Core GeoJSON: `B397912C6E3ED3D21FC4F4FBB4B7C383533DA2C947237D094DFA81CFAFF043BA`
-- Extended Core GeoJSON vuoto: `C3311FCCB903EE2126AF2CF493ED98DAA5DAA7B7962F5344A25E397E46CBD3C4`
-- Comprehensive GeoJSON: `1A44F76B37029B30FD14F08D89EE6079892995DD3FE4CC5ABC8C63BBFE9737DB`
-- ANAS evidence: `D15EB8B9708809259B9AC4C1AB825010CAB105B8AA32B98115472755FDDE6FFC`
-- Autostrade Alto Adriatico HTML: `22C6ED432B16739F3143FB325FC70BF3F3E9CFF3A609CA1EB942AD7CE9CA2B56`
-- MIT evidence: `2C5BA39A7F22FEB273A25D4C43CC59C32C9CB96AEABB1195BD5E4AB39897F8C4`
-
-## 9. Governance
-
-Il PROJECT_CONTROL_REGISTER Ã¨ stato aggiornato solo con informazione tecnica:
-- `F3_SRC_TENTEC_001` resta **REVIEW**;
+Pertanto:
 - `ISS-0005` resta **OPEN**;
-- la prossima azione richiede review indipendente della Chat Madre prima di qualsiasi chiusura.
+- `Q-METH-3.3-A` resta **OPEN**;
+- `F3_SRC_TENTEC_001` resta **REVIEW**.
 
-Il PROJECT_SOURCE_OF_TRUTH non viene modificato dalla Chat 3.7.
+La disposizione finale compete alla Chat Madre/utente.
 
-## 10. Quality gate Chat 3.7
+## 7. Manifest e QA finali
+
+Manifest finale:
+`02_external_sources\F3_CHAT_3_7\FINAL_EVIDENCE_MANIFEST_v01.json`
+SHA-256:
+`A20D0090C1C71EFBE65BC364B5CE56ACB92657EC90C5A8FD9E5349FAC9DEF642`
+
+QA finale:
+`05_intermediate_outputs\F3_CHAT_3_7\TENT_FVG_CROSSWALK_QA_v01.json`
+SHA-256:
+`97F16DA5F579539AD0E48BE1F8AB4519416D4390C2961234C52CCACB2453E903`
+
+Il manifest è prodotto solo dopo i quattro CSV finali. Il QA è prodotto solo dopo il manifest.
+
+## 8. Verifica deterministica
+
+La pipeline è stata eseguita ripetutamente sugli stessi input materializzati.
+
+Gli hash dei quattro CSV finali sono rimasti identici tra esecuzioni:
+- route-match diagnostic: `A2EABB19748DFB6836279CF8D30E44E2289FF37B39FF1EDE3F97BBB597283CC2`;
+- crosswalk: `BFE5985915CA5169E762E66E603334EC1F8DB36AC10EEBC49297C139CDAF3CE9`;
+- OSM access diagnostic: `4F518CE69EC3782EE41490428ED8237C7350C2C358AA4936E4560BBD1B540A9F`;
+- exit relevance audit: `153052D726960F798C28933527521956A103740C7B60698BACAE7C8F1F6D6D24`.
+
+Manifest e QA non contengono timestamp variabili di esecuzione e sono deterministici a parità di input.
+
+## 9. Quality gate rework
 
 | Controllo | Esito |
 |---|---|
-| Dispatch e baseline vincolanti letti | PASS |
-| Governance viva verificata | PASS |
-| Fonte TEN-T corrente Reg. 2024/1679 identificata | PASS |
-| Tre livelli Core / Extended Core / Comprehensive coperti | PASS |
-| Crosswalk route-level FVG completo e tracciabile | PASS |
-| Extended Core FVG esplicitamente verificato come assente | PASS |
-| OSM escluso dalla classificazione normativa TEN-T | PASS |
-| Morfologia accessi verificata per tutti gli assi FVG risultanti | PASS |
-| A28 comprehensive-only verificata separatamente | PASS |
-| Q-METH-3.3-A dimostrata/non dimostrata senza scelta implicita | PASS â€” non materialmente rilevante nel dominio osservato |
-| Storiche 23 uscite non promosse | PASS |
+| un solo writer autorevole per artifact finale | PASS |
+| diagnostica automatica OSM separata dall'audit validato | PASS |
+| produzione in ordine deterministico | PASS |
+| vecchi QA/manifest non sopravvivono a run incompleta | PASS |
+| crosswalk = 6 record / 11 sezioni aggregate | PASS |
+| Extended Core FVG = 0 | PASS |
+| manifest generato dopo artifact finali | PASS |
+| QA generato dopo manifest | PASS |
+| hash artifact = manifest = QA | PASS |
+| path corrente unico TEN-T | PASS |
+| nessun riferimento corrente a manifest legacy | PASS |
+| nessuna conclusione a raso attribuita all'algoritmo OSM | PASS |
+| candidati non costruiti | PASS |
+| distanze candidato–TEN-T non calcolate | PASS |
 | `TENT_EXIT_SET_v01` non costruito | PASS |
-| Nessuna decisione metodologica/issue chiusa autonomamente | PASS |
-| Artifact OneDrive + hash + script riproducibili | PASS |
-| Review indipendente Chat Madre prima della chiusura ISS-0005 | REQUIRED / PENDING |
+| ISS-0005 invariato OPEN | PASS |
+| Q-METH-3.3-A invariata OPEN | PASS |
+| F3_SRC_TENTEC_001 invariato REVIEW | PASS |
 
-**Esito operativo Chat 3.7: PASS tecnico-operativo, soggetto a review della Chat Madre.**
-Non equivale a chiusura di ISS-0005, non equivale a FASE 3 CLOSED/FROZEN e non autorizza la costruzione del definitivo exit set.
+## 10. Stato
+
+**Rework Chat 3.7 completato.**
+
+Il quality gate di riproducibilità interno è PASS, ma il precedente PASS tecnico-operativo non viene auto-ripristinato: il lavoro è **READY FOR NEW CHAT MADRE REVIEW**.

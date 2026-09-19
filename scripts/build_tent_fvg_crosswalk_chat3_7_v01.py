@@ -3,13 +3,11 @@ from __future__ import annotations
 import argparse
 import collections
 import csv
-import hashlib
 import json
 import math
+import os
 import sqlite3
-import urllib.parse
-import urllib.request
-from datetime import datetime, timezone
+import tempfile
 from pathlib import Path
 
 from pyproj import Transformer
@@ -17,9 +15,7 @@ from shapely.geometry import shape
 from shapely.ops import transform
 from shapely.strtree import STRtree
 
-API_BASE = "https://tentec.transport.ec.europa.eu/api/public/gis/TENT_Regulation_2024/MapServer"
 LAYERS = {8: "CORE", 9: "EXTENDED_CORE", 10: "COMPREHENSIVE"}
-FVG_SCREEN_BBOX = (12.30, 45.50, 13.95, 46.75)
 EXPECTED = {
     "CORE": {"A4", "A23", "RA13", "RA14", "A/SS202"},
     "EXTENDED_CORE": set(),
@@ -49,33 +45,38 @@ SCOPE = {
     "A/SS202": "Padriciano -> asse SS202/GVT -> Rabuiese / confine IT/SI",
     "A28": "confine Veneto/FVG presso Sacile-Schiavoi -> Pordenone -> Portogruaro/A4",
 }
-CONTEXT = {
-    "A4": "2 connessioni OSM non-link grezze: entrambe trunk con ref=A4 e nome 'Bretella di Latisana'; screening 3.3: bretella/link, non incrocio ordinario sulla carreggiata principale.",
-    "A23": "Nessuna connessione diretta non-link a viabilita ordinaria sui nodi mainline OSM.",
-    "A28": "Nessuna connessione diretta non-link a viabilita ordinaria sui nodi mainline OSM; OSM mainline motorway e motorway_link.",
-    "RA13": "Nessuna connessione diretta non-link a viabilita ordinaria sui nodi mainline OSM.",
-    "RA14": "Nessuna connessione diretta non-link a viabilita ordinaria sui nodi mainline OSM.",
-    "A/SS202": "1 connessione OSM non-link grezza: segmento 9.8 m 'Via della Rampa'; screening 3.3: struttura di rampa/link della Nuova Sopraelevata, non intersezione ordinaria a raso.",
+SOURCE_FILES = {
+    8: "TENT_REGULATION_2024_LAYER_08_CORE_FVG_SCREEN.geojson",
+    9: "TENT_REGULATION_2024_LAYER_09_EXTENDED_CORE_FVG_SCREEN.geojson",
+    10: "TENT_REGULATION_2024_LAYER_10_COMPREHENSIVE_FVG_SCREEN.geojson",
 }
 
 
-def sha256(path: Path) -> str:
-    h = hashlib.sha256()
-    with path.open("rb") as f:
-        for b in iter(lambda: f.read(1024 * 1024), b""):
-            h.update(b)
-    return h.hexdigest().upper()
+def parse_args():
+    p = argparse.ArgumentParser(
+        description="Build deterministic TEN-T/FVG route crosswalk and OSM-only access diagnostic."
+    )
+    p.add_argument("--source-dir", type=Path, required=True)
+    p.add_argument("--roadgraph", type=Path, required=True)
+    p.add_argument("--osm-gpkg", type=Path, required=True)
+    p.add_argument("--output-dir", type=Path, required=True)
+    return p.parse_args()
 
 
-def fetch_json(url: str) -> dict:
-    req = urllib.request.Request(url, headers={"User-Agent": "5-HUB-FVG-Chat3.7/1.0"})
-    with urllib.request.urlopen(req, timeout=90) as r:
-        return json.loads(r.read().decode("utf-8"))
-
-
-def write_json(path: Path, data: dict) -> None:
+def atomic_write_csv(path: Path, rows: list[dict], fieldnames: list[str]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+    fd, tmp = tempfile.mkstemp(prefix=path.name + ".", suffix=".tmp", dir=path.parent)
+    os.close(fd)
+    tmp_path = Path(tmp)
+    try:
+        with tmp_path.open("w", newline="", encoding="utf-8-sig") as f:
+            w = csv.DictWriter(f, fieldnames=fieldnames)
+            w.writeheader()
+            w.writerows(rows)
+        os.replace(tmp_path, path)
+    finally:
+        if tmp_path.exists():
+            tmp_path.unlink()
 
 
 def densify(line, step=200.0):
@@ -83,60 +84,38 @@ def densify(line, step=200.0):
     return [line.interpolate(i / n, normalized=True) for i in range(n + 1)]
 
 
-def norm_ref(s):
-    return (s or "").replace(" ", "").upper()
+def norm_ref(value):
+    return (value or "").replace(" ", "").upper()
 
 
-def parse_args():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--roadgraph", type=Path, required=True)
-    ap.add_argument("--osm-gpkg", type=Path, required=True)
-    ap.add_argument("--evidence-dir", type=Path, required=True)
-    ap.add_argument("--output-dir", type=Path, required=True)
-    return ap.parse_args()
+def feature_id(feature):
+    value = feature.get("id")
+    if value is None:
+        value = feature.get("properties", {}).get("OBJECTID")
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return str(value)
 
 
 def main():
     a = parse_args()
-    a.evidence_dir.mkdir(parents=True, exist_ok=True)
     a.output_dir.mkdir(parents=True, exist_ok=True)
-    run_utc = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
 
     raw_by_layer = {}
-    source_manifest = []
-    for layer, tier in LAYERS.items():
-        meta_url = f"{API_BASE}/{layer}?f=pjson"
-        meta = fetch_json(meta_url)
-        meta_path = a.evidence_dir / f"TENT_REGULATION_2024_LAYER_{layer:02d}_{tier}_METADATA.json"
-        write_json(meta_path, meta)
-
-        params = {
-            "where": "COUNTRY_CODE='IT'",
-            "geometry": ",".join(map(str, FVG_SCREEN_BBOX)),
-            "geometryType": "esriGeometryEnvelope",
-            "inSR": "4326",
-            "spatialRel": "esriSpatialRelIntersects",
-            "outFields": "*",
-            "returnGeometry": "true",
-            "outSR": "4326",
-            "f": "geojson",
-        }
-        query_url = f"{API_BASE}/{layer}/query?" + urllib.parse.urlencode(params)
-        data = fetch_json(query_url)
-        out = a.evidence_dir / f"TENT_REGULATION_2024_LAYER_{layer:02d}_{tier}_FVG_SCREEN.geojson"
-        write_json(out, data)
-        raw_by_layer[layer] = data
-        for pth, kind, url in [(meta_path, "layer_metadata", meta_url), (out, "fvg_screen_query", query_url)]:
-            source_manifest.append({
-                "kind": kind, "tier": tier, "layer": layer, "source_url": url,
-                "retrieved_utc": run_utc, "path": str(pth), "sha256": sha256(pth),
-            })
+    for layer, filename in SOURCE_FILES.items():
+        p = a.source_dir / filename
+        if not p.exists():
+            raise FileNotFoundError(f"Missing canonical TEN-T source: {p}")
+        raw_by_layer[layer] = json.loads(p.read_text(encoding="utf-8-sig"))
 
     road = json.loads(a.roadgraph.read_text(encoding="utf-8-sig"))
     tr_rg = Transformer.from_crs(6708, 32633, always_xy=True).transform
     tr_t = Transformer.from_crs(4326, 32633, always_xy=True).transform
+
     major = {"AS", "RA", "SS", "NSA", "SR"}
-    rg_geoms, rg_props = [], []
+    rg_geoms = []
+    rg_props = []
     for f in road["features"]:
         if f["properties"].get("CLASSE") not in major:
             continue
@@ -144,167 +123,222 @@ def main():
         rg_props.append(f["properties"])
     tree = STRtree(rg_geoms)
 
-    diagnostics = []
+    route_match_rows = []
     relevant = collections.defaultdict(list)
+
     for layer, tier in LAYERS.items():
-        for f in raw_by_layer[layer]["features"]:
-            p = f["properties"]
-            line = transform(tr_t, shape(f["geometry"]))
+        features = sorted(raw_by_layer[layer].get("features", []), key=feature_id)
+        for feat in features:
+            props = feat["properties"]
+            geom = transform(tr_t, shape(feat["geometry"]))
             counts = collections.Counter()
             close = 0
-            samples = densify(line)
+            samples = densify(geom)
             for pt in samples:
                 idx = int(tree.nearest(pt))
-                d = pt.distance(rg_geoms[idx])
-                if d <= 100:
+                dist = pt.distance(rg_geoms[idx])
+                if dist <= 100:
                     close += 1
                     counts[rg_props[idx].get("TRIM_STR_CODE_1")] += 1
+
             share = close / len(samples)
-            core_flag = str(p.get("CORE_NETWORK")) == "1"
+            core_flag = str(props.get("CORE_NETWORK")) == "1"
             exclusive_tier = tier
             if layer == 10 and core_flag:
                 exclusive_tier = "CORE_DUPLICATE_IN_COMPREHENSIVE_LAYER"
-            is_relevant = close >= 5 and exclusive_tier != "CORE_DUPLICATE_IN_COMPREHENSIVE_LAYER"
-            diagnostics.append({
-                "layer": layer, "layer_tier": tier, "exclusive_tier": exclusive_tier,
-                "feature_id": f.get("id"), "globalid": p.get("GLOBALID"),
-                "description": p.get("DESCRIPTION"), "nationalro": p.get("NATIONALRO"),
-                "type": p.get("TYPE"), "gis_status": p.get("GIS_STATUS"),
-                "sample_count": len(samples), "close_sample_count": close,
-                "close_sample_share": f"{share:.6f}",
-                "nearest_fvg_codes": "; ".join(f"{k}:{v}" for k, v in counts.most_common(8)),
-                "relevant_to_fvg": "YES" if is_relevant else "NO",
-            })
+
+            is_relevant = (
+                close >= 5
+                and exclusive_tier != "CORE_DUPLICATE_IN_COMPREHENSIVE_LAYER"
+            )
+            route_match_rows.append(
+                {
+                    "layer": layer,
+                    "layer_tier": tier,
+                    "exclusive_tier": exclusive_tier,
+                    "feature_id": feature_id(feat),
+                    "description": props.get("DESCRIPTION"),
+                    "nationalro": props.get("NATIONALRO"),
+                    "type": props.get("TYPE"),
+                    "gis_status": props.get("GIS_STATUS"),
+                    "sample_count": len(samples),
+                    "close_sample_count": close,
+                    "close_sample_share": f"{share:.6f}",
+                    "nearest_fvg_codes": "; ".join(
+                        f"{k}:{v}" for k, v in counts.most_common(8)
+                    ),
+                    "official_section_in_fvg_crosswalk": "YES" if is_relevant else "NO",
+                    "diagnostic_role": "GEOMETRIC_MATCH_SUPPORT_ONLY",
+                }
+            )
             if is_relevant:
-                key = p.get("NATIONALRO")
-                if key:
-                    relevant[(exclusive_tier, key)].append(f)
+                route = props.get("NATIONALRO")
+                if route:
+                    relevant[(exclusive_tier, route)].append(feat)
 
     discovered = collections.defaultdict(set)
-    for (tier, route), feats in relevant.items():
+    for tier, route in relevant:
         discovered[tier].add(route)
     for tier in LAYERS.values():
         got = discovered.get(tier, set())
         if got != EXPECTED[tier]:
-            raise RuntimeError(f"Unexpected TEN-T FVG route set for {tier}: got={sorted(got)} expected={sorted(EXPECTED[tier])}")
+            raise RuntimeError(
+                f"Unexpected TEN-T FVG route set for {tier}: "
+                f"got={sorted(got)} expected={sorted(EXPECTED[tier])}"
+            )
 
-    diag_path = a.output_dir / "TENT_FVG_ROUTE_MATCH_DIAGNOSTIC_v01.csv"
-    with diag_path.open("w", newline="", encoding="utf-8-sig") as f:
-        w = csv.DictWriter(f, fieldnames=list(diagnostics[0]))
-        w.writeheader(); w.writerows(diagnostics)
+    route_match_rows.sort(
+        key=lambda r: (
+            int(r["layer"]),
+            str(r["feature_id"]),
+        )
+    )
+    route_match_path = a.output_dir / "TENT_FVG_ROUTE_MATCH_DIAGNOSTIC_v01.csv"
+    atomic_write_csv(
+        route_match_path,
+        route_match_rows,
+        list(route_match_rows[0].keys()),
+    )
 
-    crosswalk = []
+    crosswalk_rows = []
     for tier in ("CORE", "EXTENDED_CORE", "COMPREHENSIVE"):
         for route in sorted(EXPECTED[tier]):
-            feats = relevant[(tier, route)]
-            ids = [str(x.get("id")) for x in feats]
-            desc = [x["properties"].get("DESCRIPTION") or "" for x in feats]
+            feats = sorted(relevant[(tier, route)], key=feature_id)
+            ids = [str(feature_id(x)) for x in feats]
+            descriptions = [x["properties"].get("DESCRIPTION") or "" for x in feats]
             types = sorted({x["properties"].get("TYPE") or "NULL" for x in feats})
-            statuses = sorted({x["properties"].get("GIS_STATUS") or "NULL" for x in feats})
-            crosswalk.append({
-                "tent_tier": tier,
-                "tent_route": route,
-                "tentec_feature_ids": ";".join(ids),
-                "tentec_descriptions": " | ".join(desc),
-                "tentec_types": ";".join(types),
-                "tentec_gis_statuses": ";".join(statuses),
-                "fvg_real_road_codes": ";".join(REAL_CODES[route]),
-                "fvg_scope": SCOPE[route],
-                "membership_authority": "EC DG MOVE TENtec public GIS - TENT_Regulation_2024",
-                "geometry_crosswalk_support": "FVG regional road graph WFS 2026-09-18; nearest-sample spatial check <=100 m",
-                "crosswalk_status": "VERIFIED",
-            })
-    cw_path = a.output_dir / "TENT_FVG_ROUTE_CROSSWALK_v01.csv"
-    with cw_path.open("w", newline="", encoding="utf-8-sig") as f:
-        w = csv.DictWriter(f, fieldnames=list(crosswalk[0]))
-        w.writeheader(); w.writerows(crosswalk)
+            statuses = sorted(
+                {x["properties"].get("GIS_STATUS") or "NULL" for x in feats}
+            )
+            crosswalk_rows.append(
+                {
+                    "tent_tier": tier,
+                    "tent_route_axis": route,
+                    "official_section_count": len(feats),
+                    "tentec_feature_ids": ";".join(ids),
+                    "tentec_descriptions": " | ".join(descriptions),
+                    "tentec_types": ";".join(types),
+                    "tentec_gis_statuses": ";".join(statuses),
+                    "fvg_real_road_codes": ";".join(REAL_CODES[route]),
+                    "fvg_scope": SCOPE[route],
+                    "membership_authority": (
+                        "EC DG MOVE TENtec public GIS - TENT_Regulation_2024"
+                    ),
+                    "geometry_crosswalk_support": (
+                        "FVG regional road graph WFS; 200 m sampling; "
+                        "nearest major-road support <=100 m"
+                    ),
+                    "crosswalk_status": "VERIFIED",
+                }
+            )
+
+    if len(crosswalk_rows) != 6:
+        raise RuntimeError(f"Expected 6 route-axis records, got {len(crosswalk_rows)}")
+    if sum(int(r["official_section_count"]) for r in crosswalk_rows) != 11:
+        raise RuntimeError("Expected 11 official TENtec sections in the 6 route-axis records")
+
+    crosswalk_path = a.output_dir / "TENT_FVG_ROUTE_CROSSWALK_v01.csv"
+    atomic_write_csv(
+        crosswalk_path,
+        crosswalk_rows,
+        list(crosswalk_rows[0].keys()),
+    )
 
     con = sqlite3.connect(a.osm_gpkg)
     table = "G_OSM_operativo_segments_v01"
-    audit = []
-    for row in crosswalk:
-        route = row["tent_route"]
+    all_ref_rows = con.execute(
+        f"select fid,osm_u,osm_v,highway,name,ref,length_m "
+        f"from {table} where ref is not null order by fid"
+    ).fetchall()
+
+    osm_rows = []
+    for row in crosswalk_rows:
+        route = row["tent_route_axis"]
         osm_ref, main_classes = OSM_CFG[route]
-        raw = con.execute(
-            f"select fid,osm_u,osm_v,highway,name,ref,length_m from {table} where ref is not null"
-        ).fetchall()
-        mainrows = [r for r in raw if norm_ref(r[5]) == norm_ref(osm_ref) and (r[3] or "") in main_classes]
-        mfids = {r[0] for r in mainrows}
-        nodes = {n for r in mainrows for n in (r[1], r[2]) if n is not None}
+        mainrows = [
+            r
+            for r in all_ref_rows
+            if norm_ref(r[5]) == norm_ref(osm_ref)
+            and (r[3] or "") in main_classes
+        ]
+        main_fids = {r[0] for r in mainrows}
+        nodes = sorted({n for r in mainrows for n in (r[1], r[2]) if n is not None})
+
         adjacent = []
-        nl = list(nodes)
-        for st in range(0, len(nl), 300):
-            ch = nl[st:st + 300]
-            ph = ",".join(["?"] * len(ch))
-            q = f"select fid,osm_u,osm_v,highway,name,ref,length_m from {table} where osm_u in ({ph}) or osm_v in ({ph})"
-            adjacent.extend(con.execute(q, ch + ch).fetchall())
-        seen, links, nonlink = set(), [], []
-        for r in adjacent:
-            if r[0] in mfids or r[0] in seen:
+        for start in range(0, len(nodes), 300):
+            chunk = nodes[start : start + 300]
+            placeholders = ",".join(["?"] * len(chunk))
+            q = (
+                f"select fid,osm_u,osm_v,highway,name,ref,length_m from {table} "
+                f"where osm_u in ({placeholders}) or osm_v in ({placeholders}) "
+                f"order by fid"
+            )
+            adjacent.extend(con.execute(q, chunk + chunk).fetchall())
+
+        seen = set()
+        links = []
+        nonlink = []
+        for r in sorted(adjacent, key=lambda x: x[0]):
+            if r[0] in main_fids or r[0] in seen:
                 continue
             seen.add(r[0])
-            h = r[3] or ""
-            if h.endswith("_link"):
+            highway = r[3] or ""
+            if highway.endswith("_link"):
                 links.append(r)
-            elif h not in main_classes:
+            elif highway not in main_classes:
                 nonlink.append(r)
+
         examples = " | ".join(
             f"fid={r[0]};highway={r[3]};name={r[4]};ref={r[5]};len_m={r[6]:.1f}"
             for r in nonlink[:8]
         )
-        audit.append({
-            "tent_tier": row["tent_tier"],
-            "tent_route": route,
-            "fvg_real_road_codes": row["fvg_real_road_codes"],
-            "tentec_types": row["tentec_types"],
-            "osm_ref_used": osm_ref,
-            "osm_mainline_classes": ";".join(sorted(main_classes)),
-            "osm_mainline_segment_count": len(mainrows),
-            "osm_adjacent_link_segment_count": len(links),
-            "osm_raw_nonlink_adjacency_count": len(nonlink),
-            "osm_raw_nonlink_examples": examples,
-            "contextual_review": CONTEXT[route],
-            "ordinary_at_grade_tent_segment_found": "NO",
-            "nearest_tent_exit_problem_materially_relevant_fvg": "NO",
-            "audit_status": "VERIFIED_NO_ORDINARY_AT_GRADE_TENT_SEGMENT_OBSERVED",
-            "role_of_osm": "TOPOLOGY_SUPPORT_ONLY_NOT_TENT_MEMBERSHIP",
-        })
-    audit_path = a.output_dir / "TENT_FVG_EXIT_RELEVANCE_AUDIT_v01.csv"
-    with audit_path.open("w", newline="", encoding="utf-8-sig") as f:
-        w = csv.DictWriter(f, fieldnames=list(audit[0]))
-        w.writeheader(); w.writerows(audit)
+        machine_status = (
+            "NO_RAW_NONLINK_ADJACENCY"
+            if not nonlink
+            else "RAW_NONLINK_ADJACENCY_REQUIRES_DOCUMENTARY_REVIEW"
+        )
+        osm_rows.append(
+            {
+                "tent_tier": row["tent_tier"],
+                "tent_route_axis": route,
+                "fvg_real_road_codes": row["fvg_real_road_codes"],
+                "osm_ref_used": osm_ref,
+                "osm_mainline_classes": ";".join(sorted(main_classes)),
+                "osm_mainline_segment_count": len(mainrows),
+                "osm_adjacent_link_segment_count": len(links),
+                "osm_raw_nonlink_adjacency_count": len(nonlink),
+                "osm_raw_nonlink_examples": examples,
+                "machine_status": machine_status,
+                "requires_documentary_review": "YES" if nonlink else "NO",
+                "role_of_osm": (
+                    "AUTOMATIC_TOPOLOGY_DIAGNOSTIC_ONLY; "
+                    "NOT_TENT_MEMBERSHIP; NOT_FINAL_AT_GRADE_CONCLUSION"
+                ),
+            }
+        )
+    con.close()
 
-    manifest_path = a.evidence_dir / "SOURCE_MANIFEST_v01.csv"
-    with manifest_path.open("w", newline="", encoding="utf-8-sig") as f:
-        w = csv.DictWriter(f, fieldnames=list(source_manifest[0]))
-        w.writeheader(); w.writerows(source_manifest)
+    osm_path = a.output_dir / "TENT_FVG_OSM_ACCESS_DIAGNOSTIC_v01.csv"
+    atomic_write_csv(osm_path, osm_rows, list(osm_rows[0].keys()))
 
-    qa = {
-        "run_utc": run_utc,
-        "api_base": API_BASE,
-        "fvg_screen_bbox_wgs84": FVG_SCREEN_BBOX,
-        "exclusive_route_sets": {k: sorted(v) for k, v in discovered.items()},
-        "expected_route_sets": {k: sorted(v) for k, v in EXPECTED.items()},
-        "crosswalk_rows": len(crosswalk),
-        "extended_core_fvg_route_count": len(EXPECTED["EXTENDED_CORE"]),
-        "ordinary_at_grade_tent_segments_found": 0,
-        "nearest_exit_issue_materially_relevant_fvg": False,
-        "outputs": {
-            "crosswalk": {"path": str(cw_path), "sha256": sha256(cw_path)},
-            "audit": {"path": str(audit_path), "sha256": sha256(audit_path)},
-            "diagnostic": {"path": str(diag_path), "sha256": sha256(diag_path)},
-            "source_manifest": {"path": str(manifest_path), "sha256": sha256(manifest_path)},
-        },
-        "constraints": [
-            "TEN-T membership/tier comes only from EC DG MOVE TENtec TENT_Regulation_2024 layers.",
-            "FVG regional road graph is used only for route-name/geometric crosswalk support.",
-            "OSM frozen graph is used only for access/topology support.",
-            "No candidate set, candidate-to-TEN-T distance, or definitive TENT_EXIT_SET is produced.",
-        ],
-    }
-    qa_path = a.output_dir / "TENT_FVG_CROSSWALK_QA_v01.json"
-    write_json(qa_path, qa)
-    print(json.dumps(qa, ensure_ascii=False, indent=2))
+    print(
+        json.dumps(
+            {
+                "route_axis_records": len(crosswalk_rows),
+                "official_tentec_sections": sum(
+                    int(r["official_section_count"]) for r in crosswalk_rows
+                ),
+                "osm_diagnostic_records": len(osm_rows),
+                "outputs": [
+                    str(route_match_path),
+                    str(crosswalk_path),
+                    str(osm_path),
+                ],
+            },
+            ensure_ascii=False,
+            indent=2,
+        )
+    )
 
 
 if __name__ == "__main__":
