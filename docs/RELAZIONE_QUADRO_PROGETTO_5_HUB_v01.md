@@ -399,7 +399,7 @@ Per ogni tematismo territoriale è stata predisposta una matrice tecnica dei pos
 - indicatore di merito;
 - semplice informazione di contesto.
 
-Restano aperte le questioni `Q-METH-3.4-A…E`, relative a PGRA, frane, Natura 2000, parchi/riserve/biotopi/prati stabili e PPR. La disponibilità del layer, da sola, non determina una regola di esclusione.
+`Q-METH-3.4-A` — trattamento PGRA — è APPROVATA: il rischio idraulico non costituisce un hard filter generale. Un candidato viene escluso solo quando la disciplina vigente rende l’intervento incompatibile/non ammissibile o quando emerga una incompatibilità tecnica non ragionevolmente mitigabile. Negli altri casi pericolosità e allagabilità restano fattori negativi di valutazione, preferibili alla sola carta del rischio. Le classi PGRA devono ancora essere ricondotte alle Norme di Attuazione/PAI applicabili prima di trasformarle in effetti operativi. Per la geometria, si cerca prima un legame esplicito con la versione vigente; se non reperibile dopo ricerca documentata, il WFS ufficiale live potrà essere utilizzato operativamente con caveat e lineage espliciti. Restano aperte `Q-METH-3.4-B…E`.
 
 ---
 
@@ -725,7 +725,8 @@ Baseline: docs/FASE_2_UNIT_ANALYSIS_CONSOLIDATED_v01.md.
 - DEC-0035: accettato il PASS tecnico-operativo della Chat 3.7; ISS-0005 risolta sul piano tecnico.
 - DEC-0036: Q-METH-3.3-A risolta come non materialmente applicabile al dominio FVG corrente; nessuna regola artificiale per rotatorie/intersezioni a raso.
 - DEC-0037: autorizzata Chat 3.4 per validazione dei vincoli territoriali, ambientali e paesaggistici.
-- DEC-0038: accettato il PASS tecnico-operativo della Chat 3.4; ISS-0008 PPR RESOLVED; ISS-0006 PGRA e ISS-0011 biotopi restano OPEN; Q-METH-3.4-A…E restano da decidere.
+- DEC-0038: accettato il PASS tecnico-operativo della Chat 3.4; ISS-0008 PPR RESOLVED; ISS-0006 PGRA e ISS-0011 biotopi restano OPEN.
+- DEC-0039: approvato il trattamento PGRA senza hard filter generale; esclusione solo quando imposta dalla disciplina o da incompatibilità tecnica non ragionevolmente mitigabile; negli altri casi pericolosità/allagabilità entra come fattore negativo di valutazione.
 
 ---
 
