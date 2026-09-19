@@ -1,0 +1,257 @@
+{
+  "artifact": "FASE_3_TERRITORIAL_VALIDATION_EVIDENCE_v01",
+  "date": "2026-09-19",
+  "status": "REVIEW_TECHNICAL_PASS_PROPOSED",
+  "branch": "chat-3.4-territorial-constraints",
+  "source_manifest": {
+    "path": "C:\\Users\\visen\\OneDrive\\Università\\UniUD\\Tesi\\5_HUB_FVG\\02_external_sources\\F3_CHAT_3_4\\source_manifest_v01.json",
+    "sha256": "b3fa6c361b8b8ec269c03b6a8304ef6c9f23785c45387bff5acbc9474da3fb5b"
+  },
+  "qa": {
+    "path": "C:\\Users\\visen\\OneDrive\\Università\\UniUD\\Tesi\\5_HUB_FVG\\05_intermediate_outputs\\F3_CHAT_3_4\\TERRITORIAL_CONSTRAINTS_QA_v01.json",
+    "sha256": "705c1d7eee62241041220965169711ea13f4f901ad7fe7c75f75628eba0c4a8d",
+    "technical_checks_pass": true,
+    "residual_gaps": [
+      "PGRA: live SIGMA WFS vectors lack explicit machine-readable version binding to Delibera 12/2025 / PGRA2027 map set; legal-current equivalence not asserted and bulk vector geometry not promoted.",
+      "Biotopi: regional WFS exposes 40 geometries while current institutional total is 42; DPReg 065/2026 and 066/2026 legal/cartographic PDFs preserved, but updated vector geometry is not yet exposed by the checked WFS."
+    ]
+  },
+  "pgra": {
+    "current_set": {
+      "id": 40,
+      "codice": "PGRA2027",
+      "nome": "Piano di Gestione del rischio di alluvioni 2027-33 IN SALVAGUARDIA",
+      "descrizione": "Mappe delle aree allagabili, del pericolo e del rischio idraulico",
+      "elementId": 246,
+      "layerName": "Riquadri rappresentazione"
+    },
+    "map_index_count": 5448,
+    "map_types": {
+      "Mappa delle aree allagabili - altezze idriche - TR 100": 1069,
+      "Carta del Rischio Idraulico": 1069,
+      "Carta della Pericolosità Idraulica": 1069,
+      "Mappa delle aree allagabili - altezze idriche - TR 30": 1069,
+      "Mappa delle aree allagabili - altezze idriche - TR 300": 1172
+    },
+    "hazard_wfs": {
+      "scope": "FVG geographic envelope; NOT clipped to administrative boundary",
+      "filter": "BBOX(the_geom,12.20,45.50,14.00,46.75,'EPSG:4326')",
+      "crs_native": "EPSG:3035",
+      "feature_count_envelope": 187230,
+      "materialization_status": "SCHEMA_HITS_SAMPLE_ONLY_VERSION_BINDING_UNPROVEN",
+      "reproducible_full_vector_url": "https://sigma.distrettoalpiorientali.it/sigma/geo/sigma/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=sigma%3APericolo_direttiva_alluvioni&outputFormat=shape-zip&CQL_FILTER=BBOX%28the_geom%2C12.20%2C45.50%2C14.00%2C46.75%2C%27EPSG%3A4326%27%29",
+      "version_binding_note": "Live official SIGMA WFS; WFS schema/capabilities do not expose an explicit identifier binding these vectors to Delibera 12/2025. Bulk geometry is deliberately not promoted as current legal PGRA until that binding is proven."
+    },
+    "risk_wfs": {
+      "scope": "FVG geographic envelope; NOT clipped to administrative boundary",
+      "filter": "BBOX(the_geom,12.20,45.50,14.00,46.75,'EPSG:4326')",
+      "crs_native": "EPSG:3035",
+      "feature_count_envelope": 132840,
+      "materialization_status": "SCHEMA_HITS_SAMPLE_ONLY_VERSION_BINDING_UNPROVEN",
+      "reproducible_full_vector_url": "https://sigma.distrettoalpiorientali.it/sigma/geo/sigma/wfs?service=WFS&version=1.1.0&request=GetFeature&typeName=sigma%3ARischio&outputFormat=shape-zip&CQL_FILTER=BBOX%28the_geom%2C12.20%2C45.50%2C14.00%2C46.75%2C%27EPSG%3A4326%27%29",
+      "version_binding_note": "Live official SIGMA WFS; WFS schema/capabilities do not expose an explicit identifier binding these vectors to Delibera 12/2025. Bulk geometry is deliberately not promoted as current legal PGRA until that binding is proven."
+    },
+    "issue": "ISS-0006 OPEN"
+  },
+  "landslides": {
+    "hazard_count": 830,
+    "hazard_classes": {
+      "P2": 39,
+      "P3": 349,
+      "P4": 440,
+      "P1": 2
+    },
+    "hazard_crs": "urn:ogc:def:crs:EPSG::3004",
+    "hazard_artifact": {
+      "path": "C:\\Users\\visen\\OneDrive\\Università\\UniUD\\Tesi\\5_HUB_FVG\\02_external_sources\\F3_CHAT_3_4\\fvg_wfs\\IRDAT__CATFRANE_PERICOLOSITA_20260919.geojson",
+      "bytes": 4966615,
+      "sha256": "861c897379d44efc568fbfaf9fd77bf5a291a5acfeedfa930f067f8284f50e06"
+    },
+    "perimeter_count": 4989,
+    "perimeter_artifact": {
+      "path": "C:\\Users\\visen\\OneDrive\\Università\\UniUD\\Tesi\\5_HUB_FVG\\02_external_sources\\F3_CHAT_3_4\\fvg_wfs\\IRDAT__CATFRANE_PERIMFRANE_20260919.geojson",
+      "bytes": 17914708,
+      "sha256": "2e382fc6d77c1b439fd4958b55fe87811547f14cc6906c892f67c54336a5263d"
+    }
+  },
+  "natura_protected": {
+    "sic_technical_count": 66,
+    "zps_count": 35,
+    "unique_site_codes": 72,
+    "overlap_site_codes": 29,
+    "biotopi_wfs_count": 40,
+    "biotopi_legal_current_count": 42,
+    "missing_2026_biotopi": [
+      "Monte Joanaz",
+      "Prati di Spignon/Varh e Monte Craguenza/Kraguojnca"
+    ],
+    "parks_regional": 2,
+    "reserves_regional": 13,
+    "state_protected_areas": 3,
+    "municipal_parks": 18,
+    "stable_meadows_total": 10486,
+    "stable_meadows_protected_flag_counts": {
+      "Sì": 8097,
+      "No": 2389
+    },
+    "issue": "ISS-0011 OPEN"
+  },
+  "ppr": {
+    "crs": "EPSG:6708",
+    "variant2_2025_records": 53,
+    "selected_layers": {
+      "PPR:v_aggiornamenti_ppr": {
+        "feature_count": 67,
+        "materialization_status": "MATERIALIZED",
+        "artifact": {
+          "sha256": "2e6b8f227c1f0cc3359234517ace06de95444ba8715259d9562b69a5b7ee9bbc",
+          "path": "C:\\Users\\visen\\OneDrive\\Università\\UniUD\\Tesi\\5_HUB_FVG\\02_external_sources\\F3_CHAT_3_4\\ppr_wfs\\PPR__v_aggiornamenti_ppr_20260919.geojson"
+        }
+      },
+      "PPR:v_paesaggi_delimitazione_art_136": {
+        "feature_count": 50,
+        "materialization_status": "MATERIALIZED",
+        "artifact": {
+          "sha256": "70ead10bfd6b5df9f1865de66cf54b9cd9691b762825eab59dde9c37621200f2",
+          "path": "C:\\Users\\visen\\OneDrive\\Università\\UniUD\\Tesi\\5_HUB_FVG\\02_external_sources\\F3_CHAT_3_4\\ppr_wfs\\PPR__v_paesaggi_delimitazione_art_136_20260919.zip"
+        }
+      },
+      "PPR:v_corsi_acqua_aree_tutelate": {
+        "feature_count": 974,
+        "materialization_status": "MATERIALIZED",
+        "artifact": {
+          "sha256": "fa44cec522378c58a076702546c3f473e43b550a03a8558feccdde71c146b9fe",
+          "path": "C:\\Users\\visen\\OneDrive\\Università\\UniUD\\Tesi\\5_HUB_FVG\\02_external_sources\\F3_CHAT_3_4\\ppr_wfs\\PPR__v_corsi_acqua_aree_tutelate_20260919.zip"
+        }
+      },
+      "PPR:v_laghi_aree_tutelate": {
+        "feature_count": 151,
+        "materialization_status": "MATERIALIZED",
+        "artifact": {
+          "sha256": "c5213833fd6db38b3f67d35e6be8b7159ad9bae46fe548abe8f2beae96e779f4",
+          "path": "C:\\Users\\visen\\OneDrive\\Università\\UniUD\\Tesi\\5_HUB_FVG\\02_external_sources\\F3_CHAT_3_4\\ppr_wfs\\PPR__v_laghi_aree_tutelate_20260919.zip"
+        }
+      },
+      "PPR:v_fascia_rispetto_battigia_marittima": {
+        "feature_count": 1,
+        "materialization_status": "MATERIALIZED",
+        "artifact": {
+          "sha256": "87432fdf6701368e1d88f0a737ee8574fbc4df65bb56b1a798d07021accf835f",
+          "path": "C:\\Users\\visen\\OneDrive\\Università\\UniUD\\Tesi\\5_HUB_FVG\\02_external_sources\\F3_CHAT_3_4\\ppr_wfs\\PPR__v_fascia_rispetto_battigia_marittima_20260919.zip"
+        }
+      },
+      "PPR:v_fascia_rispetto_battigia_lagunare": {
+        "feature_count": 1,
+        "materialization_status": "MATERIALIZED",
+        "artifact": {
+          "sha256": "f5c8a366c75b4ca3be8888285d6c4d09eff63db7a54a921a90f9e31306a3b6e2",
+          "path": "C:\\Users\\visen\\OneDrive\\Università\\UniUD\\Tesi\\5_HUB_FVG\\02_external_sources\\F3_CHAT_3_4\\ppr_wfs\\PPR__v_fascia_rispetto_battigia_lagunare_20260919.zip"
+        }
+      },
+      "PPR:v_ghiacciai": {
+        "feature_count": 28,
+        "materialization_status": "MATERIALIZED",
+        "artifact": {
+          "sha256": "34d9436fa3f28b5ffc40b4ff597f6afe03aac39bc5bc3cde481c41976abb7791",
+          "path": "C:\\Users\\visen\\OneDrive\\Università\\UniUD\\Tesi\\5_HUB_FVG\\02_external_sources\\F3_CHAT_3_4\\ppr_wfs\\PPR__v_ghiacciai_20260919.zip"
+        }
+      },
+      "PPR:v_montagne_oltre_1600_m": {
+        "feature_count": 316,
+        "materialization_status": "MATERIALIZED",
+        "artifact": {
+          "sha256": "2f528e9afb3cb252a30e4f67c32cfbf09619c841cef386ab285c90afbc457112",
+          "path": "C:\\Users\\visen\\OneDrive\\Università\\UniUD\\Tesi\\5_HUB_FVG\\02_external_sources\\F3_CHAT_3_4\\ppr_wfs\\PPR__v_montagne_oltre_1600_m_20260919.zip"
+        }
+      },
+      "PPR:v_territori_coperti_da_foreste_e_boschi": {
+        "feature_count": 18602,
+        "materialization_status": "MATERIALIZED",
+        "artifact": {
+          "sha256": "35af30006a32c395c3380509cc66b0913516782fb2a1a02eef47ba06a2e0204c",
+          "path": "C:\\Users\\visen\\OneDrive\\Università\\UniUD\\Tesi\\5_HUB_FVG\\02_external_sources\\F3_CHAT_3_4\\ppr_wfs\\PPR__v_territori_coperti_da_foreste_e_boschi_20260919.zip"
+        }
+      },
+      "PPR:v_parchi_e_riserve_naturali_nazionali_o_regionali": {
+        "feature_count": 18,
+        "materialization_status": "MATERIALIZED",
+        "artifact": {
+          "sha256": "569e025e22368f2b8ac51cfeafe5659927c7e5a668d67e9a2eb9ba8469ee201d",
+          "path": "C:\\Users\\visen\\OneDrive\\Università\\UniUD\\Tesi\\5_HUB_FVG\\02_external_sources\\F3_CHAT_3_4\\ppr_wfs\\PPR__v_parchi_e_riserve_naturali_nazionali_o_regionali_20260919.zip"
+        }
+      },
+      "PPR:v_aree_umide": {
+        "feature_count": 3,
+        "materialization_status": "MATERIALIZED",
+        "artifact": {
+          "sha256": "22120e55094c43215a469a77ced41f4bc9127ea89708e4a80bd3e1bdc05b7729",
+          "path": "C:\\Users\\visen\\OneDrive\\Università\\UniUD\\Tesi\\5_HUB_FVG\\02_external_sources\\F3_CHAT_3_4\\ppr_wfs\\PPR__v_aree_umide_20260919.zip"
+        }
+      },
+      "PPR:v_usi_civici": {
+        "feature_count": 13477,
+        "materialization_status": "MATERIALIZED",
+        "artifact": {
+          "sha256": "e03b4c4b81adfd0dfbb5a0d3d2159e07dcc0765109b6620425aeba97799809aa",
+          "path": "C:\\Users\\visen\\OneDrive\\Università\\UniUD\\Tesi\\5_HUB_FVG\\02_external_sources\\F3_CHAT_3_4\\ppr_wfs\\PPR__v_usi_civici_20260919.zip"
+        }
+      },
+      "PPR:v_zone_interesse_archeologico": {
+        "feature_count": 1534,
+        "materialization_status": "MATERIALIZED",
+        "artifact": {
+          "sha256": "5fa71aabde6c1919abc239423d50fc75e8bc11ea033759ddf4d59422c1e0d8fa",
+          "path": "C:\\Users\\visen\\OneDrive\\Università\\UniUD\\Tesi\\5_HUB_FVG\\02_external_sources\\F3_CHAT_3_4\\ppr_wfs\\PPR__v_zone_interesse_archeologico_20260919.zip"
+        }
+      },
+      "PPR:v_ulteriori_contesti_archeologici": {
+        "feature_count": 3578,
+        "materialization_status": "MATERIALIZED",
+        "artifact": {
+          "sha256": "cbaa195a4a45d708877870ed6ef5e983c28026ec6bca438fa6088f647fe825c9",
+          "path": "C:\\Users\\visen\\OneDrive\\Università\\UniUD\\Tesi\\5_HUB_FVG\\02_external_sources\\F3_CHAT_3_4\\ppr_wfs\\PPR__v_ulteriori_contesti_archeologici_20260919.zip"
+        }
+      },
+      "PPR:v_uc_immobili_int_storico_artistico_architettonico": {
+        "feature_count": 3311,
+        "materialization_status": "MATERIALIZED",
+        "artifact": {
+          "sha256": "4eb5e8d372fea23443e86db8c2e09194c61221515ce83670ecaa47334bf641d7",
+          "path": "C:\\Users\\visen\\OneDrive\\Università\\UniUD\\Tesi\\5_HUB_FVG\\02_external_sources\\F3_CHAT_3_4\\ppr_wfs\\PPR__v_uc_immobili_int_storico_artistico_architettonico_20260919.zip"
+        }
+      },
+      "PPR:v_ulteriori_contesti_immobili_decretati": {
+        "feature_count": 73,
+        "materialization_status": "MATERIALIZED",
+        "artifact": {
+          "sha256": "19ba4bb5c0c5e04ee9e49a2f4dba7808cf08cf3d9178ea782555f794b3684948",
+          "path": "C:\\Users\\visen\\OneDrive\\Università\\UniUD\\Tesi\\5_HUB_FVG\\02_external_sources\\F3_CHAT_3_4\\ppr_wfs\\PPR__v_ulteriori_contesti_immobili_decretati_20260919.zip"
+        }
+      }
+    },
+    "issue": "ISS-0008 REVIEW"
+  },
+  "governance": {
+    "data_registry": [
+      "F3_SRC_PGRA_001=REVIEW",
+      "F3_SRC_PPR_001=REVIEW",
+      "F3_SRC_FVG_LANDSLIDE_001=REVIEW",
+      "F3_SRC_FVG_NATURA_001=REVIEW"
+    ],
+    "issues": [
+      "ISS-0006=OPEN",
+      "ISS-0008=REVIEW",
+      "ISS-0011=OPEN"
+    ],
+    "decisions_added": [],
+    "project_source_of_truth_modified": false
+  },
+  "methodological_questions": [
+    "Q-METH-3.4-A",
+    "Q-METH-3.4-B",
+    "Q-METH-3.4-C",
+    "Q-METH-3.4-D",
+    "Q-METH-3.4-E"
+  ],
+  "automatic_exclusion_rules_approved": false
+}
