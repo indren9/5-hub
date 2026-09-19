@@ -399,7 +399,7 @@ Per ogni tematismo territoriale è stata predisposta una matrice tecnica dei pos
 - indicatore di merito;
 - semplice informazione di contesto.
 
-`Q-METH-3.4-A` — trattamento PGRA — resta **PROPOSED**. L’utente ha espresso orientamenti chiari sui singoli punti: il rischio idraulico non dovrebbe costituire un hard filter generale salvo obblighi normativi o incompatibilità tecniche non ragionevolmente mitigabili; nella valutazione comparativa è preferibile usare pericolosità/allagabilità rispetto alla sola carta del rischio; va recuperata la disciplina applicabile; se non emerge un binding di versione più forte, si può usare la migliore geometria ufficiale disponibile motivando il limite. La sintesi complessiva non è ancora stata formalmente approvata. Restano aperte `Q-METH-3.4-B…E`.
+`Q-METH-3.4-A` — trattamento PGRA — è **ACCEPTED** con DEC-0039. La presenza di pericolosità o allagabilità PGRA non costituisce di per sé un criterio automatico di esclusione. Un candidato viene escluso quando la disciplina vigente rende l’intervento incompatibile/non ammissibile oppure quando emerge una incompatibilità tecnica non ragionevolmente mitigabile. Negli altri casi pericolosità e allagabilità restano fattori negativi di futura valutazione, preferibili alla sola carta del rischio; scoring, pesi e funzioni di valutazione sono rinviati alle fasi dedicate. Le classi PGRA devono essere ricondotte alle Norme di Attuazione/PAI applicabili prima di produrre effetti operativi. Per la geometria si cerca prioritariamente un binding esplicito alla versione vigente; se non reperibile dopo ricerca documentata, il WFS ufficiale live può essere utilizzato operativamente con caveat e lineage espliciti. Restano aperte `Q-METH-3.4-B…E`.
 
 ---
 
@@ -716,7 +716,7 @@ Baseline: docs/FASE_1_HUB_DEFINITION_CONSOLIDATED_v02.md.
 
 Baseline: docs/FASE_2_UNIT_ANALYSIS_CONSOLIDATED_v01.md.
 
-## Decisioni Fase 3 approvate e proposte tracciate
+## Decisioni Fase 3 già approvate
 
 - DEC-0031: layer D/H della Mosaicatura PRG 2018 non sono urbanistica corrente 2026.
 - DEC-0032: procedura urbanistica current-first/ibrida approvata.
@@ -726,7 +726,7 @@ Baseline: docs/FASE_2_UNIT_ANALYSIS_CONSOLIDATED_v01.md.
 - DEC-0036: Q-METH-3.3-A risolta come non materialmente applicabile al dominio FVG corrente; nessuna regola artificiale per rotatorie/intersezioni a raso.
 - DEC-0037: autorizzata Chat 3.4 per validazione dei vincoli territoriali, ambientali e paesaggistici.
 - DEC-0038: accettato il PASS tecnico-operativo della Chat 3.4; ISS-0008 PPR RESOLVED; ISS-0006 PGRA e ISS-0011 biotopi restano OPEN.
-- DEC-0039: PROPOSTA sul trattamento PGRA; orientamenti utente acquisiti, ma sintesi complessiva non ancora formalmente approvata.
+- DEC-0039: approvato il trattamento PGRA senza hard filter generale; esclusione solo quando imposta dalla disciplina vigente o da incompatibilità tecnica non ragionevolmente mitigabile; negli altri casi pericolosità/allagabilità resta un fattore negativo di futura valutazione.
 
 ---
 

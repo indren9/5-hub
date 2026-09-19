@@ -5,7 +5,7 @@ STATO OPERATIVO — 2026-09-19
 - FASE 0 — INIZIALIZZAZIONE DEL PROGETTO: PASS / CLOSED.
 - FASE 1 — DEFINIZIONE DELL’OGGETTO “HUB ENERGETICO GREEN”: PASS / CLOSED / FROZEN.
 - FASE 2 — DEFINIZIONE DELL’UNITÀ ELEMENTARE DI ANALISI: PASS / CLOSED / FROZEN.
-- FASE 3 — INVENTARIO E VALIDAZIONE DEI DATI: IN CORSO — Chat 3.1, Chat 3.2, Chat 3.3, Chat 3.4 e Chat 3.7 PASS tecnico-operativo / review Chat Madre completata. Chat 3.7 ha validato il crosswalk stradale TEN-T FVG corrente; Chat 3.4 ha validato il blocco territoriale/ambientale, con ISS-0008 PPR RESOLVED e ISS-0006 PGRA / ISS-0011 biotopi ancora OPEN. Q-METH-3.4-A — trattamento PGRA — è PROPOSED con orientamenti utente già espressi ma sintesi complessiva non ancora formalmente approvata; Q-METH-3.4-B…E restano da approvare.
+- FASE 3 — INVENTARIO E VALIDAZIONE DEI DATI: IN CORSO — Chat 3.1, Chat 3.2, Chat 3.3, Chat 3.4 e Chat 3.7 PASS tecnico-operativo / review Chat Madre completata. Chat 3.7 ha validato il crosswalk stradale TEN-T FVG corrente; Chat 3.4 ha validato il blocco territoriale/ambientale, con ISS-0008 PPR RESOLVED e ISS-0006 PGRA / ISS-0011 biotopi ancora OPEN. Q-METH-3.4-A — trattamento PGRA — è ACCEPTED con DEC-0039; Q-METH-3.4-B…E restano da approvare.
 - FASI 4–15: NON AVVIATE.
 - Attività corrente: completamento delle restanti questioni metodologiche territoriali e delle validazioni Fase 3: urbanistica corrente, routing Light/Heavy, energia e dati di domanda.
 
