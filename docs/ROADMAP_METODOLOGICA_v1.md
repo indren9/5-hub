@@ -5,9 +5,9 @@ STATO OPERATIVO — 2026-09-19
 - FASE 0 — INIZIALIZZAZIONE DEL PROGETTO: PASS / CLOSED.
 - FASE 1 — DEFINIZIONE DELL’OGGETTO “HUB ENERGETICO GREEN”: PASS / CLOSED / FROZEN.
 - FASE 2 — DEFINIZIONE DELL’UNITÀ ELEMENTARE DI ANALISI: PASS / CLOSED / FROZEN.
-- FASE 3 — INVENTARIO E VALIDAZIONE DEI DATI: IN CORSO — Chat 3.1, Chat 3.2, Chat 3.3 e Chat 3.7 PASS tecnico-operativo / review Chat Madre completata. Chat 3.7 ha validato il crosswalk stradale TEN-T FVG corrente: 11 sezioni TENtec aggregate in 6 assi, con 9 sezioni CORE, 0 EXTENDED CORE e 2 COMPREHENSIVE-only. Q-METH-3.3-A è ACCEPTED / RESOLVED con DEC-0036. Chat 3.4 — Vincoli territoriali, ambientali e paesaggistici — AUTHORIZED / NOT STARTED.
+- FASE 3 — INVENTARIO E VALIDAZIONE DEI DATI: IN CORSO — Chat 3.1, Chat 3.2, Chat 3.3, Chat 3.4 e Chat 3.7 PASS tecnico-operativo / review Chat Madre completata. Chat 3.7 ha validato il crosswalk stradale TEN-T FVG corrente; Chat 3.4 ha validato il blocco territoriale/ambientale, con ISS-0008 PPR RESOLVED e ISS-0006 PGRA / ISS-0011 biotopi ancora OPEN. Le questioni metodologiche Q-METH-3.4-A…E restano da approvare.
 - FASI 4–15: NON AVVIATE.
-- Attività corrente: Chat 3.4 incaricata della validazione di PGRA 2026, frane/pericolosità, Natura 2000/aree protette e PPR vigente; restano inoltre da completare urbanistica corrente, routing Light/Heavy, energia e dati di domanda.
+- Attività corrente: completamento delle questioni metodologiche territoriali e delle restanti validazioni Fase 3: urbanistica corrente, routing Light/Heavy, energia e dati di domanda.
 
 Nota: questo aggiornamento modifica esclusivamente lo stato di avanzamento. La metodologia della ROADMAP METODOLOGICA v1 resta invariata.
 

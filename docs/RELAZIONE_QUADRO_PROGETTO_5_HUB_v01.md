@@ -372,7 +372,7 @@ L’audit completo non ha individuato alcun tratto TEN-T FVG rilevante privo di 
 
 # 10. Vincoli territoriali, ambientali e paesaggistici
 
-Questa sezione è **IN VALIDAZIONE**.
+Questa sezione ha superato la **validazione tecnica di Fase 3**, ma le regole metodologiche con cui i singoli vincoli entreranno nell’ammissibilità restano da approvare.
 
 Le principali famiglie di dati già individuate sono:
 - PGRA — Piano di Gestione del Rischio di Alluvioni;
@@ -386,22 +386,20 @@ Le principali famiglie di dati già individuate sono:
 
 La fonte di riferimento è l’Autorità di Bacino Distrettuale delle Alpi Orientali, tramite SIGMA/PGRA.
 
-Il progetto ha verificato l’esistenza di un aggiornamento recente, ma i layer vettoriali correnti devono ancora essere acquisiti, versionati e controllati. Le copie storiche non possono essere assunte come baseline corrente.
+Il quadro aggiornato adottato con Delibera n. 12 del 18 dicembre 2025 è vigente dal 22 gennaio 2026. Il set corrente SIGMA `PGRA2027` e i servizi WFS live sono stati verificati. Resta però aperto `ISS-0006`: il servizio WFS non espone un binding di versione esplicito che colleghi in modo machine-readable le geometrie live alla Delibera 12/2025, quindi tali vettori non sono ancora promossi a baseline normativa corrente.
 
 ## 10.2 Paesaggio
 
-Il PPR vigente dopo la Variante 2/2025 deve essere acquisito dal riferimento ufficiale regionale con una procedura GIS riproducibile.
-
-Copie legacy o servizi secondari possono non essere allineati alla cartografia prescrittiva vigente.
+Il PPR vigente con Variante 2/2025 è stato verificato sul riferimento ufficiale regionale. Il servizio WFS corrente incorpora la Variante 2 e il subset pertinente è stato materializzato con una procedura GIS riproducibile e hash verificati. `ISS-0008` è quindi RESOLVED sul piano dei dati. Resta separata la decisione metodologica su quali componenti del PPR costituiscano esclusione, verifica di ammissibilità o semplice contesto.
 ## 10.3 Regola metodologica ancora da definire
 
-Per ogni tematismo territoriale sarà necessario stabilire se agisce come:
+Per ogni tematismo territoriale è stata predisposta una matrice tecnica dei possibili ruoli, ma resta necessario approvare se e come ciascuna categoria agisca come:
 - vincolo normativo di esclusione;
 - criterio di ammissibilità;
 - indicatore di merito;
 - semplice informazione di contesto.
 
-Questa classificazione non può essere dedotta automaticamente dalla sola disponibilità del layer.
+Restano aperte le questioni `Q-METH-3.4-A…E`, relative a PGRA, frane, Natura 2000, parchi/riserve/biotopi/prati stabili e PPR. La disponibilità del layer, da sola, non determina una regola di esclusione.
 
 ---
 
@@ -726,6 +724,8 @@ Baseline: docs/FASE_2_UNIT_ANALYSIS_CONSOLIDATED_v01.md.
 - DEC-0034: autorizzata Chat 3.7 per crosswalk TEN-T FVG e verifica della rilevanza delle uscite AFIR.
 - DEC-0035: accettato il PASS tecnico-operativo della Chat 3.7; ISS-0005 risolta sul piano tecnico.
 - DEC-0036: Q-METH-3.3-A risolta come non materialmente applicabile al dominio FVG corrente; nessuna regola artificiale per rotatorie/intersezioni a raso.
+- DEC-0037: autorizzata Chat 3.4 per validazione dei vincoli territoriali, ambientali e paesaggistici.
+- DEC-0038: accettato il PASS tecnico-operativo della Chat 3.4; ISS-0008 PPR RESOLVED; ISS-0006 PGRA e ISS-0011 biotopi restano OPEN; Q-METH-3.4-A…E restano da decidere.
 
 ---
 
