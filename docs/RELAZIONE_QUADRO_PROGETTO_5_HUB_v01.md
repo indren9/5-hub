@@ -731,6 +731,7 @@ Baseline: docs/FASE_2_UNIT_ANALYSIS_CONSOLIDATED_v01.md.
 - DEC-0041: approvato il pre-screening Natura 2000 automatico con uso prioritario delle prevalutazioni regionali e delle aree di interferenza; VINCA formale fuori dal modello; ISS-0013 aperta per la codifica riproducibile delle regole regionali.
 - DEC-0042: approvato il trattamento differenziato di parchi, riserve, biotopi e prati stabili; ISS-0011 risolta proceduralmente con fallback sui 40 biotopi WFS e controllo puntuale dei due mancanti sui finalisti; parchi comunali via pianificazione comunale; prati stabili `DEROGA_REQUIRED` con penalizzazione da definire nello scoring.
 - DEC-0043: approvato il trattamento PPR come controllo di compatibilità, senza esclusione o penalizzazione automatica per la sola intersezione; esclusione solo quando la disciplina applicabile rende l'Hub incompatibile; nessun punteggio PPR generico approvato.
+- DEC-0044: autorizzata Chat 3.8 — Acquisizione e validazione urbanistica corrente FVG — per eseguire DEC-0032 Comune per Comune, aggiornare coverage/lineage e restituire `PHASE_4_READINESS`; `ISS-0010` resta OPEN fino a review indipendente Chat Madre.
 
 ---
 
