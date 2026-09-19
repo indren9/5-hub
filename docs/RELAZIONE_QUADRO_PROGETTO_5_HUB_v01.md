@@ -734,6 +734,7 @@ Baseline: docs/FASE_2_UNIT_ANALYSIS_CONSOLIDATED_v01.md.
 - DEC-0044: autorizzata Chat 3.8 — Acquisizione e validazione urbanistica corrente FVG — per eseguire DEC-0032 Comune per Comune, aggiornare coverage/lineage e restituire `PHASE_4_READINESS`; `ISS-0010` resta OPEN fino a review indipendente Chat Madre.
 - DEC-0045: accettato il PASS tecnico-operativo della Chat 3.8 dopo review indipendente; coverage 215/215, QA vettori 4/4 PASS, preservation 51/51 senza mismatch. `PHASE_4_READINESS = NOT_READY` e `ISS-0010` resta OPEN; il dataset current-first resta in REVIEW.
 - DEC-0046: autorizzata Chat 3.9 — Chiusura dei 43 Comuni urbanistici `TO_VERIFY` — sul solo snapshot dedicato dei 43 casi; target operativo `TO_VERIFY = 0` se sostenuto da evidenza ufficiale. I 167 lineage incompleti restano fuori scope fino alla rivalutazione post-3.9.
+- DEC-0047: accettato il PASS tecnico-operativo della Chat 3.9 dopo review indipendente; 43/43 casi processati, `TO_VERIFY` 43→0, coverage finale 4 `CURRENT_VECTOR_VERIFIED` / 4 `CURRENT_PLAN_VERIFIED_NO_VECTOR` / 207 `CURRENT_SOURCE_FOUND_LINEAGE_INCOMPLETE` / 0 `TO_VERIFY`. `PHASE_4_READINESS = NOT_READY` e `ISS-0010` resta OPEN; il dataset current-first resta in REVIEW.
 
 ---
 

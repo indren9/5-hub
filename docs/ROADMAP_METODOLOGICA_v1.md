@@ -1,13 +1,13 @@
 ROADMAP METODOLOGICA v1
 
-STATO OPERATIVO — 2026-09-19
+STATO OPERATIVO — 2026-09-20
 
 - FASE 0 — INIZIALIZZAZIONE DEL PROGETTO: PASS / CLOSED.
 - FASE 1 — DEFINIZIONE DELL’OGGETTO “HUB ENERGETICO GREEN”: PASS / CLOSED / FROZEN.
 - FASE 2 — DEFINIZIONE DELL’UNITÀ ELEMENTARE DI ANALISI: PASS / CLOSED / FROZEN.
-- FASE 3 — INVENTARIO E VALIDAZIONE DEI DATI: IN CORSO — Chat 3.1, Chat 3.2, Chat 3.3, Chat 3.4 e Chat 3.7 PASS tecnico-operativo / review Chat Madre completata. Chat 3.7 ha validato il crosswalk stradale TEN-T FVG corrente; Chat 3.4 ha validato il blocco territoriale/ambientale, con ISS-0008 PPR RESOLVED, ISS-0011 biotopi RESOLVED proceduralmente e ISS-0006 PGRA ancora OPEN. Tutte le questioni metodologiche territoriali Q-METH-3.4-A…E sono ACCEPTED: PGRA DEC-0039; frane DEC-0040; Natura 2000 DEC-0041; parchi/riserve/biotopi/prati stabili DEC-0042; PPR DEC-0043. Chat 3.8 — Acquisizione e validazione urbanistica corrente FVG — PASS tecnico-operativo accettato con DEC-0045; coverage 215/215, PHASE_4_READINESS = NOT_READY e ISS-0010 resta OPEN. Chat 3.9 — Chiusura dei 43 Comuni urbanistici TO_VERIFY — AUTHORIZED con DEC-0046 sul solo snapshot dei 43 casi.
+- FASE 3 — INVENTARIO E VALIDAZIONE DEI DATI: IN CORSO — Chat 3.1, Chat 3.2, Chat 3.3, Chat 3.4 e Chat 3.7 PASS tecnico-operativo / review Chat Madre completata. Chat 3.7 ha validato il crosswalk stradale TEN-T FVG corrente; Chat 3.4 ha validato il blocco territoriale/ambientale, con ISS-0008 PPR RESOLVED, ISS-0011 biotopi RESOLVED proceduralmente e ISS-0006 PGRA ancora OPEN. Tutte le questioni metodologiche territoriali Q-METH-3.4-A…E sono ACCEPTED: PGRA DEC-0039; frane DEC-0040; Natura 2000 DEC-0041; parchi/riserve/biotopi/prati stabili DEC-0042; PPR DEC-0043. Chat 3.8 — Acquisizione e validazione urbanistica corrente FVG — PASS tecnico-operativo accettato con DEC-0045; coverage 215/215, PHASE_4_READINESS = NOT_READY e ISS-0010 resta OPEN. Chat 3.9 — Chiusura dei 43 Comuni urbanistici TO_VERIFY — PASS tecnico-operativo accettato con DEC-0047; 43/43 casi processati, TO_VERIFY 43→0, coverage 215/215 = 4 CURRENT_VECTOR_VERIFIED / 4 CURRENT_PLAN_VERIFIED_NO_VECTOR / 207 CURRENT_SOURCE_FOUND_LINEAGE_INCOMPLETE / 0 TO_VERIFY. PHASE_4_READINESS resta NOT_READY e ISS-0010 resta OPEN.
 - FASI 4–15: NON AVVIATE.
-- Attività corrente: Chat 3.9 lavora esclusivamente sui 43 Comuni `TO_VERIFY` di ISS-0010; i 167 lineage incompleti restano fuori scope fino alla rivalutazione post-3.9. Restano inoltre routing Light/Heavy, energia, dati di domanda e gap tecnici/dati già tracciati. La Fase 4 resta NOT_READY.
+- Attività corrente: definire il secondo passaggio urbanistico sui 207 Comuni `CURRENT_SOURCE_FOUND_LINEAGE_INCOMPLETE` e sui 4 piani verificati senza vettore corrente, dopo l'azzeramento dei `TO_VERIFY`. Restano inoltre routing Light/Heavy, energia, dati di domanda e gap tecnici/dati già tracciati. La Fase 4 resta NOT_READY.
 
 Nota: questo aggiornamento modifica esclusivamente lo stato di avanzamento. La metodologia della ROADMAP METODOLOGICA v1 resta invariata.
 
