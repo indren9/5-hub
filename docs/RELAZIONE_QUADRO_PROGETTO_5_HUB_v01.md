@@ -1,7 +1,7 @@
 # RELAZIONE QUADRO E SCHELETRO METODOLOGICO — PROGETTO 5 HUB ENERGETICI GREEN FVG
 
 **Versione:** v01
-**Data:** 18 settembre 2026
+**Data aggiornamento:** 19 settembre 2026
 **Stato:** DRAFT — documento esplicativo e di lavoro
 **Destinatari:** tecnici, analisti e collaboratori che devono entrare nel progetto senza conoscere la nomenclatura interna o la storia delle chat.
 
@@ -359,17 +359,15 @@ Esempio concettuale:
 
 **geometria TEN-T ufficiale → tratto reale A4 → livello core → estensione e fonte documentate**
 
-Il crosswalk completo deve coprire tutta la rete stradale TEN-T FVG nei tre livelli.
-
-Questa attività è assegnata alla **Chat 3.7 — Crosswalk TEN-T FVG e rilevanza delle uscite AFIR**.
+Il crosswalk completo copre la rete stradale TEN-T FVG corrente nei tre livelli. La Chat 3.7 ha validato **11 sezioni TENtec ufficiali aggregate in 6 assi stradali FVG**: A4, A23, RA13, RA14, A/SS202 e A28. La ripartizione corrente è 9 sezioni CORE, 0 EXTENDED CORE e 2 COMPREHENSIVE-only.
 
 ## 9.2 Problema della nearest exit
 
 Le FAQ tecniche AFIR della Commissione chiariscono che, quando si misura dalla più vicina uscita TEN-T, la distanza parte dal punto in cui la rampa si separa dalla strada TEN-T.
 
-Prima di introdurre una regola speciale per strade TEN-T con intersezioni a raso, il progetto sta verificando se tale caso esista davvero in FVG.
+Il progetto ha verificato l’intera rete stradale TEN-T FVG corrente prima di introdurre qualsiasi regola speciale per strade con intersezioni a raso.
 
-Uno screening preliminare su A4, A23, RA13, RA14 e asse SS202 non ha evidenziato il problema. La questione resta aperta solo finché non viene completato il crosswalk dell’intera rete TEN-T FVG.
+L’audit completo non ha individuato alcun tratto TEN-T FVG rilevante privo di una vera uscita/rampa. La questione metodologica è quindi **ACCEPTED / RESOLVED** con DEC-0036 come **non materialmente applicabile al dominio FVG corrente**. Non viene introdotta alcuna regola artificiale che assimili rotatorie o normali intersezioni a raso a una TEN-T exit. La questione dovrà essere riaperta solo se una futura versione della rete TEN-T o della rete stradale introduce un caso reale diverso.
 ---
 
 # 10. Vincoli territoriali, ambientali e paesaggistici
@@ -624,7 +622,7 @@ I numeri finali dovranno essere generati dagli artifact congelati, non ricopiati
 | Lotti Consorzi | Consorzi di sviluppo economico locale | REVIEW | disponibilità parziale e dinamica |
 | Grafo stradale FVG | Regione FVG / IRDAT | REVIEW | screening geometrico; routing di produzione non ancora validato |
 | OSM congelato tesi | OpenStreetMap, baseline tecnica storica | SUPPORT / TO VERIFY | supporto topologico e confronto |
-| TEN-T | Reg. UE 2024/1679 + DG MOVE / TENtec | IN VALIDAZIONE | fonte normativa; crosswalk FVG in corso |
+| TEN-T | Reg. UE 2024/1679 + DG MOVE / TENtec | SOURCE_VERIFIED / CROSSWALK_VALIDATED | 11 sezioni ufficiali aggregate in 6 assi FVG; classificazione corrente validata |
 | PGRA | Autorità di Bacino / SIGMA | SOURCE VERIFIED, CURRENT VECTOR TO ACQUIRE | rischio idraulico corrente ancora da materializzare |
 | PPR | Regione FVG / WebGIS PPR | SOURCE VERIFIED, EXTRACTION TO VALIDATE | riferimento paesaggistico vigente |
 | Frane | Regione FVG / IRDAT | ENDPOINT VERIFIED / TO VALIDATE | semantica e ruolo normativo da definire |
@@ -642,7 +640,7 @@ I numeri finali dovranno essere generati dagli artifact congelati, non ricopiati
 
 1. **Urbanistica:** completare la verifica dei PRGC vigenti e delle relative geometrie.
 2. **Routing:** validare la rete definitiva per Light e Heavy, compresi sensi di marcia e restrizioni.
-3. **TEN-T:** completare il crosswalk route-level FVG nei tre livelli core / extended core / comprehensive.
+3. **TEN-T:** crosswalk route-level completato e validato; Q-METH-3.3-A risolta come non materialmente applicabile al dominio FVG corrente.
 4. **Rischio idraulico:** acquisire e versionare i layer PGRA correnti.
 5. **Paesaggio:** definire l’estrazione GIS riproducibile del PPR vigente.
 6. **Energia:** chiarire quali dati reali di capacità e connessione siano ottenibili da Terna e distributori.
@@ -726,6 +724,8 @@ Baseline: docs/FASE_2_UNIT_ANALYSIS_CONSOLIDATED_v01.md.
 - DEC-0032: procedura urbanistica current-first/ibrida approvata.
 - DEC-0033: disponibilità fisica e disponibilità proprietaria/commerciale trattate separatamente; UNKNOWN non equivale a indisponibile.
 - DEC-0034: autorizzata Chat 3.7 per crosswalk TEN-T FVG e verifica della rilevanza delle uscite AFIR.
+- DEC-0035: accettato il PASS tecnico-operativo della Chat 3.7; ISS-0005 risolta sul piano tecnico.
+- DEC-0036: Q-METH-3.3-A risolta come non materialmente applicabile al dominio FVG corrente; nessuna regola artificiale per rotatorie/intersezioni a raso.
 
 ---
 
