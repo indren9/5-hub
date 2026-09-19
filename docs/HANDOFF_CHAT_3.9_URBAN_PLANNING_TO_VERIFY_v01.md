@@ -1,11 +1,11 @@
-# HANDOFF — CHAT 3.9 URBAN PLANNING TO_VERIFY v01
+# HANDOFF â€” CHAT 3.9 URBAN PLANNING TO_VERIFY v01
 
-**Chat:** 3.9 — Chiusura dei 43 Comuni urbanistici TO_VERIFY  
-**Data chiusura:** 2026-09-19  
-**Stato attività:** COMPLETED / TECHNICAL PASS  
-**PHASE_4_READINESS:** NOT_READY  
-**ISS-0010:** OPEN  
-**Branch:** chat-3.9-close-urban-planning-to-verify  
+**Chat:** 3.9 â€” Chiusura dei 43 Comuni urbanistici TO_VERIFY
+**Data chiusura:** 2026-09-19
+**Stato attivitÃ :** COMPLETED / TECHNICAL PASS
+**PHASE_4_READINESS:** NOT_READY
+**ISS-0010:** OPEN
+**Branch:** chat-3.9-close-urban-planning-to-verify
 **Commit implementazione:** bedf180
 
 ## 1. Obiettivo
@@ -17,11 +17,11 @@ classificazioni non sostenute dalle fonti.
 ## 2. Lavoro svolto
 
 Sono stati letti il dispatch, le baseline Fase 1 e Fase 2, gli artifact Chat 3.8
-e la governance viva. Lo snapshot autorizzato è stato verificato tramite SHA-256.
+e la governance viva. Lo snapshot autorizzato Ã¨ stato verificato tramite SHA-256.
 
 Per tutti i 43 Comuni sono state ricercate e registrate fonti ufficiali comunali
 o istituzionali, distinguendo vigenza, adozione, approvazione, pubblicazione,
-disponibilità geometrica e completezza della lineage.
+disponibilitÃ  geometrica e completezza della lineage.
 ## 3. Risultato quantitativo
 
 Sui 43 Comuni del mandato:
@@ -40,11 +40,11 @@ Coverage complessiva aggiornata:
 I tre casi promossi a piano corrente verificato senza vettore sono:
 Arba, Cordenons e Porcia.
 
-Nessuna delle 172 righe fuori scope è stata modificata.
+Nessuna delle 172 righe fuori scope Ã¨ stata modificata.
 
 ## 4. Interpretazione
 
-Il target TO_VERIFY=0 è raggiunto senza forzature, ma non equivale alla
+Il target TO_VERIFY=0 Ã¨ raggiunto senza forzature, ma non equivale alla
 chiusura della validazione urbanistica regionale. I 207 casi lineage-incomplete
 restano un gap sostanziale per la futura costruzione dell'universo poligonale.
 
@@ -90,7 +90,7 @@ PROJECT_CONTROL_REGISTER aggiornato:
 PROJECT_SOURCE_OF_TRUTH verificato ma non modificato dalla Chat 3.9:
 l'integrazione del risultato nel documento autorevole resta alla review della Chat Madre.
 
-Nessuna nuova decisione metodologica è stata assunta autonomamente.
+Nessuna nuova decisione metodologica Ã¨ stata assunta autonomamente.
 
 ## 9. SESSION CLOSE
 
@@ -105,6 +105,6 @@ Commit implementazione = bedf180.
 
 ## 10. Problemi aperti e prossimo passo
 
-Il residuo principale è costituito dai 207 Comuni con lineage incompleta e dai piani verificati senza vettore corrente. La Chat Madre deve revieware Chat 3.9, aggiornare il PROJECT_SOURCE_OF_TRUTH se accetta il risultato e decidere il mandato successivo sui 207 casi.
+Il residuo principale Ã¨ costituito dai 207 Comuni con lineage incompleta e dai piani verificati senza vettore corrente. La Chat Madre deve revieware Chat 3.9, aggiornare il PROJECT_SOURCE_OF_TRUTH se accetta il risultato e decidere il mandato successivo sui 207 casi.
 
 Stato finale: CLOSED OPERATIVAMENTE / TECHNICAL PASS / PHASE 4 NOT READY.

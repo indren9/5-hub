@@ -1,15 +1,15 @@
-# FASE 3 — URBAN PLANNING TO_VERIFY REVIEW v01
+# FASE 3 â€” URBAN PLANNING TO_VERIFY REVIEW v01
 
-**Chat:** 3.9 — Chiusura dei 43 Comuni urbanistici TO_VERIFY  
-**Data:** 2026-09-19  
-**Stato:** REVIEW  
-**TECHNICAL_QUALITY_GATE:** PASS  
-**PHASE_4_READINESS:** NOT_READY  
-**ISS-0010:** OPEN — decisione finale riservata alla Chat Madre
+**Chat:** 3.9 â€” Chiusura dei 43 Comuni urbanistici TO_VERIFY
+**Data:** 2026-09-19
+**Stato:** REVIEW
+**TECHNICAL_QUALITY_GATE:** PASS
+**PHASE_4_READINESS:** NOT_READY
+**ISS-0010:** OPEN â€” decisione finale riservata alla Chat Madre
 
 ## 1. Mandato e perimetro
 
-L'attività esegue DISPATCH_CHAT_3.9_CLOSE_URBAN_PLANNING_TO_VERIFY_v01.md
+L'attivitÃ  esegue DISPATCH_CHAT_3.9_CLOSE_URBAN_PLANNING_TO_VERIFY_v01.md
 secondo DEC-0032, DEC-0045 e DEC-0046.
 
 Perimetro esclusivo: i 43 Comuni TO_VERIFY dello snapshot
@@ -23,12 +23,12 @@ Grado e i 4 Comuni CURRENT_VECTOR_VERIFIED.
 
 ## 2. Regola applicata
 
-È stata applicata la procedura current-first di DEC-0032.
-Per ogni Comune è stata ricercata prima una fonte ufficiale comunale e poi, quando necessario, evidenza istituzionale regionale o BUR di supporto.
+Ãˆ stata applicata la procedura current-first di DEC-0032.
+Per ogni Comune Ã¨ stata ricercata prima una fonte ufficiale comunale e poi, quando necessario, evidenza istituzionale regionale o BUR di supporto.
 
-La classificazione è stata conservativa. CURRENT_PLAN_VERIFIED_NO_VECTOR è usato solo con evidenza esplicita e sufficientemente corrente della vigenza. CURRENT_SOURCE_FOUND_LINEAGE_INCOMPLETE è usato quando la fonte ufficiale è utile ma manca almeno un passaggio di lineage.
+La classificazione Ã¨ stata conservativa. CURRENT_PLAN_VERIFIED_NO_VECTOR Ã¨ usato solo con evidenza esplicita e sufficientemente corrente della vigenza. CURRENT_SOURCE_FOUND_LINEAGE_INCOMPLETE Ã¨ usato quando la fonte ufficiale Ã¨ utile ma manca almeno un passaggio di lineage.
 
-Nessuna adozione è stata trattata automaticamente come efficacia. Nessun PDF o WebGIS è stato trattato automaticamente come vettore corrente. IRDAT, Eagle e CER 2018 non sono stati promossi silenziosamente a prova di vigenza.
+Nessuna adozione Ã¨ stata trattata automaticamente come efficacia. Nessun PDF o WebGIS Ã¨ stato trattato automaticamente come vettore corrente. IRDAT, Eagle e CER 2018 non sono stati promossi silenziosamente a prova di vigenza.
 
 ## 3. Risultato sui 43 Comuni
 
@@ -55,14 +55,14 @@ Il confronto automatico non rileva alcuna modifica nelle 172 righe fuori perimet
 
 Le 43 fonti primarie sono registrate con URL e data di accesso.
 La materializzazione automatica ha salvato 34 sorgenti in OneDrive.
-Nove fonti non sono state materializzate per errori SSL/certificato o timeout del server; il mancato download non è stato interpretato come assenza della fonte e resta registrato nel manifest.
+Nove fonti non sono state materializzate per errori SSL/certificato o timeout del server; il mancato download non Ã¨ stato interpretato come assenza della fonte e resta registrato nel manifest.
 
 Per i 34 artifact materializzati:
 - byte e SHA-256 sono registrati nel manifest;
 - preservation check: PASS;
 - mismatch SHA-256: 0.
 
-Nessuna nuova geometria vettoriale è stata acquisita o promossa in questa attività.
+Nessuna nuova geometria vettoriale Ã¨ stata acquisita o promossa in questa attivitÃ .
 
 ## 6. Quality gate
 
@@ -85,11 +85,11 @@ Controlli:
 
 ISS-0010 resta OPEN. La Chat 3.9 non ne dichiara la chiusura.
 
-Il problema dei 43 casi senza evidenza sufficiente è stato eliminato, ma il problema residuo cambia forma: 207 Comuni sono ora CURRENT_SOURCE_FOUND_LINEAGE_INCOMPLETE e 4 hanno piano corrente verificato senza vettore corrente. Solo 4 Comuni dispongono di CURRENT_VECTOR_VERIFIED.
+Il problema dei 43 casi senza evidenza sufficiente Ã¨ stato eliminato, ma il problema residuo cambia forma: 207 Comuni sono ora CURRENT_SOURCE_FOUND_LINEAGE_INCOMPLETE e 4 hanno piano corrente verificato senza vettore corrente. Solo 4 Comuni dispongono di CURRENT_VECTOR_VERIFIED.
 
 PHASE_4_READINESS = NOT_READY.
 
-Motivo: i gap di lineage e geometria ancora presenti possono modificare l'universo poligonale. La prossima attività dovrebbe affrontare i 207 casi lineage-incomplete secondo mandato separato della Chat Madre.
+Motivo: i gap di lineage e geometria ancora presenti possono modificare l'universo poligonale. La prossima attivitÃ  dovrebbe affrontare i 207 casi lineage-incomplete secondo mandato separato della Chat Madre.
 
 ## 8. Artifact
 
