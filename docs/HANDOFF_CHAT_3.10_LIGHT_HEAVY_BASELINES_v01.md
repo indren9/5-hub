@@ -112,3 +112,31 @@ Prossimo passo raccomandato per Chat 0.2:
 4. mantenere ISS-0014 separato come issue di preservation e non come blocker metodologico della rete.
 
 La Chat 3.10 si ferma qui e non apre la Fase 4.
+
+## 11. SESSION CLOSE — change-driven
+
+NOTEBOOK_CHANGE = NO
+
+Motivo: nessun notebook è stato usato come fonte autorevole o modificato.
+
+REGISTER_CHANGE = YES
+
+Motivo: DATA_REGISTRY ha ricevuto sei riferimenti Light/Heavy in stato REVIEW; ISS-0004 è stato aggiornato senza cambiarne lo stato OPEN; ISS-0014 è stato creato OPEN per il mismatch di preservation.
+
+GIT_COMMIT_REQUIRED = YES
+
+Motivo: review, source matrix e handoff sono artifact leggeri versionabili. Commit eseguiti durante la chiusura: 14df41041dccc7801002d70075d5e8fd320350db e ef37b29f51b9759d43cebd2b7db270cb34ae0803.
+
+PROJECT_SOURCE_OF_TRUTH_CHANGE = NO
+
+Motivo: Chat 3.10 formula una raccomandazione tecnica ma non approva autonomamente la risoluzione di ISS-0004 o nuove decisioni metodologiche sostanziali.
+
+Artifact check:
+- nessun artifact tesi FROZEN modificato;
+- nessun dataset pesante duplicato nel 5 HUB;
+- registry live verificato dopo la scrittura;
+- branch dedicata pulita dopo i commit;
+- review e source matrix conservate in Git;
+- Fase 4 non aperta.
+
+Build notebook: N/A.
