@@ -1,10 +1,10 @@
-﻿# DISPATCH — Chat 3.5 — Proxy territoriale di prossimità alla rete elettrica
+# DISPATCH — Chat 3.5 — Proxy territoriale di prossimità alla rete elettrica
 
-**Fase:** 3 — Inventario e validazione dei dati  
-**Data:** 2026-09-20  
-**Stato mandato:** AUTHORIZED  
-**Regia:** Chat Madre 5 HUB  
-**Decisioni di riferimento:** DEC-0049, DEC-0050  
+**Fase:** 3 — Inventario e validazione dei dati
+**Data:** 2026-09-20
+**Stato mandato:** AUTHORIZED
+**Regia:** Chat Madre 5 HUB
+**Decisioni di riferimento:** DEC-0049, DEC-0050
 **Sostituisce operativamente:** `DISPATCH_CHAT_3.5_ELECTRIC_GRID_ENERGY_FEASIBILITY_v01.md`
 
 ## 1. Obiettivo
@@ -139,6 +139,3 @@ La Chat Madre deve poter rispondere chiaramente:
 > Quale infrastruttura elettrica possiamo rappresentare in modo affidabile a scala regionale, con quale fonte, e come possiamo usarne la prossimità come proxy senza confonderla con la capacità reale?
 
 Il risultato deve essere proporzionato a una **pianificazione di massima dei 5 Hub**.
-
-
-
