@@ -1,11 +1,11 @@
 # FASE 3 — Validazione baseline idrogeologica corrente PGRA + PAI
 
-**Chat:** 3.11 — Baseline idrogeologica corrente PGRA + PAI  
-**Data:** 2026-09-20  
-**Branch:** `chat-3.11-pgra-pai-current-baseline`  
-**Stato documento:** REVIEW — TECHNICAL_QUALITY_GATE_PASS_PROPOSED  
-**Regia metodologica:** Chat 0.2 — Chat Madre 5 HUB  
-**Decisioni vincolanti:** DEC-0039, DEC-0040, DEC-0056  
+**Chat:** 3.11 — Baseline idrogeologica corrente PGRA + PAI
+**Data:** 2026-09-20
+**Branch:** `chat-3.11-pgra-pai-current-baseline`
+**Stato documento:** REVIEW — TECHNICAL_QUALITY_GATE_PASS_PROPOSED
+**Regia metodologica:** Chat 0.2 — Chat Madre 5 HUB
+**Decisioni vincolanti:** DEC-0039, DEC-0040, DEC-0056
 **Issue:** ISS-0006, ISS-0012
 
 ## 1. Scopo e limiti

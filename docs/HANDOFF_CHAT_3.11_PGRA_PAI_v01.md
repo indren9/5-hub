@@ -1,10 +1,10 @@
 # HANDOFF — Chat 3.11 — Baseline idrogeologica corrente PGRA + PAI
 
-**Chat:** 3.11 — Baseline idrogeologica corrente PGRA + PAI  
-**Data:** 2026-09-20  
-**Destinatario:** Chat 0.2 — Chat Madre 5 HUB  
-**Stato finale operativo:** PASS_WITH_LIMITATIONS / REVIEW  
-**Branch:** `chat-3.11-pgra-pai-current-baseline`  
+**Chat:** 3.11 — Baseline idrogeologica corrente PGRA + PAI
+**Data:** 2026-09-20
+**Destinatario:** Chat 0.2 — Chat Madre 5 HUB
+**Stato finale operativo:** PASS_WITH_LIMITATIONS / REVIEW
+**Branch:** `chat-3.11-pgra-pai-current-baseline`
 **Commit principale:** `e56f545` — `feat(data): validate current PGRA and PAI baseline`
 
 ## 1. Obiettivo
