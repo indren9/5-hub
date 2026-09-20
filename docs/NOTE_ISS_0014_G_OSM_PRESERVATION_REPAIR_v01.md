@@ -1,9 +1,9 @@
 # NOTE — ISS-0014 — Riparazione preservation copy G_OSM_operativo_v01
 
-**Data:** 2026-09-20  
-**Chat:** Chat 0.2 — Chat Madre 5 HUB  
-**Issue:** ISS-0014  
-**Stato finale:** RESOLVED  
+**Data:** 2026-09-20
+**Chat:** Chat 0.2 — Chat Madre 5 HUB
+**Issue:** ISS-0014
+**Stato finale:** RESOLVED
 **Ambito:** preservation / integrità artifact, non metodologia scientifica
 
 ## 1. Problema
