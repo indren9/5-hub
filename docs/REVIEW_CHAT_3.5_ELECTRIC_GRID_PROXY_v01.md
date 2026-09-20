@@ -140,17 +140,30 @@ Le correzioni non cambiano conteggi, risultati o giudizio tecnico.
 - aree convenzionali ufficiali FVG/GSE come controllo territoriale e gestore;
 - fonti DSO ufficiali come cross-check di currentness, ruolo e tensione.
 
-Non è approvato in questa review:
+Restano NON approvati anche dopo DEC-0053:
 - OSM come censimento ufficiale delle cabine primarie;
 - una soglia elettrica del modello;
 - la geometria target finale del futuro indicatore;
 - la metrica o soglia di distanza;
 - qualsiasi conversione distanza → MW/capacità/costo;
-- chiusura metodologica di ISS-0007;
 - apertura della Fase 4.
 
-## 11. Decisione successiva richiesta
+La sola modifica successiva alla review tecnica è la risoluzione **procedurale** di `ISS-0007` tramite DEC-0053: non è stato acquisito un dataset di capacità disponibile, ma quel dato non è più richiesto a scala regionale.
 
-La sola decisione metodologica successiva da sottoporre all'utente è:
+## 11. Decisione metodologica finale
 
-> Accettare o meno la combinazione **OSM substation objects / representative locations + aree convenzionali ufficiali + cross-check DSO** come baseline dati del futuro proxy territoriale di prossimità alla rete elettrica, mantenendo i limiti e rinviando la scelta della geometria/metrica finale alla fase degli indicatori.
+**DEC-0053 — ACCEPTED.**
+
+L'utente approva la combinazione **OSM substation objects / representative locations + aree convenzionali ufficiali FVG/GSE + cross-check DSO** come baseline dati del futuro proxy territoriale di prossimità alla rete elettrica.
+
+La scelta è esplicitamente coerente con una **pianificazione macro**: non si richiede una precisione da studio di connessione elettrica nella fase regionale.
+
+Restano invariati i limiti già documentati:
+- OSM non è un censimento ufficiale delle cabine primarie;
+- prossimità non equivale a capacità disponibile;
+- i gap `AC001E00999` e `AC001E00994` restano espliciti;
+- la regola >=60 kV resta QA-only;
+- punto rappresentativo vs geometria completa, metrica e soglie di distanza saranno definiti nelle fasi indicatori;
+- capacità reale, punto di connessione, costi e fattibilità tecnica restano verifiche puntuali sui candidati finalisti.
+
+`ISS-0007` è quindi **RESOLVED proceduralmente**: l'assenza di un dataset region-wide di capacità resta un limite reale, ma non è più un blocker della Fase 3 perché la metodologia approvata non richiede tale dato a scala regionale.
