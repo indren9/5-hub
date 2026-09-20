@@ -1,10 +1,10 @@
 # DISPATCH — Chat 3.11 — Baseline idrogeologica corrente PGRA + PAI
 
-**Fase:** 3 — Inventario e validazione dei dati  
-**Data:** 2026-09-20  
-**Stato mandato:** AUTHORIZED  
-**Regia:** Chat 0.2 — Chat Madre 5 HUB  
-**Issue principali:** ISS-0006, ISS-0012  
+**Fase:** 3 — Inventario e validazione dei dati
+**Data:** 2026-09-20
+**Stato mandato:** AUTHORIZED
+**Regia:** Chat 0.2 — Chat Madre 5 HUB
+**Issue principali:** ISS-0006, ISS-0012
 **Decisioni vincolanti:** DEC-0039, DEC-0040
 
 ## 1. Obiettivo
