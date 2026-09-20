@@ -19,8 +19,8 @@
     "CURRENT_PLAN_VERIFIED_NO_VECTOR": 4
   },
   "residual_to_verify": 0,
-  "materialized_sources": 34,
-  "source_fetch_failures": 9,
+  "materialized_sources": 35,
+  "source_fetch_failures": 8,
   "preservation_hash_failures": 0,
   "phase_4_readiness_assessment": "NOT_READY",
   "phase_4_reason": "Residual lineage gaps remain for 207 municipalities and current vector gaps remain; Chat 3.9 cannot open Phase 4."

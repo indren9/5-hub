@@ -650,8 +650,8 @@
   ],
   "materialization_manifest_path": "C:\\Users\\visen\\OneDrive\\Università\\UniUD\\Tesi\\5_HUB_FVG\\02_external_sources\\F3_CHAT_3_9\\source_manifest_v01.json",
   "materialization_summary": {
-    "materialized": 34,
-    "not_materialized": 9,
+    "materialized": 35,
+    "not_materialized": 8,
     "preservation_hash_failures": 0
   }
 }
