@@ -736,6 +736,7 @@ Baseline: docs/FASE_2_UNIT_ANALYSIS_CONSOLIDATED_v01.md.
 - DEC-0046: autorizzata Chat 3.9 — Chiusura dei 43 Comuni urbanistici `TO_VERIFY` — sul solo snapshot dedicato dei 43 casi; target operativo `TO_VERIFY = 0` se sostenuto da evidenza ufficiale. I 167 lineage incompleti restano fuori scope fino alla rivalutazione post-3.9.
 - DEC-0047: accettato il PASS tecnico-operativo della Chat 3.9 dopo review indipendente; 43/43 casi processati, `TO_VERIFY` 43→0, coverage finale 4 `CURRENT_VECTOR_VERIFIED` / 4 `CURRENT_PLAN_VERIFIED_NO_VECTOR` / 207 `CURRENT_SOURCE_FOUND_LINEAGE_INCOMPLETE` / 0 `TO_VERIFY`.
 - DEC-0048: approvato l'uso della migliore geometria urbanistica ufficiale disponibile come proxy dichiarato per lo screening Fase 4. Se la currentness non è dimostrata, il dato resta marcato `PLANNING_CURRENTNESS_NOT_VERIFIED`; verifica urbanistica corrente puntuale obbligatoria sui candidati finalisti. CER/Mosaicatura PRG 2018 resta ultima risorsa storica/proxy e non prova di vigenza. `ISS-0010` è RESOLVED proceduralmente; urban-planning Phase 4 readiness = `READY_WITH_LIMITATIONS`. L'apertura formale della Fase 4 resta subordinata al PASS/CLOSED complessivo della Fase 3.
+- DEC-0049: autorizzata Chat 3.5 — Rete elettrica e fattibilità energetica — per validare Terna/TE.R.R.A., DSO e fonti energetiche FVG, separando infrastruttura/prossimità/cabine/richieste di connessione da capacità realmente disponibile. `ISS-0007` resta OPEN; eventuali proxy con effetto su ammissibilità o scoring sono solo PROPOSED fino ad approvazione utente.
 
 ---
 
