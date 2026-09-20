@@ -102,28 +102,29 @@ Per futuri aggiornamenti della baseline occorre:
 
 Questa osservazione non invalida il gate corrente.
 
-## 7. Decisione metodologica ancora necessaria sul PAI
+## 7. Decisione metodologica finale sul PAI
 
-Per la pianificazione macro, la Chat Madre propone di NON bloccare la Fase 3 in attesa di un pacchetto vettoriale ufficiale completo richiesto al Distretto.
+**DEC-0058 — ACCEPTED.**
 
-Proposta operativa:
-1. usare le cartografie e NTA ufficiali PAI come riferimento normativo;
-2. usare le viste regionali correnti frane solo per pre-screening territoriale;
-3. applicare un flag `PAI_POINTWISE_CHECK_REQUIRED` ai candidati che sopravvivono allo screening;
-4. verificare puntualmente cartografia e disciplina PAI ufficiale prima della conferma finale del sito;
-5. acquisire i vettori ufficiali dal Distretto solo se diventano necessari per automatizzare in modo più forte la fase successiva.
+L'utente approva esplicitamente il fallback macro proposto dalla Chat 0.2. La Fase 3 non viene bloccata in attesa di un pacchetto vettoriale PAI ufficiale unico/completo/current-versioned richiesto al Distretto.
 
-Questa proposta modifica il requisito operativo implicito di DEC-0040 ("baseline PAI completa prima dell'implementazione") e quindi richiede approvazione esplicita dell'utente.
+Assetto approvato:
+1. cartografie e NTA ufficiali PAI restano il riferimento normativo/cartografico;
+2. viste regionali correnti frane sono usate solo per pre-screening territoriale;
+3. `CATFRANE_*` resta supporto/confronto e non viene promosso a PAI completo;
+4. applicare `PAI_POINTWISE_CHECK_REQUIRED` ai candidati che sopravvivono allo screening / finalisti;
+5. verificare puntualmente cartografia e disciplina PAI ufficiale prima della conferma finale del sito;
+6. acquisire i vettori ufficiali dal Distretto solo se diventano necessari per automatizzare o risolvere casi specifici.
 
-Fino a tale approvazione:
+**ISS-0012 = RESOLVED PROCEDURALLY.**
 
-**ISS-0012 = REVIEW / READY_WITH_LIMITATIONS.**
+La risoluzione non significa che il gap vettoriale sia scomparso: significa che il gap non è più un blocker della pianificazione macro perché viene gestito con controllo puntuale sui casi rilevanti.
 
 ## 8. Stato finale review
 
 - Chat 3.11: ACCEPTED_WITH_LIMITATIONS
 - ISS-0006: RESOLVED PROCEDURALLY
-- ISS-0012: REVIEW / READY_WITH_LIMITATIONS
+- ISS-0012: RESOLVED PROCEDURALLY
 - Fase 4: NON APERTA
 
-La sola decisione sostanziale residua è se accettare il fallback macro PAI descritto al §7.
+La review Chat 3.11 non lascia decisioni metodologiche residue su PGRA/PAI.
