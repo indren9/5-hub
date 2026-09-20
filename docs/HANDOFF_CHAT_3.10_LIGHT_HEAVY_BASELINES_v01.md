@@ -1,11 +1,11 @@
 # HANDOFF — Chat 3.10 — Baseline stradali e domanda Light/Heavy
 
-**Chat:** 3.10 — Baseline stradali e domanda Light/Heavy  
-**Data chiusura:** 2026-09-20  
-**Regia:** Chat 0.2 — Chat Madre 5 HUB  
-**Stato attività:** COMPLETED / REVIEW  
-**Quality gate tecnico:** PASS WITH LIMITATIONS  
-**Raccomandazione ISS-0004:** PROPOSE_RESOLVED_PROCEDURALLY  
+**Chat:** 3.10 — Baseline stradali e domanda Light/Heavy
+**Data chiusura:** 2026-09-20
+**Regia:** Chat 0.2 — Chat Madre 5 HUB
+**Stato attività:** COMPLETED / REVIEW
+**Quality gate tecnico:** PASS WITH LIMITATIONS
+**Raccomandazione ISS-0004:** PROPOSE_RESOLVED_PROCEDURALLY
 **Decisione finale ISS-0004:** non presa da Chat 3.10; resta alla Chat 0.2 / utente.
 
 ## 1. Obiettivo

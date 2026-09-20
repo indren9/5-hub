@@ -1,11 +1,11 @@
 # FASE 3 â€” Baseline stradali e domanda Light/Heavy â€” Review Chat 3.10
 
-**Chat:** 3.10 â€” Baseline stradali e domanda Light/Heavy  
-**Data:** 2026-09-20  
-**Stato documento:** REVIEW  
-**Esito tecnico:** PASS WITH LIMITATIONS  
-**Regia metodologica:** Chat 0.2 â€” Chat Madre 5 HUB  
-**Decisione di riferimento:** DEC-0054 â€” ACCEPTED  
+**Chat:** 3.10 â€” Baseline stradali e domanda Light/Heavy
+**Data:** 2026-09-20
+**Stato documento:** REVIEW
+**Esito tecnico:** PASS WITH LIMITATIONS
+**Regia metodologica:** Chat 0.2 â€” Chat Madre 5 HUB
+**Decisione di riferimento:** DEC-0054 â€” ACCEPTED
 **Issue principale:** ISS-0004 â€” OPEN all'avvio
 
 ## 1. Scopo e confini
@@ -146,3 +146,5 @@ Metodo: reference-by-manifest + SHA-256 + path, con stato 5 HUB REVIEW fino alla
 - integrity: PASS WITH LIMITATION per mismatch della sola preservation copy G_OSM in TESI_BASELINE_SAFE; due copie hash-corrette disponibili.
 
 **Esito tecnico Chat 3.10: PASS WITH LIMITATIONS.**
+
+**Preservation issue correlata:** ISS-0014 = OPEN.
