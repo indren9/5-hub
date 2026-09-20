@@ -1,9 +1,9 @@
 # FASE 3 — Electric grid proxy validation review v01
 
-**Chat:** Chat 3.5 — Proxy territoriale di prossimità alla rete elettrica  
-**Data gate:** 2026-09-20  
-**Stato documento:** REVIEW  
-**Giudizio tecnico della Chat 3.5:** **READY_WITH_LIMITATIONS**  
+**Chat:** Chat 3.5 — Proxy territoriale di prossimità alla rete elettrica
+**Data gate:** 2026-09-20
+**Stato documento:** REVIEW
+**Giudizio tecnico della Chat 3.5:** **READY_WITH_LIMITATIONS**
 **Autorità metodologica:** Chat 0.2 / utente. Questo documento non approva OSM/OpenInfraMap come baseline definitiva.
 
 ## 1. Mandato e perimetro
@@ -74,12 +74,12 @@ Classe B — `B_DISTRIBUTION_HV_OPERATOR_MISSING`:
 Il limite inferiore a 60 kV è una regola di screening scelta per non perdere la CP di Barcis, presente nel riferimento ufficiale e-distribuzione e mappata in OSM a 60 kV. Non è un confine normativo e non deve essere riutilizzato automaticamente nel modello.
 
 Esito:
-- **92** geometrie OSM plausibili per il proxy CP/AT-MT;
+- **92** posizioni rappresentative OSM plausibili per il proxy CP/AT-MT;
 - 89 classe A;
 - 3 classe B;
 - operatori: 81 e-distribuzione, 7 AcegasApsAmga, 1 SECAB, 3 mancanti.
 
-Queste 92 geometrie non equivalgono a 92 cabine primarie certe. Esempio importante: il Piano AcegasApsAmga identifica 5 CP AT/MT nei territori di Trieste e Gorizia, mentre il filtro OSM restituisce 7 geometrie Acegas a 132 kV. Il filtro va quindi interpretato come insieme **plausibile**, non come inventario ufficiale di CP.
+Queste 92 posizioni rappresentative non equivalgono a 92 cabine primarie certe. Esempio importante: il Piano AcegasApsAmga identifica 5 CP AT/MT nei territori di Trieste e Gorizia, mentre il filtro OSM restituisce 7 geometrie Acegas a 132 kV. Il filtro va quindi interpretato come insieme **plausibile**, non come inventario ufficiale di CP.
 
 ## 5. Confronto con le 57 aree convenzionali ufficiali
 
@@ -97,7 +97,9 @@ Consistenza verificata:
 Analisi spaziale:
 - CRS sorgenti: EPSG:4326;
 - CRS metrico QA: EPSG:32633;
-- test principale: presenza della geometria CP-proxy **dentro** il poligono convenzionale;
+- test principale: presenza della posizione rappresentativa CP-proxy **dentro** il poligono convenzionale;
+- per way/relation la posizione usata dal gate è il `center` restituito da Overpass (`out center`), cioè il centro del bounding box dell'oggetto OSM; non è la geometria completa della sottostazione e non è garantito che cada dentro il relativo poligono OSM;
+- questa semplificazione è accettabile esclusivamente per il presente quality gate di copertura territoriale e non definisce ancora la geometria target della futura metrica di prossimità;
 - nessuna tolleranza metrica è stata introdotta per trasformare un punto esterno in “coperto”;
 - viene riportata separatamente la distanza dalla più vicina geometria CP-proxy.
 

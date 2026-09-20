@@ -1,9 +1,9 @@
 # HANDOFF — Chat 3.5 — Proxy territoriale di prossimità alla rete elettrica
 
-**Chat:** 3.5 — Proxy territoriale di prossimità alla rete elettrica  
-**Data:** 2026-09-20  
-**Destinatario:** Chat 0.2 — Chat Madre 5 HUB  
-**Stato finale operativo:** **READY_WITH_LIMITATIONS / REVIEW**  
+**Chat:** 3.5 — Proxy territoriale di prossimità alla rete elettrica
+**Data:** 2026-09-20
+**Destinatario:** Chat 0.2 — Chat Madre 5 HUB
+**Stato finale operativo:** **READY_WITH_LIMITATIONS / REVIEW**
 **Mandato:** `docs/DISPATCH_CHAT_3.5_ELECTRIC_GRID_ENERGY_FEASIBILITY_v02.md`
 
 ## 1. Obiettivo
@@ -31,7 +31,7 @@ Il gate doveva verificare se una geometria fisica OSM delle sottostazioni può e
 
 Estrazione OSM:
 - 8.206 elementi `power=substation` deduplicati nell'envelope;
-- 92 geometrie incluse nel sottoinsieme QA CP-proxy;
+- 92 posizioni rappresentative incluse nel sottoinsieme QA CP-proxy;
 - 89 `A_DSO_HV_PLAUSIBLE`;
 - 3 `B_DISTRIBUTION_HV_OPERATOR_MISSING`;
 - distribuzione operatori nel sottoinsieme: 81 e-distribuzione, 7 AcegasApsAmga, 1 SECAB, 3 mancanti.
@@ -76,7 +76,7 @@ Il filtro OSM può sovra-includere: nel territorio Acegas restituisce 7 geometri
 ## 6. Artifact repository
 
 Commit sostanziale:
-`ff5edc3073b02d32a8a0d366f89f24d0d8de08d7`  
+`ff5edc3073b02d32a8a0d366f89f24d0d8de08d7`
 Messaggio: `feat(f3): validate OSM electric grid proxy`
 
 File:
@@ -130,7 +130,7 @@ Hash chiave:
 Nessuna nuova decisione metodologica è stata approvata dalla Chat 3.5.
 
 Proposta tecnica da sottoporre alla Chat 0.2:
-**OSM physical geometry + aree convenzionali ufficiali FVG/GSE + cross-check DSO ufficiale** come base del futuro proxy territoriale.
+**OSM substation objects / representative locations + aree convenzionali ufficiali FVG/GSE + cross-check DSO ufficiale** come base dati candidata del futuro proxy territoriale. La geometria target finale (punto rappresentativo oppure geometria OSM completa) resta una scelta metodologica successiva.
 
 Una futura metrica potrebbe misurare la minima distanza tra poligono candidato e geometrie CP-proxy validate in CRS metrico, ma questa scelta resta **PROPOSED** e non è stata implementata né approvata.
 
