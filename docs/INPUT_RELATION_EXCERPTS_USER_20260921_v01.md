@@ -8,7 +8,7 @@
 
 # ALLEGATO FORNITO DALL'UTENTE
 
-Metodologia per la localizzazione degli hub energetici green 
+Metodologia per la localizzazione degli hub energetici green
 Approccio metodologico generale
 Obiettivo generale
 La successiva fase dello studio è finalizzata all’individuazione, sul territorio regionale, delle localizzazioni maggiormente idonee a ospitare una rete iniziale di cinque Hub Energetici Green. L’obiettivo integra quanto previsto dalla proposta, relativa all’individuazione di cinque stazioni di rifornimento a idrogeno accessibili al pubblico riferiti alle infrastrutture di ricarica elettrica e agli Hub Energetici Green. Le cinque localizzazioni sono pertanto uniche: le stazioni di rifornimento a idrogeno e gli Hub Energetici Green insistono sui medesimi siti, secondo l’impostazione definita dal Committente.
@@ -20,7 +20,7 @@ Definiti gli indicatori, saranno stabiliti i relativi criteri di normalizzazione
 La sequenza metodologica costituisce un elemento sostanziale dell’analisi: la selezione deriva dall’applicazione progressiva dei criteri all’intero universo delle alternative e non dall’individuazione preventiva dei cinque siti finali e dalla loro successiva giustificazione.
 Analisi dei dati territoriali e di mobilità
 Relazione con la rete TEN-T e requisiti AFIR
-Ai fini della localizzazione degli Hub Energetici Green, i requisiti previsti dal Regolamento AFIR assumono carattere vincolante per le infrastrutture chiamate a concorrere al conseguimento degli obiettivi di copertura della rete TEN-T. In particolare, una stazione di rifornimento di idrogeno è considerata localizzata lungo la rete TEN-T qualora sia posta direttamente sulla rete oppure entro 10 km di percorrenza stradale dall’uscita TEN-T più vicina; per le infrastrutture di ricarica elettrica la distanza corrispondente è pari a 3 km [16]. 
+Ai fini della localizzazione degli Hub Energetici Green, i requisiti previsti dal Regolamento AFIR assumono carattere vincolante per le infrastrutture chiamate a concorrere al conseguimento degli obiettivi di copertura della rete TEN-T. In particolare, una stazione di rifornimento di idrogeno è considerata localizzata lungo la rete TEN-T qualora sia posta direttamente sulla rete oppure entro 10 km di percorrenza stradale dall’uscita TEN-T più vicina; per le infrastrutture di ricarica elettrica la distanza corrispondente è pari a 3 km [16].
 Per il rifornimento di idrogeno, AFIR prevede entro il 31 dicembre 2030 la disponibilità, lungo la rete centrale TEN-T, di stazioni accessibili al pubblico a una distanza massima di 200 km l’una dall’altra, con capacità cumulativa minima di 1 t/giorno e almeno un erogatore a 700 bar. La prescrizione dei 200 km riguarda quindi la rete centrale TEN-T e non la rete globale. A tali condizioni si affianca, nell’ambito della metodologia di studio, una distanza minima di 10 km tra le cinque localizzazioni, assunta come requisito di commessa e non derivante dal Regolamento AFIR.
 L’applicazione territoriale di tali requisiti presuppone la preventiva validazione della rete TEN-T ricadente nel territorio regionale. La definizione operativa delle uscite TEN-T da utilizzare per il calcolo delle distanze stradali sarà pertanto effettuata a valle di tale verifica.
 Configurazione energetica e approvvigionamento dell’idrogeno
@@ -77,7 +77,7 @@ classificazione delle aree interne;
 porti, interporti e terminali logistici;
 aree industriali e poli produttivi.
 Le principali fonti di riferimento comprendono ISTAT, Regione Friuli Venezia Giulia, WebTur e la Strategia Nazionale Aree Interne. La disponibilità di una fonte non comporta tuttavia automaticamente l’utilizzo del dato come indicatore del modello. Ogni indicatore dovrà essere introdotto esclusivamente qualora sia possibile definirne in modo esplicito significato, unità di misura, geometria di riferimento, formula di calcolo, direzione preferenziale, trattamento dei valori mancanti e metodo di normalizzazione.
-Applicazione modello 
+Applicazione modello
 L’applicazione del modello sarà sviluppata attraverso una sequenza di fasi successive, finalizzate alla costruzione dell’universo dei candidati, alla verifica della loro ammissibilità, alla valutazione multicriteriale dei singoli siti e, infine, alla selezione della migliore configurazione complessiva di cinque Hub. Le diverse fasi sono descritte di seguito secondo lo stato attuale di sviluppo.
 Costruzione dell’universo dei candidati
 La prima fase sarà dedicata alla costruzione dell’universo di candidati, inteso come insieme completo, tracciabile e versionato delle aree realisticamente candidabili alla localizzazione degli Hub Energetici Green.
@@ -104,11 +104,11 @@ Valutazione multicriteriale dei candidati
 I siti risultati ammissibili saranno successivamente sottoposti a una valutazione multicriteriale finalizzata a rappresentarne la qualità individuale rispetto alle diverse dimensioni considerate rilevanti per la localizzazione degli Hub.
 Le possibili macro-famiglie di indicatori comprendono:
 accessibilità, anche in relazione alla classe della strada servente;
-domanda logistica e industriale; 
+domanda logistica e industriale;
 flussi veicolari intercettabili;
 compatibilità territoriale;
 fattibilità energetica anche in relazione alla distanza dalla cabina primaria;
-presenza di infrastrutture a idrogeno preesistenti. 
+presenza di infrastrutture a idrogeno preesistenti.
 La fattibilità energetica potrà concorrere direttamente al sistema di scoring qualora siano disponibili dati omogenei e sufficientemente completi per l’intero insieme dei candidati. In caso contrario, il ranking potrà essere sviluppato inizialmente sugli altri criteri, rinviando la verifica energetica a una fase successiva. Nessun indicatore sarà mantenuto esclusivamente in ragione della disponibilità del dato. Indicatori costanti o scarsamente variabili non dovranno essere presentati come elementi discriminanti della graduatoria.
 Fattibilità energetica
 La verifica di fattibilità energetica dovrà valutare, nei limiti consentiti dai dati effettivamente disponibili:
