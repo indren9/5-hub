@@ -6,7 +6,7 @@ La regia resta nella **Chat 0.2 — Chat Madre 5 HUB**.
 
 Prima di iniziare leggi integralmente:
 
-`C:\dev\5-hub-rebaseline\docs\DISPATCH_CHAT_0.3_STRATEGIC_REBASELINE_v01.md`
+`C:\dev\5-hub\_worktrees\chat-0.3-strategic-rebaseline\docs\DISPATCH_CHAT_0.3_STRATEGIC_REBASELINE_v01.md`
 
 Verifica inoltre lo stato vivo di:
 - PROJECT_SOURCE_OF_TRUTH;
