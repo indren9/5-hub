@@ -53,13 +53,32 @@ Decisione:
 
 Restano pendenti formula raw, normalizzazione, peso, aggregazione e formalizzazione computazionale dei vincoli di configurazione.
 
+## DEC-0070 — Architettura di scoring
+
+**Stato:** ACCEPTED
+
+Decisione:
+- una volta definito l'universo candidato non è prevista una seconda fase ordinaria di eliminazione site-level;
+- ogni criterio riceve importanza intera 1–5;
+- i valori di importanza vengono convertiti in pesi percentuali normalizzati;
+- gli indicatori vengono normalizzati prima dell'aggregazione;
+- score candidato = media pesata dei criteri normalizzati;
+- score cinquina = media aritmetica degli score dei cinque candidati;
+- la cinquina deve comunque rispettare i vincoli di configurazione approvati.
+
+Formule:
+- `w_j = r_j / Σ r_j`;
+- `S_i = Σ_j (w_j × z_ij)`;
+- `Q = (1/5) × Σ_i S_i`.
+
+Restano pendenti valori concreti 1–5, formule raw e normalizzazioni criterio-specifiche.
+
 ## Decisioni ancora pendenti
 
 Restano da discutere separatamente:
 - criteri e formule raw;
-- normalizzazione;
-- pesi;
-- aggregazione score;
+- normalizzazioni criterio-specifiche;
+- valori concreti di importanza 1–5;
 - cinque macro-aree;
 - uno-per-macro-area;
 - top-k;

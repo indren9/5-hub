@@ -154,19 +154,32 @@ Con DEC-0069 l'utente ha approvato:
 
 Formula raw, normalizzazione, peso e aggregazione restano pendenti.
 
+### UDI-04 — architettura di scoring semplice
+
+Con DEC-0070 l'utente ha approvato:
+- nessuna seconda fase ordinaria di eliminazione site-level dopo la costruzione dell'universo candidato;
+- importanza di ogni criterio su scala intera **1–5**;
+- conversione in peso percentuale: `w_j = r_j / Σ r_j`;
+- normalizzazione dei valori dei criteri prima dell'aggregazione;
+- score candidato: `S_i = Σ_j (w_j × z_ij)`;
+- score cinquina: `Q = (1/5) × Σ_i S_i`;
+- confronto delle cinquine solo dopo verifica dei vincoli di configurazione applicabili.
+
+Restano pendenti valori concreti 1–5, formule raw e normalizzazioni criterio-specifiche.
+
 ## METHODOLOGY_PENDING_DECISION
 
-### MPD-04 — scoring individuale
+### MPD-04 — dettagli ancora aperti dello scoring
 
-Proposta presente nello stralcio, **non approvata**:
-- peso intero positivo **1–5** per criterio;
-- normalizzazione **min-max [0,1]**;
-- score come **somma pesata** `Σ(weight × normalized_value)`.
+DEC-0070 ha approvato l'architettura generale dello scoring.
 
-Decisioni necessarie:
-- DQ-04: trasformazioni/normalizzazione;
-- DQ-05: metodo e valori dei pesi;
-- DQ-06: formula di aggregazione individuale.
+Restano da definire:
+- formule raw dei singoli indicatori;
+- trasformazioni/normalizzazioni criterio-specifiche;
+- valori concreti di importanza 1–5;
+- trattamento missing/outlier.
+
+Non è imposto automaticamente il min-max per tutti gli indicatori.
 
 ### MPD-05 — indicatori specifici
 
