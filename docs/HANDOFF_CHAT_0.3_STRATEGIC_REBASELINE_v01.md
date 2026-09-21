@@ -4,143 +4,118 @@
 **Mandante:** Chat 0.2 — Chat Madre 5 HUB
 **Data:** 2026-09-21
 **Branch:** chat-0.3-strategic-rebaseline
+**Worktree:** C:\dev\5-hub\_worktrees\chat-0.3-strategic-rebaseline
 **Stato proposto:** PASS / READY FOR CHAT 0.2 + USER REVIEW
-**Fase 4:** NON APERTA
+**Fase 4 / V2-1:** NON APERTA
 
 ## 1. Obiettivo
 
-Riadattare l'intera architettura metodologica del progetto al nuovo scopo approvato con DEC-0061: modello GIS multicriterio dimostrativo a scala di pianificazione strategica, con output finale costituito da una configurazione di cinque poligoni territorialmente preferibile secondo criteri e pesi dichiarati, senza trasformare il modello in due diligence catastale, proprietaria, autorizzativa o progettuale.
+Ridisegnare baseline metodologica e roadmap dopo DEC-0061, preservando storia e decisioni precedenti e separando il modello GIS multicriterio strategico dalla futura due diligence dei siti.
 
-## 2. Fonti e stato vivo verificati
+Il risultato proposto è una configurazione di cinque poligoni territorialmente preferibile secondo il modello approvato; non è una certificazione di disponibilità, autorizzabilità, connessione o cantierabilità.
 
-Sono stati verificati:
-- dispatch ufficiale Chat 0.3 nel worktree corretto;
+## 2. Materiali letti e verificati
+
+- dispatch ufficiale Chat 0.3;
+- istruzioni persistenti e README_PROJECT_ARCHITECTURE;
 - PROJECT_SOURCE_OF_TRUTH vivo su Google Drive;
-- PROJECT_CONTROL_REGISTER vivo su Google Drive;
-- tutte le 61 DEC registrate fino a DEC-0061;
-- tutte le 14 ISS;
-- tutte le 31 voci DATA_REGISTRY;
+- PROJECT_CONTROL_REGISTER vivo: DECISIONS, DATA_REGISTRY, ISSUES;
+- tutte le 61 DEC fino a DEC-0061 e tutte le 14 ISS;
 - ROADMAP_METODOLOGICA_v1;
-- baseline Fase 1 e Fase 2 FROZEN;
-- principali review/handoff Fase 3;
-- architettura e review della Chat 90.0;
-- branch chat-3.12-natura2000-prescreen-ruleset e review indipendente PASS WITH LIMITATIONS;
-- artifact tracciati nei worktree/branch rilevanti.
-
-La Chat 3.12 risulta tecnicamente supportata con PASS WITH LIMITATIONS, ma ISS-0013 resta OPEN nella governance viva e il branch non viene integrato da questa chat.
-
+- FASE_1_HUB_DEFINITION_CONSOLIDATED_v02 — FROZEN;
+- FASE_2_UNIT_ANALYSIS_CONSOLIDATED_v01 — FROZEN;
+- Chat 3.1 inventario dati e Chat 3.2/3.8/3.9 urbanistica;
+- Chat 3.3 e Chat 3.7 rete/TEN-T;
+- Chat 3.4 ambiente, Chat 3.5 energia, Chat 3.10 Light/Heavy, Chat 3.11 PGRA/PAI;
+- Chat 3.12 Natura 2000, inclusi review e handoff letti dal worktree principale senza modificarlo;
+- RELATION_ARCHITECTURE_v01 e REVIEW_CHAT_90.0_RELATION_BUILDER_v01.
 ## 3. Lavoro svolto
 
-Prodotto un nuovo model contract che:
-- fissa scala strategica e significato della cinquina;
-- conferma il poligono come unità di analisi;
-- separa qualità individuale e qualità della configurazione;
-- definisce solo la semantica di hard constraint, soft criterion e flag;
-- sposta proprietà, disponibilità commerciale, due diligence, capacità/connessione reale e progettazione locale fuori dal core;
-- non introduce indicatori, formule, pesi, normalizzazione, funzione obiettivo o algoritmo.
+Il model contract PROPOSED:
+- conferma scala di pianificazione strategica e poligono come unità;
+- separa score individuale e qualità della cinquina;
+- rende centrale HARD / SOFT / FLAG;
+- esplicita ruoli proposti per urbanistica, mobilità, energia, PGRA, PAI, PPR, Natura 2000, aree protette, biotopi e prati stabili;
+- non approva indicatori, formule, soglie, normalizzazione, pesi, score o funzione obiettivo.
 
-Prodotta una roadmap v2 a 10 stadi V2-0…V2-9, sostanzialmente più snella della sequenza v1 a 16 fasi:
-- elimina la fattibilità energetica di dettaglio come fase autonoma;
-- elimina la verifica puntuale dei finalisti come gate del modello;
-- rende il confronto Claude opzionale/storico;
-- concentra il core su universo candidati, criteri, misura, normalizzazione, pesi/score, configurazione, selezione, robustezza e freeze.
+La roadmap v2 è stata riscritta in 10 stadi V2-0…V2-9. Ogni stadio contiene esplicitamente obiettivo, input, output, decisioni necessarie, quality gate e artifact persistente.
 
-Prodotta una impact matrix esaustiva con 240 righe:
+La impact matrix contiene 281 elementi:
 - 16 fasi roadmap v1;
+- 12 subfasi/chat;
 - 61 DEC;
 - 14 ISS;
-- 31 dataset DATA_REGISTRY;
-- 103 artifact tracciati nel worktree Chat 0.3;
-- 15 artifact aggiuntivi presenti sui branch Chat 3.12 e Chat 90.0 ma non nel worktree 0.3.
+- 31 dataset;
+- 103 artifact del worktree 0.3;
+- 15 branch artifact aggiuntivi;
+- 9 requisiti;
+- 9 controlli;
+- 11 future attività.
 
-Prodotta una issue disposition completa per ISS-0001…ISS-0014.
+La issue disposition copre ISS-0001…ISS-0014. La decision queue contiene 10 sole decisioni materialmente rilevanti.
 
-Prodotta una decision queue di sole 9 decisioni sostanziali future.
+È stato inoltre creato il successore Fase 1 PROPOSED, senza toccare la v02 FROZEN:
+FASE_1_HUB_DEFINITION_REBASELINED_v03_PROPOSED.md.
 
-Prodotta la nota di riallineamento per Chat 90.0 senza modificare i suoi artifact.
+## 4. Principali semplificazioni proposte
 
-## 4. Proposte metodologiche principali
+Fuori dal core: proprietà/catasto/disponibilità commerciale, verifica urbanistica definitiva del finalista, progettazione/accesso locale, capacità/punto/costo reale di connessione, VINCA/autorizzazioni/deroghe formali, verifica PAI/PPR sito-specifica, layout e cantierabilità.
 
-### Roadmap v1
-Proposta: SUPERSEDED_PROPOSED / HISTORICAL SUPPORT.
-Dopo approvazione utente della v2: DEPRECATED / SUPERSEDED BY ROADMAP_METODOLOGICA_v2.
+Restano core: mobilità Light/Heavy macro, TEN-T e rete principale, proxy elettrico territoriale, urbanistica utile a generare/classificare poligoni, territorio e ambiente proporzionati alla scala strategica, robustezza e selezione della configurazione di cinque.
+## 5. Elementi mantenuti, storici e post-model
 
-### Fase 1
-Il nucleo F1-D1…F1-D7 resta valido.
+**KEEP:** F1-D1…F1-D7 nel loro nucleo funzionale; Fase 2 FROZEN; baseline Light/Heavy; TEN-T; proxy elettrico; fonti ambientali/territoriali validate; governance e requisiti di riproducibilità.
 
-Proposta di successore, senza modificare il FROZEN v02:
-FASE_1_HUB_DEFINITION_CONSOLIDATED_v03_PROPOSED.md
+**HISTORICAL_SUPPORT:** roadmap v1 dopo eventuale approvazione v2; baseline Claude/QGIS; audit superati da baseline successive; vecchi blocker che documentano lineage e limiti.
 
-Modifiche previste:
-- mantenere integralmente F1-D1…F1-D7;
-- conservare AFIR/TEN-T quando materialmente rilevante alla funzione strategica;
-- spostare progettazione accessi, sicurezza sito-specifica, capacità/connessione elettrica reale e verifiche esecutive a post-model;
-- distinguere requisiti funzionali dell'Hub da due diligence del terreno.
+**DEFER_POST_MODEL:** proprietà/disponibilità, verifica urbanistica puntuale, accessi locali, connessione reale, autorizzazioni/VINCA/deroghe, due diligence PAI/PPR, layout e cantierabilità.
 
-### Fase 2
-KEEP / FROZEN.
-Nessun successore proposto.
+## 6. Stato proposto Roadmap v1 e Fasi 1–3
 
-### Fase 3
-Proposta futura: PASS / CLOSED WITH DECLARED LIMITATIONS, solo dopo:
-- approvazione della re-baseline;
-- disposizione di ISS-0009 come post-model;
-- decisione su ISS-0013;
-- integrazione governata del lavoro Chat 3.12, se approvata.
+- Roadmap v1: SUPERSEDED_PROPOSED / HISTORICAL_BASELINE; nessuna cancellazione o riscrittura retroattiva.
+- Fase 1: F1-D1…F1-D7 KEEP; v02 resta FROZEN; v03 re-baselined PROPOSED creata.
+- Fase 2: KEEP / FROZEN; nessun successore necessario.
+- Fase 3: PROPOSED PASS / CLOSED WITH DECLARED LIMITATIONS solo dopo approvazione della re-baseline, disposizione ISS-0009/ISS-0013 e integrazione governata Chat 3.12 se approvata.
 
-I dataset non selezionati come indicatori non devono restare blocker della chiusura.
+## 7. DEC che richiedono disposizione o successor decision
 
-## 5. DEC che richiedono nuova disposizione/approvazione
+- DEC-0016: roadmap v1 → supersessione proposta dalla v2.
+- DEC-0013/Fase 1 v02: storico FROZEN preservato; nuovo successore v03 richiede approvazione.
+- DEC-0032: SIMPLIFY come principio di gerarchia/lineage; non richiede audit region-wide completo come prerequisito.
+- DEC-0033: successor per spostare proprietà/disponibilità commerciale post-model.
+- DEC-0042: successor/clarification per mantenere DEROGA_REQUIRED ma rinviare verifiche finali e non pre-approvare una penalizzazione.
+- DEC-0048: successor per mantenere il flag currentness e spostare la verifica urbanistica definitiva post-model.
+- DEC-0050 + DEC-0053: proxy KEEP; successor/clarification per MW/punto/costo/studio reale post-model.
+- DEC-0055: successor per LOCAL_ROAD_ACCESS_CHECK come flag/post-model, mantenendo le baseline macro.
+- DEC-0058: fallback PAI KEEP; pointwise finalista post-model salvo futura regola hard approvata.
+- DEC-0060: workstream editoriale KEEP; RELATION_ARCHITECTURE_v02 da produrre dopo approvazione.
+- DEC-0061: KEEP, principio fondante della v2.
+## 8. Disposizione proposta delle issue
 
-Le proposte che modificano il ruolo operativo di decisioni ACCEPTED/FROZEN richiedono esplicita approvazione utente.
+- ISS-0002: PROPOSE_RESOLVED_AS_HISTORICAL.
+- ISS-0009: PROPOSE_CLOSED_OUT_OF_SCOPE_CORE / DEFER_POST_MODEL.
+- ISS-0013: PROPOSE_RESOLVED_PROCEDURALLY; rule-set 3.12 classificato come support/flag con limitazioni.
+- ISS-0004, 0007, 0010, 0011 e 0012: restano RESOLVED ma il relativo obbligo puntuale viene riclassificato tramite successor decision dove necessario.
+- Le altre issue mantengono lo stato corrente e il ruolo indicato nella issue disposition.
 
-Principali:
-- DEC-0016 — roadmap v1 da superare formalmente;
-- baseline Fase 1 / DEC-0013 — nuovo successore v03, senza modifica del FROZEN;
-- DEC-0032 — current-first semplificato come gerarchia/preferenza, non due diligence region-wide;
-- DEC-0033 — proprietà/disponibilità commerciale spostate fuori dal core;
-- DEC-0042 — rimuovere l'implicita approvazione anticipata di una futura penalizzazione dei prati stabili; ruolo da decidere in DQ-02;
-- DEC-0048 — currentness urbanistica puntuale del finalista non più gate di chiusura del modello;
-- DEC-0050 e DEC-0053 — proxy energetico KEEP, capacità/punto/costo reale post-model;
-- DEC-0055 — baseline Light/Heavy KEEP, local road access check non più gate del modello strategico;
-- DEC-0058 — fallback PAI KEEP, pointwise check post-model salvo futura regola hard esplicitamente approvata;
-- DEC-0060 — Chat 90.0 KEEP, architettura editoriale da riallineare con v02.
+## 9. Decision queue futura ordinata
 
-DEC-0061 resta KEEP ed è il vincolo fondante.
+1. DQ-01 — universo dei poligoni e prefiltri indispensabili.
+2. DQ-02 — variabili e ruolo HARD / SOFT / FLAG.
+3. DQ-03 — costruzione degli indicatori raw.
+4. DQ-04 — trasformazioni e normalizzazione.
+5. DQ-05 — metodo e valori dei pesi.
+6. DQ-06 — formula dello score individuale.
+7. DQ-07 — qualità/funzione della configurazione di cinque.
+8. DQ-08 — vincoli di configurazione.
+9. DQ-09 — algoritmo/procedura di selezione.
+10. DQ-10 — piano di sensitivity/robustness.
 
-## 6. ISS che richiedono nuova disposizione
+Nessuna voce della queue è approvata dalla Chat 0.3.
 
-- ISS-0002: proposta RESOLVED_AS_HISTORICAL; l'universo Claude non verrà riusato come universo autorevole.
-- ISS-0007: resta RESOLVED; esplicitare che il dettaglio di connessione è post-model.
-- ISS-0009: proposta CLOSED_OUT_OF_SCOPE_CORE / DEFER_POST_MODEL.
-- ISS-0010: resta RESOLVED; currentness come flag/limite, due diligence puntuale post-model.
-- ISS-0011: resta RESOLVED; gap biotopi come flag/limite salvo futura regola.
-- ISS-0012: resta RESOLVED; pointwise PAI post-model salvo futura regola.
-- ISS-0013: proposta RESOLVED_PROCEDURALLY, coerente con la review indipendente PASS WITH LIMITATIONS della Chat 3.12; decisione e merge restano a Chat 0.2/utente.
+## 10. File creati/modificati
 
-Le altre ISS restano risolte/storiche secondo il registro corrente.
-
-## 7. Decision queue futura minima
-
-Le sole decisioni che possono cambiare materialmente il risultato sono:
-1. universo dei poligoni e prefiltri indispensabili;
-2. set criteri/indicatori e ruolo HARD/SOFT/FLAG;
-3. trasformazioni e normalizzazione;
-4. metodo e valori dei pesi;
-5. formula dello score individuale;
-6. qualità/funzione della configurazione di 5;
-7. eventuali vincoli di configurazione;
-8. algoritmo/procedura di selezione;
-9. piano di sensitivity/robustness.
-
-Nessuna di queste è approvata dalla Chat 0.3.
-
-## 8. Artifact creati
-
-Commit metodologico principale:
-28df1d0 — docs(rebaseline): propose strategic multicriteria model v2
-
-File:
+Deliverable obbligatori:
 - docs/PROJECT_MODEL_CONTRACT_REBASELINE_v01_PROPOSED.md
 - docs/ROADMAP_METODOLOGICA_v2_PROPOSED.md
 - docs/REBASELINE_IMPACT_MATRIX_v01.csv
@@ -149,49 +124,50 @@ File:
 - docs/REBASELINE_EDITORIAL_IMPACT_CHAT90_v01.md
 - docs/HANDOFF_CHAT_0.3_STRATEGIC_REBASELINE_v01.md
 
-Il presente handoff viene committato separatamente dopo il commit metodologico principale.
+Artifact aggiuntivo necessario:
+- docs/FASE_1_HUB_DEFINITION_REBASELINED_v03_PROPOSED.md
+## 11. Git e commit
 
-## 9. Quality gate
+Commit già presenti e preservati:
+- 28df1d0 — docs(rebaseline): propose strategic multicriteria model v2
+- 31ede79 — docs(rebaseline): add Chat 0.3 handoff
 
-- DEC-0061 rispettata: PASS.
-- Intero progetto mappato senza cancellazioni implicite: PASS, 240 elementi.
-- Aree fuori scope esplicitamente separate: PASS.
-- FROZEN/ACCEPTED non modificati silenziosamente: PASS.
-- F1/F2 originali non modificati: PASS.
-- Roadmap v2 sostanzialmente più snella: PASS.
-- Ogni fase futura ha output e gate verificabili: PASS.
-- Scoring/pesi/F.O./vincoli/algoritmo non approvati implicitamente: PASS.
-- Ruolo del poligono coerente: PASS.
-- Proprietà/disponibilità riclassificate post-model: PASS PROPOSED, soggetto ad approvazione.
-- Urbanistica distinta tra generazione/classificazione e due diligence puntuale: PASS.
-- Energia mantenuta come proxy macro senza MW/connessione/costi: PASS.
-- Mobilità macro separata da accesso locale progettuale: PASS.
-- Ambiente/tutele preservati senza nuove interpretazioni normative: PASS.
-- Chat 3.12 considerata senza chiudere ISS-0013 o fare merge: PASS.
-- Impatto Chat 90.0 documentato senza modificarne gli artifact: PASS.
-- CSV impact matrix: 240 righe, disposizioni tutte nel vocabolario consentito: PASS.
-- Issue disposition: 14/14 issue: PASS.
-- Fase 4 non aperta: PASS.
-- git diff --check sul commit metodologico: PASS.
-- branch clean: da verificare dopo commit del presente handoff.
+Commit di revisione sostanziale:
+- 8f51d87 — docs(rebaseline): strengthen strategic audit and phase contracts
 
-## 10. Problemi aperti / limiti
+Il presente handoff è committato separatamente alla chiusura. Nessun merge su main è eseguito dalla Chat 0.3. Il branch Chat 3.12 e gli altri worktree non sono modificati.
 
-- La governance viva non è stata modificata dalla Chat 0.3: le disposizioni restano PROPOSED.
-- ISS-0013 resta OPEN fino a decisione esplicita.
-- Il branch Chat 3.12 non è stato merged.
-- Nessun successore F1 v03 è stato creato: è solo proposto.
-- Nessuna decisione della queue futura è stata risolta.
-- Nessuna Fase 4/V2-1 è stata aperta.
+## 12. Quality gate
 
-## 11. Prossimo passo minimo consigliato
+- DEC-0061 integralmente rispettata: PASS.
+- Audit senza cancellazioni implicite: PASS.
+- Core model separato dalla fattibilità/due diligence: PASS.
+- Roadmap v2 significativamente più semplice della v1: PASS.
+- Proprietà/catasto/disponibilità commerciale fuori dal core: PASS PROPOSED.
+- Capacità elettrica reale fuori dal requisito macro: PASS PROPOSED.
+- Verifiche autorizzative puntuali non confuse con scoring: PASS.
+- Mobilità Light/Heavy centrale: PASS.
+- Energia come proxy territoriale centrale: PASS.
+- Ambiente proporzionato alla scala macro: PASS.
+- Unità di analisi = poligono: PASS.
+- Scoring/pesi/formula cinquina non approvati implicitamente: PASS.
+- Decision queue breve e materialmente rilevante: PASS, 10 voci.
+- Impatto Chat 90.0 esplicito: PASS.
+- Impact matrix: PASS, 281 righe e tutte le categorie richieste.
+- Issue disposition: PASS, 14/14.
+- F1/F2 FROZEN originali non modificati: PASS.
+- Fase 4/V2-1 non aperta: PASS.
+- git diff --check: PASS al gate di chiusura.
+- branch pulito e pushato: PASS al gate di chiusura.
 
-Chat 0.2 deve eseguire review della re-baseline e sottoporre all'utente un unico pacchetto decisionale compatto:
-1. approvazione model contract + roadmap v2;
-2. approvazione delle disposizioni sulle DEC ACCEPTED/FROZEN elencate al §5;
-3. disposizione ISS-0009 e ISS-0013;
-4. autorizzazione a predisporre il successore Fase 1 v03 e aggiornare la governance viva.
+## 13. Problemi aperti e limiti
 
-Solo dopo questo passaggio potrà essere valutata l'apertura della nuova fase di costruzione dell'universo candidato.
+Le proposte non sono state scritte nella governance viva perché richiedono approvazione utente. ISS-0013 resta ufficialmente OPEN; il branch 3.12 resta separato. Nessuna decisione futura della queue è stata risolta.
 
-STOP — la Chat 0.3 non apre la Fase 4 e non implementa scoring, pesi, candidati o ottimizzazione.
+## 14. Prossimo passo minimo
+
+**Chat 0.2 sottopone all'utente un unico pacchetto di approvazione della re-baseline e delle successor decisions sostanziali.**
+
+Solo dopo tale approvazione può essere valutata l'apertura di V2-1 / Fase 4.
+
+STOP — nessun candidato, indicatore, peso, score o algoritmo è stato implementato.
