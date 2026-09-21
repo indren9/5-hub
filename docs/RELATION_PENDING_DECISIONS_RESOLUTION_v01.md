@@ -39,10 +39,23 @@ Restano post-model/progettuali:
 
 DEC-0068 supersede F1-D6 / DEC-0011 limitatamente alla non obbligatorietà dell'elettrolizzatore.
 
+## DEC-0069 — Ruolo AFIR/TEN-T e infrastrutture H2
+
+**Stato:** ACCEPTED
+
+Decisione:
+- AFIR/TEN-T è criterio primario della qualità del singolo candidato;
+- la soglia H2 di 10 km stradali dalla TEN-T exit stabilisce se una localizzazione può concorrere alla copertura AFIR, ma non è hard filter universale;
+- la cinquina finale deve soddisfare i vincoli AFIR applicabili;
+- il requisito massimo di 200 km opera a livello di copertura/configurazione e non come distanza minima tra Hub;
+- la presenza di infrastrutture H2 esistenti/programmate è un criterio positivo separato;
+- Monfalcone Lisert può essere valorizzata come opportunità di integrazione/potenziamento, senza essere automaticamente AFIR-compliant né automaticamente uno dei cinque Hub.
+
+Restano pendenti formula raw, normalizzazione, peso, aggregazione e formalizzazione computazionale dei vincoli di configurazione.
+
 ## Decisioni ancora pendenti
 
 Restano da discutere separatamente:
-- ruolo AFIR/TEN-T;
 - criteri e formule raw;
 - normalizzazione;
 - pesi;
@@ -51,4 +64,4 @@ Restano da discutere separatamente:
 - uno-per-macro-area;
 - top-k;
 - distanza minima 10 km tra Hub;
-- ruolo modellistico di Monfalcone Lisert.
+- quantificazione del ruolo di Monfalcone Lisert.

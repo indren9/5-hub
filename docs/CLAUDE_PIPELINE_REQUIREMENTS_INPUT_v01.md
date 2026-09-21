@@ -143,12 +143,18 @@ Effetto operativo nel MODEL_v2:
 - non condiziona la configurazione dei cinque Hub;
 - potenza, layout, sicurezza e connessione elettrica necessaria restano post-model/progettuali.
 
+### UDI-03 — AFIR/TEN-T criterio primario e vincolo della configurazione
+
+Con DEC-0069 l'utente ha approvato:
+- AFIR/TEN-T come **criterio primario** della qualità individuale dei candidati;
+- soglia H2 di 10 km stradali dalla TEN-T exit come condizione per poter conteggiare una localizzazione come infrastruttura H2 “lungo TEN-T”, non come hard filter universale;
+- verifica della conformità AFIR sulla **cinquina complessiva**, inclusa copertura TEN-T core e altri requisiti applicabili;
+- presenza di infrastrutture H2 esistenti/programmate come **criterio positivo separato**;
+- Monfalcone Lisert come opportunità di integrazione/potenziamento, senza assumerne automaticamente conformità AFIR o appartenenza alla cinquina.
+
+Formula raw, normalizzazione, peso e aggregazione restano pendenti.
+
 ## METHODOLOGY_PENDING_DECISION
-
-### MPD-03 — ruolo AFIR/TEN-T nel modello
-
-Da decidere: quali Hub devono assolvere funzione AFIR/TEN-T e se i relativi requisiti operano come hard del sito, criterio, vincolo della cinquina o combinazione formalizzata.
-**Stato:** DQ-02/DQ-03 e/o DQ-07/DQ-08.
 
 ### MPD-04 — scoring individuale
 
@@ -192,15 +198,16 @@ Proposta presente nello stralcio, **non approvata**:
 
 Stato: DQ-09. Un pre-screen top-k può eliminare la soluzione globale migliore e deve essere giustificato/testato.
 
-### MPD-08 — ruolo di Monfalcone Lisert
+### MPD-08 — quantificazione del ruolo di Monfalcone Lisert
 
-Da decidere dopo verifica aggiornata dello status:
-- solo contesto;
-- criterio di sinergia/infrastruttura H2;
-- elemento di copertura/ridondanza;
-- vincolo o input della qualità di configurazione.
+DEC-0069 ha stabilito la semantica: Monfalcone Lisert è un'opportunità di integrazione/potenziamento e la presenza di infrastruttura H2 è un criterio positivo separato.
 
-Non decidere in questo pacchetto se Monfalcone 'conta' come uno dei cinque Hub o come copertura AFIR.
+Restano da decidere:
+- formula raw del criterio;
+- normalizzazione e peso;
+- trattamento della capacità disponibile/programmata;
+- modalità con cui un eventuale potenziamento può contribuire alla conformità AFIR della configurazione;
+- verifiche tecniche necessarie prima di conteggiare Monfalcone ai fini AFIR.
 
 ## DO_NOT_USE_SUPERSEDED
 
