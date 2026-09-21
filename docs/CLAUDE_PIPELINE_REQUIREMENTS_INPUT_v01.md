@@ -23,7 +23,7 @@
 - Il modulo EV deve poter servire **veicoli Light e Heavy**.
 - FER fisica in sito non è obbligatoria.
 - H2 rinnovabile/certificato non è requisito universale del nucleo minimo.
-- Il modello non predefinisce l'architettura H2: tube trailer, pipeline, elettrolisi in sito o altre opzioni rilevano solo se generano requisiti territoriali utili alla localizzazione.
+- **Elettrolizzatore in sito obbligatorio in tutti e cinque gli Hub** (DEC-0068), ma senza effetto su generazione candidati, ammissibilità, scoring o configurazione territoriale; eventuali approvvigionamenti H2 aggiuntivi (tube trailer, pipeline o altre soluzioni) restano aperti.
 - Biocarburanti e altri vettori non fanno parte del nucleo minimo comune.
 - **BESS opzionale**: non fa parte del nucleo minimo obbligatorio e non condiziona generazione candidati, ammissibilità, scoring o configurazione del MODEL_v2, salvo futura decisione esplicita (DEC-0067).
 
@@ -131,12 +131,19 @@ Effetto operativo:
 - non condiziona la configurazione dei cinque Hub;
 - può essere previsto successivamente nella progettazione dei singoli Hub.
 
+### UDI-02 — elettrolizzatore obbligatorio, territorialmente neutro
+
+Con DEC-0068 l'utente ha deciso che ogni Hub deve integrare un **elettrolizzatore in sito**.
+
+Effetto operativo nel MODEL_v2:
+- è requisito funzionale del nucleo minimo;
+- non genera hard filter territoriali;
+- non genera score;
+- non modifica DQ-01 o l'universo candidato;
+- non condiziona la configurazione dei cinque Hub;
+- potenza, layout, sicurezza e connessione elettrica necessaria restano post-model/progettuali.
+
 ## METHODOLOGY_PENDING_DECISION
-
-### MPD-02 — elettrolizzatore obbligatorio
-
-Lo stralcio rende l'elettrolizzatore obbligatorio in ogni Hub. Ciò confligge con F1-D6/DEC-0011, che non predefinisce l'architettura H2.
-**Stato:** CONFLICT / richiede nuova decisione esplicita.
 
 ### MPD-03 — ruolo AFIR/TEN-T nel modello
 

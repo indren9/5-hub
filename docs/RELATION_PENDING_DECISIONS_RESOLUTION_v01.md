@@ -21,10 +21,27 @@ Effetti:
 - nessun effetto sulla selezione della cinquina;
 - possibile integrazione progettuale successiva senza modificare la baseline territoriale.
 
+## DEC-0068 — Elettrolizzatore
+
+**Stato:** ACCEPTED
+
+Decisione:
+ogni Hub deve integrare un elettrolizzatore in sito.
+
+Trattamento nel MODEL_v2:
+il requisito è funzionale ma territorialmente neutro. Non genera hard filter, score, modifica dell'universo candidato o vincoli aggiuntivi della cinquina.
+
+Restano post-model/progettuali:
+- potenza e dimensionamento;
+- layout e sicurezza;
+- connessione elettrica reale;
+- configurazione esecutiva dell'approvvigionamento H2.
+
+DEC-0068 supersede F1-D6 / DEC-0011 limitatamente alla non obbligatorietà dell'elettrolizzatore.
+
 ## Decisioni ancora pendenti
 
 Restano da discutere separatamente:
-- elettrolizzatore obbligatorio sì/no;
 - ruolo AFIR/TEN-T;
 - criteri e formule raw;
 - normalizzazione;
