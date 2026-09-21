@@ -657,6 +657,35 @@ def main() -> None:
     candidate_ids = set(candidate_gdf["candidate_id"])
     lineage_ids = set(lineage_df["candidate_id"]) if not lineage_df.empty else set()
 
+    distribution_rows = []
+    for dim, col, values in (
+        ("generator_class", "generator_class", sorted(GENERATOR_CLASSES)),
+        ("source_tier", "source_tier", ["S1", "S2", "S3", "S4", "S5"]),
+    ):
+        for value in values:
+            sub = candidate_gdf[candidate_gdf[col] == value]
+            distribution_rows.append({
+                "dimension": dim,
+                "value": value,
+                "candidate_count": int(len(sub)),
+                "total_area_m2": float(sub["area_m2"].sum()) if len(sub) else 0.0,
+                "min_area_m2": float(sub["area_m2"].min()) if len(sub) else "",
+                "max_area_m2": float(sub["area_m2"].max()) if len(sub) else "",
+                "mean_area_m2": float(sub["area_m2"].mean()) if len(sub) else "",
+            })
+    for _, cov in coverage.sort_values("istat_code").iterrows():
+        sub = candidate_gdf[candidate_gdf["municipality_code"] == cov["istat_code"]]
+        distribution_rows.append({
+            "dimension": "municipality",
+            "value": cov["istat_code"],
+            "candidate_count": int(len(sub)),
+            "total_area_m2": float(sub["area_m2"].sum()) if len(sub) else 0.0,
+            "min_area_m2": float(sub["area_m2"].min()) if len(sub) else "",
+            "max_area_m2": float(sub["area_m2"].max()) if len(sub) else "",
+            "mean_area_m2": float(sub["area_m2"].mean()) if len(sub) else "",
+        })
+    distribution_df = pd.DataFrame(distribution_rows)
+
     checks = {
         "candidate_id_unique_non_null": bool(
             candidate_gdf["candidate_id"].notna().all()
@@ -725,6 +754,16 @@ def main() -> None:
         ),
         "layer_selection_status": selection_df["selection_status"].value_counts().to_dict(),
         "mapping_status": mapping_df["mapping_status"].value_counts().to_dict(),
+        "mapping_unresolved_rows": int((mapping_df["mapping_status"] == "GENERATOR_CLASS_UNRESOLVED").sum()),
+        "mapping_unresolved_source_features": int(
+            mapping_df.loc[
+                mapping_df["mapping_status"] == "GENERATOR_CLASS_UNRESOLVED",
+                "source_feature_count",
+            ].sum()
+        ),
+        "candidate_total_area_m2": float(candidate_gdf["area_m2"].sum()),
+        "candidate_area_min_m2": float(candidate_gdf["area_m2"].min()),
+        "candidate_area_max_m2": float(candidate_gdf["area_m2"].max()),
         "logical_hashes": logical_hashes,
         "determinism_reference": str(args.determinism_reference or ""),
         "determinism_verified": determinism_verified,
@@ -742,6 +781,7 @@ def main() -> None:
     gaps_path = root / "CANDIDATE_SOURCE_GAPS_v01.csv"
     selection_path = root / "CANDIDATE_SOURCE_LAYER_SELECTION_v01.csv"
     overlap_path = root / "CANDIDATE_OVERLAP_QA_v01.csv"
+    distribution_path = root / "CANDIDATE_DISTRIBUTION_QA_v01.csv"
     qa_path = root / "V2_1_CANDIDATE_UNIVERSE_QA_v01.json"
 
     write_csv(lineage_path, lineage_df)
@@ -749,6 +789,7 @@ def main() -> None:
     write_csv(gaps_path, gap_df)
     write_csv(selection_path, selection_df)
     write_csv(overlap_path, overlaps_df)
+    write_csv(distribution_path, distribution_df)
     write_csv(args.mapping_output, mapping_df)
     qa_path.write_text(
         json.dumps(qa, ensure_ascii=False, indent=2, sort_keys=True),
@@ -782,7 +823,8 @@ def main() -> None:
         input_paths.append(args.determinism_reference)
     artifact_paths = [
         gpkg, lineage_path, exclusions_path, gaps_path, selection_path,
-        overlap_path, qa_path, args.mapping_output, args.summary_output,
+        overlap_path, distribution_path, qa_path, args.mapping_output,
+        args.summary_output,
     ]
     manifest = {
         "producer": Path(__file__).name,

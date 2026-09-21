@@ -62,6 +62,12 @@ Distribuzione dei candidati per source tier:
 - S4: **1.062**;
 - S5: **0**.
 
+Superficie lorda complessiva dei candidati: **251.227.636,615 m²** (251,228 km²).
+Il dettaglio completo di conteggi e superfici per Comune, source tier e G1–G5 è in
+`CANDIDATE_DISTRIBUTION_QA_v01.csv`. I Comuni con 0 candidati finali sono 16:
+5 per assenza di geometria utilizzabile (S5) e 11 con sorgente disponibile ma senza
+poligoni che superino congiuntamente mapping generatore e soglia HARD.
+
 La revisione finale del mapping ha corretto le zone esplicitamente miste D/H
 (es. D3H3, H3D3 e varianti equivalenti) verso G4 senza modificare la cardinalità dell'universo.
 
@@ -80,10 +86,11 @@ Ulteriori esclusioni:
 Tabella mapping finale: **7.592** combinazioni semantiche aggregate:
 - 1.838 `RESOLVED_INCLUDED`;
 - 5.051 `RESOLVED_EXCLUDED`;
-- 703 `GENERATOR_CLASS_UNRESOLVED`.
+- 703 `GENERATOR_CLASS_UNRESOLVED`, corrispondenti a **3.933 feature sorgente**.
 
-Le categorie unresolved restano escluse dalla baseline finale: nessuno dei 3.993 candidati
-ha `generator_class` unresolved. Non vengono forzate classificazioni in assenza di evidenza sufficiente.
+Dopo repair/split tali categorie producono **4.016 parti geometriche** escluse con
+`GENERATOR_CLASS_UNRESOLVED`. Nessuno dei 3.993 candidati ha generator_class unresolved:
+le categorie semanticamente insufficienti non vengono forzate verso G1–G5.
 
 
 ## 5. Geometria, duplicati e overlap
@@ -117,13 +124,16 @@ Hash logici:
 - mapping: `01002F2009C96FE26C515C901E80AABCF2D3ADE2CA4BD0C6C3495E3268C89C58`;
 - source gaps: `0EFB6D1F9606261A752AEABB8C0BF0A66B9A38E585AC1A3C822BCE964CFB3799`.
 
-Hash fisici principali:
-- GPKG: `78FF0CB21A60C05F7108D54918E7D0491F29A2DAFBE2E08ABA496F8509AB8DD7`;
+Hash fisici principali del run finale:
+- GPKG: `57B51E3B381743554E105F8E1959674AE426A3F20D379BC709EFA8E8BE78969B`;
 - lineage CSV: `6C11D43EBEA8FF60FF63582393632248DB65EB07340CBDF20B3BC8B7F69AA55A`;
 - exclusions CSV: `2FBD7CC5B5B733FC7679706DFBF66E833BC259AC8A01CBAF9A8FC05A9E087D24`;
-- mapping CSV: `4A80A85FBF3AE839C34D91E44E74812975269C4A2B0FB7467FD83ABAEBC4E002`.
+- mapping CSV: `4A80A85FBF3AE839C34D91E44E74812975269C4A2B0FB7467FD83ABAEBC4E002`;
+- distribution QA: `1B2F5E068FE306D9046A9DD3F277E680087B489F2A74794640F8DD538DDDB65A`;
+- machine QA JSON: `F3D1958701089CBFBE6F39F5B34E1BBFB219F46268D8B8B624C1BE52C172A15E`;
+- manifest: `1B36B52444D4B56C6FD23D66AB27956FB13A7B247EE2BE738B576A8BCCC02B40`.
 
-Il manifest registra input e artifact con SHA-256; test automatico di integrità: PASS.
+Il manifest registra input e artifact con SHA-256; controllo di integrità: PASS.
 
 
 ## 7. Limiti dichiarati
@@ -140,7 +150,7 @@ Il manifest registra input e artifact con SHA-256; test automatico di integrità
 
 QA machine-readable: **PASS** (`all_required_checks_pass=true`).
 Determinismo: **PASS**.
-Test automatici Chat 4.1: **4 passed**.
+Test automatici Chat 4.1: **5 passed**.
 DQ-02 fields assenti: **PASS**.
 
 **QUALITY GATE PROPOSTO: PASS / REVIEW CHAT 0.2.**

@@ -81,3 +81,16 @@ def test_manifest_integrity() -> None:
         digest = hashlib.sha256(path.read_bytes()).hexdigest().upper()
         assert digest == item["sha256"], path
         assert path.stat().st_size == int(item["bytes"])
+
+
+def test_distribution_qa_complete() -> None:
+    dist = pd.read_csv(OUT / "CANDIDATE_DISTRIBUTION_QA_v01.csv", encoding="utf-8-sig")
+    by_muni = dist[dist["dimension"] == "municipality"]
+    by_tier = dist[dist["dimension"] == "source_tier"]
+    by_class = dist[dist["dimension"] == "generator_class"]
+    assert len(by_muni) == 215
+    assert int(by_muni["candidate_count"].sum()) == 3993
+    assert set(by_tier["value"]) == {"S1", "S2", "S3", "S4", "S5"}
+    assert int(by_tier["candidate_count"].sum()) == 3993
+    assert len(by_class) == 5
+    assert int(by_class["candidate_count"].sum()) == 3993
