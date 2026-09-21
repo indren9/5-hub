@@ -25,6 +25,7 @@
 - H2 rinnovabile/certificato non è requisito universale del nucleo minimo.
 - Il modello non predefinisce l'architettura H2: tube trailer, pipeline, elettrolisi in sito o altre opzioni rilevano solo se generano requisiti territoriali utili alla localizzazione.
 - Biocarburanti e altri vettori non fanno parte del nucleo minimo comune.
+- **BESS opzionale**: non fa parte del nucleo minimo obbligatorio e non condiziona generazione candidati, ammissibilità, scoring o configurazione del MODEL_v2, salvo futura decisione esplicita (DEC-0067).
 
 ### C. DQ-01 — universo candidati già APPROVATO
 
@@ -117,12 +118,20 @@ Caveat AFIR:
 
 Stato di integrazione: `VERIFIED_NEW_FACT / CONTEXT`; il ruolo modellistico resta una decisione successiva.
 
+## USER_DECISIONS_INTEGRATED
+
+### UDI-01 — BESS opzionale
+
+Con DEC-0067 l'utente ha deciso che il BESS resta **opzionale** perché irrilevante ai fini della pianificazione territoriale del MODEL_v2.
+
+Effetto operativo:
+- non è requisito del nucleo minimo;
+- non genera hard filter;
+- non genera score;
+- non condiziona la configurazione dei cinque Hub;
+- può essere previsto successivamente nella progettazione dei singoli Hub.
+
 ## METHODOLOGY_PENDING_DECISION
-
-### MPD-01 — BESS obbligatorio
-
-Lo stralcio rende BESS obbligatorio in ogni Hub. La baseline Fase 1 FROZEN non lo include nel nucleo minimo.
-**Stato:** CONFLICT / richiede nuova decisione esplicita prima di qualsiasi integrazione.
 
 ### MPD-02 — elettrolizzatore obbligatorio
 
