@@ -198,6 +198,20 @@ Decisione:
 - `SITE_ID 25 — ZIMA` mantiene `NEEDS_HUMAN_CHECK`;
 - lo stato Tesi resta PASS_WITH_LIMITATION / WORKING / NOT FROZEN.
 
+## DEC-0080 — score logistico-industriale sui 2 poli più vicini
+
+**Stato:** ACCEPTED
+
+Decisione:
+- per ogni candidato si ordinano le 26 distanze verso i poli della baseline DEC-0079;
+- si prendono le due minori `d_i(1)` e `d_i(2)`;
+- `D_i = (d_i(1)+d_i(2))/2`;
+- `D_max = max_i(D_i)` sull'intero universo candidati;
+- score: `S_i_LOG = 1 - D_i/D_max`;
+- nessuna soglia, bonus o peso per tipologia di polo.
+
+Il criterio premia i candidati ben posizionati rispetto ad almeno due poli mantenendo una formulazione semplice e data-driven.
+
 ## Decisioni ancora pendenti
 
 Restano da discutere separatamente:
