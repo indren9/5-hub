@@ -186,6 +186,18 @@ Decisione:
 
 Restano fuori dal MODEL_v2: capacità disponibile, capacità residua, punto di connessione, opere necessarie, costo effettivo e fattibilità reale, da verificare post-model con il gestore.
 
+## DEC-0079 — baseline logistica/industriale operativa
+
+**Stato:** ACCEPTED
+
+Decisione:
+- `LOGISTICS_FVG_v02.gpkg / LOGISTICS_FVG_POINTS` è la baseline operativa del MODEL_v2 per il criterio logistico-industriale;
+- 26 `SITE_ID` univoci, geometrie POINT, EPSG:32632;
+- per ciascun candidato si costruisce la matrice completa delle distanze verso tutti i 26 poli;
+- in questa fase non sono approvati soglie, pesi, bonus o aggregazione in score;
+- `SITE_ID 25 — ZIMA` mantiene `NEEDS_HUMAN_CHECK`;
+- lo stato Tesi resta PASS_WITH_LIMITATION / WORKING / NOT FROZEN.
+
 ## Decisioni ancora pendenti
 
 Restano da discutere separatamente:

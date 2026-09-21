@@ -1,7 +1,7 @@
 # LOGISTICS / INDUSTRIAL PROXIMITY DATA REVIEW v01
 
 **Data:** 2026-09-22
-**Stato:** REVIEW
+**Stato:** ACCEPTED AS MODEL_v2 OPERATIVE BASELINE — DEC-0079
 **Origine:** ricognizione Chat Madre Tesi
 
 ## 1. Dataset identificato
@@ -86,6 +86,6 @@ Originali:
 
 ## 7. Stato governance 5 HUB
 
-La fonte è registrata nel DATA_REGISTRY come `F5_SRC_LOGISTICS_POINTS_001` in stato REVIEW.
+Con DEC-0079 `LOGISTICS_FVG_v02.gpkg / LOGISTICS_FVG_POINTS` è approvato come baseline operativa del MODEL_v2 e `F5_SRC_LOGISTICS_POINTS_001` è ACCEPTED nel DATA_REGISTRY.
 
-La promozione di `LOGISTICS_FVG_v02.gpkg / LOGISTICS_FVG_POINTS` a baseline operativa del MODEL_v2 richiede approvazione esplicita dell'utente.
+Restano invariati i caveat: nella Tesi il dataset è ancora PASS_WITH_LIMITATION / WORKING / NOT FROZEN; `SITE_ID 25 — ZIMA` mantiene `NEEDS_HUMAN_CHECK`; non sono ancora approvati soglie, pesi, bonus o formula di aggregazione delle 26 distanze.
