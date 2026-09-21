@@ -185,7 +185,6 @@ Non è imposto automaticamente il min-max per tutti gli indicatori.
 ### MPD-05 — indicatori specifici
 
 Indicatori ancora da formalizzare in DQ-02/DQ-03:
-- accessibilità/classe della strada servente;
 - **domanda/prossimità logistica-industriale** — baseline dati ACCEPTED con DEC-0079: `LOGISTICS_FVG_v02.gpkg / LOGISTICS_FVG_POINTS`, 26 `SITE_ID` POINT EPSG:32632. Con DEC-0080, per ogni candidato si prendono le due distanze minori `d(1)` e `d(2)`, si calcola `D=(d(1)+d(2))/2`, poi `D_max=max(D)` sull'intero universo candidati e `S_LOG=1-D/D_max`; nessuna soglia, bonus o peso per tipologia di polo; `SITE_ID 25 — ZIMA` mantiene `NEEDS_HUMAN_CHECK`;
 - **flussi veicolari intercettabili** — semantica ACCEPTED con DEC-0072, raggio baseline **5 km dal bordo del poligono** con DEC-0073 e formula raw chiusa con DEC-0074: `f(d)=1-d/5`, `V=q*f(d)`, valore candidato = massimo contributo tra gli archi entro 5 km, separatamente Light/Heavy; se non esistono archi utili entro 5 km il valore raw è 0. DEC-0075 fissa `heavy_vehicles_day_2030` come baseline HEAVY dello score e il 2019 come benchmark/sensitivity; DEC-0076 approva `DIRTY_EDGE_FLOWS_v01.csv` come baseline operativa LIGHT del MODEL_v2, con caveat DEMONSTRATOR / NON CANONICAL rispetto alla Tesi; DEC-0077 normalizza il flusso di ciascun edge come `q/q_max` sulla rispettiva rete completa LIGHT o HEAVY 2030 e applica poi il decadimento `1-d/5`, producendo direttamente uno score candidato in [0,1] senza seconda normalizzazione;
 - compatibilità territoriale generica;

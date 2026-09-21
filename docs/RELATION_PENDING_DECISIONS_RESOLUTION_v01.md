@@ -212,6 +212,16 @@ Decisione:
 
 Il criterio premia i candidati ben posizionati rispetto ad almeno due poli mantenendo una formulazione semplice e data-driven.
 
+## DEC-0081 — accessibilità stradale fuori dal MODEL_v2
+
+**Stato:** ACCEPTED
+
+Decisione:
+- nessun criterio dedicato di accessibilità/classe della strada servente;
+- nessuno score e nessun flag dedicato nel MODEL_v2;
+- accesso locale effettivo, geometria di accesso, svincoli e verifiche progettuali restano post-model sui finalisti;
+- nessuna metrica sostitutiva viene introdotta.
+
 ## Decisioni ancora pendenti
 
 Restano da discutere separatamente:
