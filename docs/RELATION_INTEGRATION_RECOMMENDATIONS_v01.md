@@ -113,7 +113,7 @@ Le fonti disponibili consentono di verificare:
 - soggetto: APT Gorizia;
 - localizzazione: nuova sede/area operativa nella zona industriale di Monfalcone Lisert, con accesso da via Consiglio d'Europa;
 - progetto: impianto integrato di produzione e distribuzione H2 con elettrolizzatore, accumulo/compressione, stazione di rifornimento e fotovoltaico;
-- capacità di produzione pubblicata: **400 kg H2/giorno**;
+- capacità pubblicate **non univoche**: NAHV (maggio 2025) indica **400 kg H2/giorno di produzione**; la pagina ufficiale APT corrente indica **453 kg H2/giorno di produzione massima** e circa **300 kg H2/giorno di capacità media di rifornimento**; IIT Hydrogen riporta **400 kg/giorno di capacità** per il progetto in realizzazione;
 - configurazione dispenser: **2 × 350 bar** per autobus e **1 × 700 bar** per veicoli;
 - stato recente: fonti 2025-2026 descrivono cantiere/lavori in fase avanzata o in realizzazione; **non è stata reperita evidenza sufficiente per dichiarare la stazione operativa/commissionata al 21/09/2026**.
 
@@ -127,7 +127,7 @@ Fonti principali:
 
 ### Cosa NON si può concludere
 
-Non si può ancora trattare Monfalcone come stazione AFIR conforme o come copertura AFIR acquisita. I dati pubblicati dimostrano il dispenser 700 bar, ma i 400 kg/giorno sono dichiarati come **capacità di produzione**, non necessariamente come capacità cumulativa di rifornimento della stazione; inoltre restano da verificare commissioning, accessibilità pubblica e relazione stradale con la TEN-T core.
+Non si può ancora trattare Monfalcone come stazione AFIR conforme o come copertura AFIR acquisita. I dati pubblicati dimostrano il dispenser 700 bar, ma i valori di capacità non sono univoci e distinguono produzione da rifornimento. La fonte ufficiale APT corrente riporta circa 300 kg/giorno di capacità media di rifornimento e 453 kg/giorno di produzione massima, mentre NAHV 2025 riporta 400 kg/giorno di produzione. Restano inoltre da verificare commissioning, accessibilità pubblica e relazione stradale con la TEN-T core.
 
 Quindi: Monfalcone è un **VERIFIED_NEW_FACT / infrastruttura di contesto**. Il modo in cui influisce su score, ridondanza/copertura o configurazione dei cinque Hub è una decisione metodologica successiva.
 
@@ -171,7 +171,7 @@ Queste scelte ricadono principalmente in DQ-02…DQ-09 e devono restare `PROPOSE
 ## 8. Elementi da verificare esternamente in futuro
 
 - commissioning e accessibilità pubblica effettiva della stazione APT Monfalcone immediatamente prima dell'uso nel modello;
-- capacità cumulativa di rifornimento della stazione, distinta dalla capacità di produzione di 400 kg/giorno;
+- capacità cumulativa di rifornimento AFIR tecnicamente validata, mantenendo distinta la produzione e risolvendo la discrepanza tra i valori pubblicati;
 - geolocalizzazione/accesso e distanza stradale dalla TEN-T core se Monfalcone viene candidato per copertura AFIR;
 - eventuali modifiche normative AFIR successive alla versione consolidata EUR-Lex del 08/01/2026.
 

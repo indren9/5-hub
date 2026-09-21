@@ -1,8 +1,8 @@
-# CLAUDE PIPELINE REQUIREMENTS INPUT v01 — PROPOSED
+# CLAUDE PIPELINE REQUIREMENTS INPUT v01 — REVIEWED
 
 **Chat di origine:** 90.5 — Audit stralci relazione e integrazione MODEL_v2
 **Data:** 2026-09-21
-**Stato:** PROPOSED — da sottoporre a review Chat 0.2
+**Stato:** REVIEWED / ACCEPTED AS PROMPT-BUILD INPUT — non approva le scelte metodologiche pendenti
 **Uso previsto:** input ripulito per una successiva costruzione del prompt/pipeline Claude
 **Importante:** questo file **NON è il prompt Claude finale** e non approva nuove scelte metodologiche.
 

@@ -153,14 +153,14 @@ Fatti verificati:
 - APT Gorizia;
 - nuova sede/area operativa in zona industriale Monfalcone Lisert, accesso da via Consiglio d'Europa;
 - elettrolizzatore + produzione/distribuzione H2 + fotovoltaico;
-- produzione pubblicata: **400 kg H2/giorno**;
+- capacità pubblicate non univoche: NAHV 2025 riporta **400 kg H2/giorno di produzione**; APT corrente riporta **453 kg/giorno di produzione massima** e circa **300 kg/giorno di capacità media di rifornimento**; IIT Hydrogen riporta **400 kg/giorno di capacità**;
 - dispenser: **2 × 350 bar + 1 × 700 bar**;
 - stato 2026: lavori in fase avanzata/realizzazione; **operatività/commissioning non verificata al 21/09/2026**.
 
 Conclusione audit:
 - Monfalcone può entrare come `VERIFIED_NEW_FACT / CONTEXT`;
 - non può essere conteggiata automaticamente come copertura AFIR;
-- 400 kg/giorno è produzione, non prova della capacità cumulativa di rifornimento AFIR;
+- i valori pubblicati di capacità non sono univoci e non provano, senza validazione tecnica aggiornata, la capacità cumulativa di rifornimento AFIR;
 - accessibilità pubblica, commissioning e relazione con TEN-T core restano da verificare se il configuration contract le richiede;
 - non è stata presa alcuna decisione sul fatto che Monfalcone conti come uno dei cinque Hub.
 
