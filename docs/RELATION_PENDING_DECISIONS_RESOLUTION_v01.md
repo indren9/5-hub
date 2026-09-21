@@ -222,6 +222,28 @@ Decisione:
 - accesso locale effettivo, geometria di accesso, svincoli e verifiche progettuali restano post-model sui finalisti;
 - nessuna metrica sostitutiva viene introdotta.
 
+## DEC-0082 — PGRA/alluvioni come criterio numerico
+
+**Stato:** ACCEPTED IN PRINCIPLE
+
+Decisione:
+- PGRA/alluvioni resta un criterio numerico separato;
+- per ogni candidato si considera la quota di superficie ricadente nelle classi PGRA;
+- le classi saranno ordinate dalla meno critica alla più critica e normalizzate in [0,1];
+- lo score sarà la media pesata per superficie delle classi intersecate;
+- la mappatura concreta classe→score resta da chiudere dopo verifica delle classi effettivamente disponibili.
+
+## DEC-0083 — PAI/frane sospeso
+
+**Stato:** ACCEPTED / SUSPENDED
+
+Decisione:
+- PAI/frane non entra per ora nello scoring del MODEL_v2;
+- motivo: manca una baseline vettoriale unica, completa e corrente con lineage normativo sufficiente;
+- i layer CATFRANE / UTIL_TER / IFFI restano SUPPORT_ONLY / CONTEXT e non sostituiscono il PAI vigente;
+- nessuna penalità o proxy sostitutiva viene introdotta;
+- il criterio potrà essere riaperto solo con una baseline vettoriale ufficiale o equivalente sufficientemente completa e versionata.
+
 ## Decisioni ancora pendenti
 
 Restano da discutere separatamente:
