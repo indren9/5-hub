@@ -118,13 +118,31 @@ Il risultato dipende dall'universo dei poligoni, dalla qualità/currentness dei 
 
 La robustezza deve essere valutata quantitativamente prima del freeze finale.
 
-## 12. Implicazioni sulle baseline FROZEN
+## 12. Disposizione proposta dei principali domini
+
+Questa tabella classifica il ruolo coerente con DEC-0061. È una **proposta di re-baseline**, non approva formule, soglie o punteggi; la futura DQ-02/DQ-03 congelerà l'operazionalizzazione.
+
+| Tema | Ruolo core proposto | Cosa resta post-model / limite |
+|---|---|---|
+| Urbanistica | dato per generazione/classificazione dei poligoni + flag di currentness | verifica puntuale definitiva del PRGC/variante sul finalista |
+| Proprietà / disponibilità commerciale | nessuno | due diligence proprietaria/commerciale |
+| Mobilità Light/Heavy | criteri macro di domanda, flusso, corridoio e accessibilità territoriale | progettazione e legalità dell'accesso locale |
+| Energia | soft criterion candidato basato sul proxy di prossimità/infrastruttura | MW, punto/costo di connessione e studio tecnico |
+| PGRA | soft criterion candidato sulla pericolosità/allagabilità + eventuale flag | esclusione solo se una regola di incompatibilità esplicita viene approvata; verifica autorizzativa puntuale fuori core |
+| PAI / frane | supporto/flag macro; hard solo dove una futura regola riproducibile dimostri incompatibilità dalla disciplina | verifica PAI sito-specifica post-model; layer regionali restano supporto |
+| PPR | flag di compatibilità; hard solo per incompatibilità prescrittiva esplicitamente operazionalizzata | autorizzazione paesaggistica e verifica puntuale post-model |
+| Natura 2000 | supporto + flag di pre-screening; nessuna penalizzazione per sola distanza/intersezione | VINCA formale e corrispondenza progettuale definitiva post-model |
+| Parchi / riserve | flag; hard solo per incompatibilità da disciplina specifica operazionalizzata | verifica autorizzativa sito-specifica |
+| Biotopi | flag/supporto; gap 40/42 dichiarato | verifica dei casi non coperti dalla geometria corrente post-model |
+| Prati stabili | flag DEROGA_REQUIRED; eventuale soft criterion solo se futuro contratto lo approva | verifica dei presupposti di deroga post-model |
+
+## 13. Implicazioni sulle baseline FROZEN
 
 ### Fase 1
 
 F1-D1…F1-D7 restano validi. La baseline FASE_1_HUB_DEFINITION_CONSOLIDATED_v02 contiene però requisiti localizzativi puntuali che possono essere letti come gate di fattibilità del singolo lotto.
 
-Proposta: non modificare v02. Dopo approvazione utente creare FASE_1_HUB_DEFINITION_CONSOLIDATED_v03_PROPOSED che:
+Proposta: non modificare v02. Il successore proposto è FASE_1_HUB_DEFINITION_REBASELINED_v03_PROPOSED.md, che:
 - mantenga integralmente F1-D1…F1-D7;
 - mantenga AFIR/TEN-T solo quando materialmente rilevante alla funzione strategica;
 - riclassifichi progettazione dell'accesso, sicurezza sito-specifica, capacità/connessione elettrica reale e verifiche esecutive come post-model;
@@ -136,7 +154,7 @@ FASE_2_UNIT_ANALYSIS_CONSOLIDATED_v01 resta coerente con DEC-0061 e non richiede
 
 Le geometrie ausiliarie e le regole di accesso si applicano quando richieste da uno specifico indicatore approvato; non costituiscono obbligo di progettazione locale generalizzata.
 
-## 13. Stato proposto
+## 14. Stato proposto
 
 PROJECT_MODEL_CONTRACT_REBASELINE_v01 = PROPOSED.
 

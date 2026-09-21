@@ -2,122 +2,135 @@
 
 **Chat:** 0.3 — Re-baseline strategica e semplificazione metodologica
 **Data:** 2026-09-21
-**Stato:** PROPOSED
-**Vincolo:** DEC-0061 ACCEPTED
-
-Questa roadmap non apre alcuna nuova fase operativa. L'avvio della prima fase futura richiede decisione separata della Chat 0.2 / utente.
+**Stato:** PROPOSED — richiede approvazione esplicita dell'utente
+**Autorità:** DEC-0061 ACCEPTED
+**Vincolo:** questa roadmap non apre la Fase 4 né alcuna fase v2.
 
 ## 1. Principio di semplificazione
 
-La v2 conserva poligono come unità di analisi, tracciabilità dati, distinzione tra ammissibilità e merito, score individuale distinto dalla configurazione, sensibilità/robustezza e freeze riproducibile.
+La v2 conserva: poligono come unità di analisi, tracciabilità dei dati, distinzione hard/soft/flag, qualità individuale distinta dalla qualità della configurazione, selezione esplicita di esattamente cinque Hub, sensitivity/robustness e freeze riproducibile.
 
-La v2 elimina dal core due diligence proprietaria/catastale, verifica commerciale dei terreni, progettazione dell'accesso locale, capacità e connessione elettrica reali, verifica autorizzativa completa e verifica puntuale finale come fase obbligatoria.
+Escono dal core: proprietà/catasto/disponibilità commerciale, progettazione dell'accesso locale, capacità/punto/costo reale di connessione elettrica, verifica autorizzativa completa e due diligence puntuale finale.
+
+Le verifiche post-model possono essere raccomandate, ma non sono condizioni per chiudere il modello strategico.
 
 ## 2. Prerequisiti già acquisiti
 
-Non vengono riaperte automaticamente Fase 0, Fase 1, Fase 2 e il lavoro Fase 3 validato e utile alla nuova scala.
-
-La re-baseline deve stabilire formalmente quali elementi di Fase 3 diventano baseline dati del modello e quali restano supporto/post-model.
+- Fase 0: infrastruttura e governance — acquisita.
+- Fase 1: definizione funzionale Hub — FROZEN; successore re-baselined proposto.
+- Fase 2: unità di analisi — FROZEN e compatibile.
+- Fase 3: fonti/dati validate da riusare secondo il ruolo assegnato dalla re-baseline.
+- DEC-0061: principio guida vincolante.
 
 ## 3. Sequenza v2 proposta
 
 ### V2-0 — Approvazione della re-baseline
-
-**Obiettivo:** rendere operativo il nuovo model contract e le disposizioni su DEC/ISS/dati.
-**Output:** model contract ACCEPTED, roadmap v2 ACCEPTED, aggiornamenti governance approvati.
-**Gate:** nessun conflitto non dichiarato con FROZEN/ACCEPTED; decision queue esplicita.
-**Decisione utente:** sì.
+**Obiettivo:** rendere operativo il nuovo model contract e chiudere la transizione documentale dalla v1.
+**Input:** DEC-0061, Fasi 1–3, registri vivi, deliverable Chat 0.3.\n**Output:** baseline metodologica v2 approvata e disposizioni su DEC/ISS formalizzate.
+**Decisioni necessarie:** approvazione utente di model contract, roadmap e successor decisions sostanziali.
+**Quality gate:** nessun conflitto implicito con ACCEPTED/FROZEN; nessuna decisione futura pre-approvata.
+**Artifact persistente:** PROJECT_MODEL_CONTRACT_REBASELINE + ROADMAP_METODOLOGICA_v2 + governance aggiornata dalla Chat Madre.
 
 ### V2-1 — Universo dei poligoni candidati
-
-**Obiettivo:** costruire un universo tracciabile di alternative territoriali coerenti con la scala strategica.
-**Attività minime:** fonti dei poligoni, regole di generazione, canonicalizzazione, split/merge, ID/versione, eventuali prefiltri indispensabili, gestione currentness/proxy.
-**Output:** CANDIDATE_UNIVERSE_v01 + lineage + QA.
-**Gate:** ogni poligono ricostruibile dalla fonte; nessun punteggio; nessuna disponibilità proprietaria richiesta.
-**Decisioni sostanziali:** fonti/categorie generatrici, eventuale superficie minima, eventuali prefiltri hard.
+**Obiettivo:** costruire alternative territoriali tracciabili coerenti con la scala strategica.
+**Input:** Fase 2 FROZEN; baseline urbanistiche/territoriali validate; decisione DQ-01.
+**Output:** universo dei poligoni con lineage, ID/versione e QA; nessun punteggio.
+**Decisioni necessarie:** fonti/categorie generatrici, eventuale superficie minima, soli prefiltri hard indispensabili.
+**Quality gate:** ogni poligono ricostruibile; proxy/currentness dichiarati; proprietà commerciale non richiesta.
+**Artifact persistente:** CANDIDATE_UNIVERSE_v01 + CANDIDATE_LINEAGE_v01 + QA.
 
 ### V2-2 — Contratto di criteri e indicatori
+**Obiettivo:** definire cosa misura il modello e il ruolo HARD / SOFT / FLAG di ogni variabile.
+**Input:** universo candidato, dataset Fase 3 accettati, model contract, decisioni DQ-02 e DQ-03.
+**Output:** dizionario dei criteri con formula raw proposta, geometria, unità, direzione, missing e ruolo.
+**Decisioni necessarie:** variabili ammesse; hard constraints; indicatori soft; flag; formule raw sostanziali.
+**Quality gate:** ogni variabile risponde a una domanda decisionale; nessun dato entra solo perché disponibile; nessun hard filter implicito.
+**Artifact persistente:** CRITERIA_INDICATOR_CONTRACT_v01.
 
-**Obiettivo:** definire cosa misura il modello e il ruolo di ogni variabile.
-**Attività minime:** selezione indicatori, significato, fonte, geometria, unità, direzione, missing values, classificazione hard/soft/flag, ridondanza e capacità discriminante.
-**Output:** CRITERIA_INDICATOR_CONTRACT_v01.
-**Gate:** ogni indicatore risponde a una domanda decisionale; nessun criterio entra solo perché il dato esiste.
-**Decisione utente:** sì.
-
-### V2-3 — Misura grezza e QA degli indicatori
-
-**Obiettivo:** calcolare i valori osservati senza ancora attribuire preferenze.
-**Output:** INDICATOR_RAW_TABLE_v01 + INDICATOR_QA_REPORT_v01.
-**Gate:** formule raw riproducibili, unità coerenti, errori/missing espliciti.
-
+### V2-3 — Calcolo raw e QA
+**Obiettivo:** calcolare valori osservati degli indicatori senza ancora applicare preferenze/pesi.
+**Input:** CANDIDATE_UNIVERSE_v01 e CRITERIA_INDICATOR_CONTRACT_v01 approvati.
+**Output:** tabella raw completa con missing/errori espliciti e diagnostica discriminante.
+**Decisioni necessarie:** solo eventuali eccezioni metodologiche emerse dal QA; nessuna nuova scelta implicita.
+**Quality gate:** formule riproducibili; unità coerenti; join/overlay verificati; missing non trasformati arbitrariamente.
+**Artifact persistente:** INDICATOR_RAW_TABLE_v01 + INDICATOR_QA_REPORT_v01.
 ### V2-4 — Trasformazioni e normalizzazione
-
-**Obiettivo:** rendere confrontabili le misure con regole trasparenti.
-**Output:** TRANSFORMATION_NORMALIZATION_CONFIG_v01.
-**Gate:** trasformazioni ricostruibili e motivate; nessuna dipendenza occulta dal campione.
-**Decisione utente:** sì.
+**Obiettivo:** rendere confrontabili gli indicatori soft con regole trasparenti.
+**Input:** valori raw verificati e decisione DQ-04.
+**Output:** valori trasformati/normalizzati e configurazione completa.
+**Decisioni necessarie:** funzioni di preferenza, normalizzazione, trattamento estremi/missing quando materialmente rilevante.
+**Quality gate:** trasformazioni ricostruibili; nessuna dipendenza occulta dal campione; test numerici su casi noti.
+**Artifact persistente:** TRANSFORMATION_NORMALIZATION_CONFIG_v01 + NORMALIZED_INDICATORS_v01.
 
 ### V2-5 — Pesi e score individuale
-
-**Obiettivo:** definire e calcolare la qualità individuale dei poligoni.
-**Output:** SITE_SCORE_CONFIG_v01 + SITE_SUITABILITY_v01.
-**Gate:** score completamente ricostruibile, contributi elementari disponibili, ranking non confuso con la cinquina.
-**Decisione utente:** sì.
+**Obiettivo:** definire e calcolare l'idoneità individuale dei poligoni.
+**Input:** indicatori normalizzati; decisioni DQ-05 e DQ-06.
+**Output:** score individuale con contributi elementari tracciabili.
+**Decisioni necessarie:** metodo/valori dei pesi e formula di aggregazione individuale.
+**Quality gate:** score ricostruibile; contributi disponibili; nessuna confusione fra ranking individuale e cinquina.
+**Artifact persistente:** WEIGHT_CONFIG_v01 + SITE_SCORE_CONFIG_v01 + SITE_SUITABILITY_v01.
 
 ### V2-6 — Contratto della configurazione di cinque Hub
-
-**Obiettivo:** definire cosa rende buona una cinquina oltre ai punteggi dei singoli siti.
-**Attività minime:** qualità della configurazione, eventuale copertura/domanda, ridondanza/diversificazione, vincoli geografici o funzionali, cardinalità = 5.
-**Output:** FIVE_HUB_CONFIGURATION_CONTRACT_v01.
-**Gate:** funzione e vincoli espliciti; nessun vincolo provinciale o diversificazione introdotto implicitamente.
-**Decisione utente:** sì.
+**Obiettivo:** definire cosa rende preferibile una cinquina oltre agli score dei singoli poligoni.
+**Input:** SITE_SUITABILITY_v01; DEC-0061; decisioni DQ-07 e DQ-08.
+**Output:** funzione di qualità della configurazione e vincoli di configurazione formalizzati.
+**Decisioni necessarie:** aggregazione della cinquina; eventuali coperture, distanze, equilibrio territoriale, TEN-T o altre relazioni.
+**Quality gate:** cardinalità = 5; funzione e vincoli espliciti; nessun vincolo provinciale/diversificazione implicito.
+**Artifact persistente:** FIVE_HUB_CONFIGURATION_CONTRACT_v01.
 
 ### V2-7 — Selezione / ottimizzazione
-
-**Obiettivo:** individuare la configurazione che soddisfa il contratto approvato.
-**Output:** FIVE_HUB_SOLUTION_v01 + SELECTION_RUN_MANIFEST_v01.
-**Gate:** soluzione riproducibile; chiaro perché la cinquina è selezionata; nessuna proclamazione di fattibilità immobiliare.
-
-### V2-8 — Sensibilità e robustezza
-
-**Obiettivo:** misurare quanto il risultato dipende dalle assunzioni sostanziali.
-**Output:** ROBUSTNESS_REPORT_v01.
-**Gate:** robustezza quantitativa; alternative ricorrenti e driver di instabilità identificati.
-**Decisione utente:** approvazione del piano di sensitivity prima dell'esecuzione.
+**Obiettivo:** individuare la configurazione conforme al contratto approvato.
+**Input:** universo ammissibile, score individuali e configuration contract.
+**Output:** soluzione selezionata, alternative rilevanti e manifest di esecuzione.
+**Decisioni necessarie:** procedura/algoritmo e criterio di ottimalità/stop, DQ-09.
+**Quality gate:** soluzione riproducibile; verifica indipendente del valore obiettivo/vincoli; nessuna proclamazione di fattibilità immobiliare.
+**Artifact persistente:** FIVE_HUB_SOLUTION_v01 + SELECTION_METHOD_v01 + SELECTION_RUN_MANIFEST_v01.
+### V2-8 — Sensitivity e robustness
+**Obiettivo:** quantificare la dipendenza della cinquina dalle assunzioni sostanziali.
+**Input:** modello selettivo completo e decisione DQ-10 sul piano di sensitivity.
+**Output:** scenari, frequenze di selezione, alternative ricorrenti e driver di instabilità.
+**Decisioni necessarie:** assunzioni da variare, range/scenari e metriche di robustezza.
+**Quality gate:** robustezza supportata da numeri; scenario base separato dagli stress test.
+**Artifact persistente:** ROBUSTNESS_PLAN_v01 + ROBUSTNESS_REPORT_v01.
 
 ### V2-9 — Freeze, risultati e relazione
+**Obiettivo:** congelare il modello riproducibile e trasferire i risultati alla relazione esterna.
+**Input:** output V2-1…V2-8 verificati, registri aggiornati, codice/config/test.
+**Output:** baseline MODEL_v2_FROZEN, package risultati e input editoriali.
+**Decisioni necessarie:** approvazione utente del freeze; nessuna nuova metodologia introdotta in fase editoriale.
+**Quality gate:** input/versioni/codice/config/commit ricostruibili; issue core non bloccanti; relazione coerente con il model contract.
+**Artifact persistente:** MODEL_v2_FROZEN + RESULT_PACKAGE_v01 + handoff finale + aggiornamento Chat 90.0.
 
-**Obiettivo:** congelare modello e output, quindi alimentare la relazione esterna.
-**Output:** MODEL_v2_FROZEN, package risultati, input editoriali aggiornati.
-**Gate:** dati/config/codice/commit ricostruibili; nessun blocker core aperto; relazione coerente con model contract.
-**Decisione utente:** freeze finale.
+## 4. Approfondimenti post-model
 
-## 4. Cosa scompare come fase core autonoma
+Non costituiscono una fase necessaria per chiudere MODEL_v2:
+- verifica catastale/proprietaria/commerciale;
+- verifica urbanistica puntuale del finalista;
+- progettazione e autorizzazione dell'accesso locale;
+- capacità MW, punto/costo e studio reale di connessione;
+- VINCA/autorizzazioni/deroghe formali;
+- PAI/PPR e altre verifiche sito-specifiche di due diligence;
+- layout, sicurezza esecutiva e cantierabilità.
 
-**Fattibilità energetica di dettaglio:** non è più una fase autonoma. Il proxy energetico entra nei criteri se approvato; capacità, punto/costo di connessione e studio tecnico restano post-model.
+Possono essere svolti successivamente sui poligoni selezionati prima di investimento/progettazione.
 
-**Verifica puntuale dei cinque siti:** non è più necessaria per chiudere il modello. Diventa POST-MODEL / DUE DILIGENCE.
+## 5. Stato proposto della roadmap v1
+ROADMAP_METODOLOGICA_v1.md → **SUPERSEDED_PROPOSED / HISTORICAL_BASELINE**.
 
-**Confronto Claude:** non è necessario alla validità del modello. Resta confronto storico opzionale.
+Non viene cancellata né riscritta. Solo dopo approvazione esplicita della v2 la Chat Madre potrà registrarla come DEPRECATED/SUPERSEDED, preservando storia e commit.
 
-## 5. Quality gate trasversale
+## 6. Stato proposto delle Fasi 1–3
 
-Ogni fase futura deve verificare input/versioni identificati, procedure riproducibili, nessun dato inventato, proxy dichiarati, hard/soft/flag distinti, artifact salvati, test/QA espliciti, git diff --check PASS, commit coerente, handoff e nessuna decisione sostanziale promossa senza approvazione utente.
+- **Fase 1:** nucleo funzionale F1-D1…F1-D7 KEEP; v02 resta FROZEN; necessario un successore proposto per separare requisiti funzionali da due diligence puntuale.
+- **Fase 2:** KEEP / FROZEN; nessun successore necessario.
+- **Fase 3:** **PROPOSED PASS / CLOSED WITH DECLARED LIMITATIONS**, subordinato all'approvazione della re-baseline, alla disposizione di ISS-0009 e ISS-0013 e alla normale integrazione degli artifact Chat 3.12. I gap diventati post-model non restano blocker del core.
 
-## 6. Stato proposto della roadmap v1
+## 7. Regola trasversale
 
-ROADMAP_METODOLOGICA_v1.md → SUPERSEDED_PROPOSED / HISTORICAL SUPPORT.
-
-Non viene cancellata né riscritta. Dopo approvazione esplicita della v2 dovrebbe essere marcata DEPRECATED / SUPERSEDED BY ROADMAP_METODOLOGICA_v2, preservando commit e storia.
-
-## 7. Stato proposto delle Fasi 1–3
-
-- **FASE 1:** contenuto funzionale KEEP; baseline v02 resta FROZEN come storico autorevole; proposto successore v03 per rimuovere dal core le implicazioni di due diligence puntuale senza cambiare F1-D1…F1-D7.
-- **FASE 2:** KEEP / FROZEN; nessun successore necessario.
-- **FASE 3:** proposta PASS / CLOSED WITH DECLARED LIMITATIONS dopo approvazione re-baseline, disposizione di ISS-0009, decisione su ISS-0013 e integrazione governata del lavoro Chat 3.12. I dataset non scelti come indicatori non devono restare blocker.
+Ogni fase futura deve: identificare input/versioni; distinguere dato/proxy/assunzione; applicare HARD/SOFT/FLAG solo come approvato; salvare artifact; eseguire QA/test; aggiornare registri quando dovuto; superare git diff --check; lasciare commit e handoff.
 
 ## 8. Prossimo passo minimo
 
-Review Chat 0.2 + approvazione utente della re-baseline e delle sole disposizioni che modificano decisioni ACCEPTED.
+**Review della Chat 0.2 e approvazione esplicita dell'utente della re-baseline.**
 
-Non aprire V2-1/Fase 4 prima di tale approvazione.
+Non aprire V2-1 / Fase 4 prima di tale approvazione.
