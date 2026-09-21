@@ -118,6 +118,20 @@ Decisione:
 
 Restano aperti la funzione di distanza, l'aggregazione tra più archi e la gestione dei candidati senza archi utili entro 5 km.
 
+## DEC-0074 — Formula raw dei flussi veicolari intercettabili
+
+**Stato:** ACCEPTED
+
+Decisione:
+- per ogni arco entro 5 km dal candidato: `f(d)=1-d/5`, con d in km;
+- contributo arco: `V=q*f(d)`;
+- valore raw candidato: massimo `V` tra gli archi nella finestra;
+- se non esistono archi utili entro 5 km, valore raw = 0;
+- calcolo separato per Light e Heavy;
+- distanza geometrica misurata tra poligono e arco.
+
+La sensitivity sul raggio resta ammessa. Restano da verificare gli artifact canonici dei flussi e da definire normalizzazione finale e valori di importanza/peso.
+
 ## Decisioni ancora pendenti
 
 Restano da discutere separatamente:

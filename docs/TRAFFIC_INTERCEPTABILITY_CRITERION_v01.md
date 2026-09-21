@@ -1,8 +1,8 @@
 # TRAFFIC INTERCEPTABILITY CRITERION v01
 
 **Data:** 2026-09-21
-**Stato:** ACCEPTED — partial specification
-**Autorità:** DEC-0072 + DEC-0073
+**Stato:** ACCEPTED — raw formula closed
+**Autorità:** DEC-0072 + DEC-0073 + DEC-0074
 
 ## 1. Scopo
 
@@ -21,13 +21,27 @@ Per ogni candidato saranno calcolati due valori separati, uno per i flussi Light
 Per ogni candidato si considerano gli archi dotati di dati di flusso che ricadono entro **5 km dal bordo del poligono**.
 
 Il raggio di 5 km è una finestra di ricerca e non costituisce da solo una regola di scoring.
-## 4. Ruolo della distanza
+## 4. Formula raw e decadimento della distanza
 
-La distanza fra poligono e arco deve incidere sul criterio mediante una funzione di penalizzazione/decadimento.
+Per ogni arco e entro 5 km dal candidato i, si misura la distanza geometrica d_ie in km fra la geometria del poligono e l'arco.
 
-La funzione non è ancora approvata.
+Il fattore di decadimento è lineare:
 
-Non è quindi ancora approvata la formula raw finale del criterio.
+`f(d_ie) = 1 - d_ie / 5`, per `0 <= d_ie <= 5`.
+
+Il contributo dell'arco è:
+
+`V_ie = q_e * f(d_ie)`.
+
+Il valore raw del candidato è il massimo contributo fra gli archi entro 5 km:
+
+`F_i = max_e(V_ie)`.
+
+Se non esistono archi utili entro 5 km, `F_i = 0`.
+
+Il calcolo resta separato:
+- `F_i^L = max_e(q_e^L * f(d_ie))`;
+- `F_i^H = max_e(q_e^H * f(d_ie))`.
 
 ## 5. Sensitivity
 
@@ -43,12 +57,9 @@ Il raggio baseline resta 5 km salvo futura successor decision.
 
 ## 6. Questioni ancora aperte
 
-Restano da definire:
+Restano da definire o verificare:
 - artifact canonici dei flussi Light e Heavy;
 - unità esatta dei flussi;
 - associazione rete/edge ID;
-- funzione di penalizzazione della distanza;
-- regola di selezione/aggregazione tra più archi entro 5 km;
-- gestione dei candidati senza archi utili entro 5 km;
-- normalizzazione;
+- normalizzazione finale dei due valori raw;
 - valori di importanza/peso.
