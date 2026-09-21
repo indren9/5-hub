@@ -109,15 +109,16 @@ HEAVY usa rete ETISplus/Speth / `Network_Edge_ID`.
 
 I due layer restano distinti e vengono associati ai candidati spazialmente.
 
-## 5. Applicazione della formula DEC-0074
+## 5. Applicazione della formula DEC-0074 + DEC-0077
 
 Per ogni candidato:
-- LIGHT: calcolare `F_i^L` sugli archi OSM entro 5 km, se/quanto la fonte LIGHT sarà approvata;
-- HEAVY: calcolare `F_i^H` sugli edge flows 2030 ricostruiti per `Network_Edge_ID`;
+- LIGHT: usare gli archi OSM entro 5 km e normalizzare `dirty_flow_veh_day` come `q/q_max_LIGHT`, dove `q_max_LIGHT` è il massimo sulla rete LIGHT completa di riferimento;
+- HEAVY: usare gli edge flows 2030 entro 5 km e normalizzare `heavy_vehicles_day_2030` come `q/q_max_HEAVY2030`, dove il massimo è calcolato sulla rete HEAVY completa di riferimento;
 - usare `f(d)=1-d/5`;
-- contributo `V=q*f(d)`;
-- valore raw = massimo contributo entro 5 km;
-- 0 se non esistono archi utili nella finestra.
+- contributo edge: `S_ie=(q/q_max)*f(d)`;
+- score candidato = massimo `S_ie` entro 5 km;
+- 0 se non esistono archi utili nella finestra;
+- nessuna seconda normalizzazione successiva del candidato.
 
 ## 6. Stato governance
 

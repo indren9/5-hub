@@ -1,8 +1,8 @@
 # TRAFFIC INTERCEPTABILITY CRITERION v01
 
 **Data:** 2026-09-21
-**Stato:** ACCEPTED — raw formula closed
-**Autorità:** DEC-0072 + DEC-0073 + DEC-0074 + DEC-0075 + DEC-0076
+**Stato:** ACCEPTED — formula e normalizzazione chiuse
+**Autorità:** DEC-0072 + DEC-0073 + DEC-0074 + DEC-0075 + DEC-0076 + DEC-0077
 
 ## 1. Scopo
 
@@ -21,7 +21,7 @@ Per ogni candidato saranno calcolati due valori separati, uno per i flussi Light
 Per ogni candidato si considerano gli archi dotati di dati di flusso che ricadono entro **5 km dal bordo del poligono**.
 
 Il raggio di 5 km è una finestra di ricerca e non costituisce da solo una regola di scoring.
-## 4. Formula raw e decadimento della distanza
+## 4. Formula del criterio e normalizzazione
 
 Per ogni arco e entro 5 km dal candidato i, si misura la distanza geometrica d_ie in km fra la geometria del poligono e l'arco.
 
@@ -29,19 +29,27 @@ Il fattore di decadimento è lineare:
 
 `f(d_ie) = 1 - d_ie / 5`, per `0 <= d_ie <= 5`.
 
-Il contributo dell'arco è:
+Con DEC-0077 il flusso dell'arco viene normalizzato rispetto al massimo flusso osservato sulla relativa rete completa di riferimento:
 
-`V_ie = q_e * f(d_ie)`.
+`q_e_norm = q_e / q_max`.
 
-Il valore raw del candidato è il massimo contributo fra gli archi entro 5 km:
+Il contributo normalizzato dell'arco è:
 
-`F_i = max_e(V_ie)`.
+`S_ie = q_e_norm * f(d_ie)`.
 
-Se non esistono archi utili entro 5 km, `F_i = 0`.
+Lo score del candidato è il massimo contributo fra gli archi entro 5 km:
+
+`S_i = max_e(S_ie)`.
+
+Se non esistono archi utili entro 5 km, `S_i = 0`.
 
 Il calcolo resta separato:
-- `F_i^L = max_e(q_e^L * f(d_ie))`;
-- `F_i^H = max_e(q_e^H * f(d_ie))`.
+- `S_i^L = max_e[(q_e^L / q_max^L) * f(d_ie)]`;
+- `S_i^H = max_e[(q_e^H2030 / q_max^H2030) * f(d_ie)]`.
+
+Il `q_max` è calcolato sulla rete completa di riferimento LIGHT o HEAVY 2030, non sui soli archi entro 5 km del singolo candidato.
+
+Lo score risultante è già compreso tra 0 e 1 e non viene applicata una seconda normalizzazione successiva del candidato.
 
 ## 5. Sensitivity
 
@@ -71,5 +79,4 @@ L'uso del 2030 è una scelta di coerenza temporale con l'orizzonte dei principal
 
 Restano da definire o verificare:
 - materializzazione e QA del full edge-flow HEAVY 2030;
-- normalizzazione finale dei due valori raw;
-- valori di importanza/peso.
+- valori di importanza/peso, che saranno assegnati successivamente dall'utente.

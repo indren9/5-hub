@@ -158,6 +158,20 @@ Decisione:
 
 La decisione non modifica raggio, formula raw o separazione Light/Heavy già approvati.
 
+## DEC-0077 — normalizzazione flussi rispetto al massimo della rete
+
+**Stato:** ACCEPTED
+
+Decisione:
+- per ogni rete il flusso edge viene normalizzato come `q_e / q_max`;
+- `q_max` è il massimo flusso osservato sull'intera rete di riferimento LIGHT o HEAVY 2030, non nella sola finestra locale del candidato;
+- lo score edge è `(q_e/q_max) * (1-d/5)`;
+- lo score candidato è il massimo score edge tra gli archi entro 5 km;
+- LIGHT e HEAVY 2030 restano separati;
+- lo score ottenuto è già in [0,1] e non viene applicata una seconda normalizzazione.
+
+La decisione completa la scala del criterio traffico senza modificare raggio, decadimento lineare o regola del massimo locale già approvati.
+
 ## Decisioni ancora pendenti
 
 Restano da discutere separatamente:
