@@ -1,8 +1,8 @@
-﻿# HANDOFF COMPLESSIVO — Chat 90.0 — Relazione Builder
+# HANDOFF COMPLESSIVO — Chat 90.0 — Relazione Builder
 
-**Data:** 2026-09-21  
-**Destinatario:** Chat 0.2 — Chat Madre 5 HUB  
-**Perimetro:** recepimento congiunto del mandato iniziale della Chat 90.0 e della successiva istruzione sull'uso della baseline storica Claude  
+**Data:** 2026-09-21
+**Destinatario:** Chat 0.2 — Chat Madre 5 HUB
+**Perimetro:** recepimento congiunto del mandato iniziale della Chat 90.0 e della successiva istruzione sull'uso della baseline storica Claude
 **Stato:** RECEIVED / IMPLEMENTED EDITORIALLY / REVIEW BY CHAT 0.2
 
 ## 1. Ruolo della Chat 90.0
@@ -213,4 +213,3 @@ Dopo review positiva, il primo blocco consigliato è:
 1. Chat 90.1 — costruzione registro fonti esterne;
 2. Chat 90.2 — consolidamento tracciabilità interna;
 3. Chat 90.3 — redazione dei capitoli READY basati su Fase 1 e Fase 2.
-

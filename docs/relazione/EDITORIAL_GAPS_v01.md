@@ -1,7 +1,7 @@
-﻿# EDITORIAL GAPS v01
+# EDITORIAL GAPS v01
 
-**Data:** 2026-09-21  
-**Owner editoriale:** Chat 90.0 — Relazione Builder  
+**Data:** 2026-09-21
+**Owner editoriale:** Chat 90.0 — Relazione Builder
 **Stato:** DRAFT / working register editoriale
 
 ## 1. Scopo
@@ -87,4 +87,3 @@ Uso vietato: fonte autorevole per stato/metodo corrente.
 
 Un gap editoriale può essere chiuso solo quando esiste una fonte interna autorevole sufficiente per scrivere il contenuto senza anticipare decisioni o risultati.
 La chiusura editoriale non modifica automaticamente DEC, ISS o stato delle fasi del progetto.
-

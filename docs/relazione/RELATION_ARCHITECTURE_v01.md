@@ -1,8 +1,8 @@
-﻿# RELAZIONE ESTERNA 5 HUB — ARCHITETTURA EDITORIALE E SCHELETRO v01
+# RELAZIONE ESTERNA 5 HUB — ARCHITETTURA EDITORIALE E SCHELETRO v01
 
-**Chat:** 90.0 — Relazione Builder  
-**Data:** 2026-09-21  
-**Stato:** PROPOSED — da sottoporre a review della Chat 0.2  
+**Chat:** 90.0 — Relazione Builder
+**Data:** 2026-09-21
+**Stato:** PROPOSED — da sottoporre a review della Chat 0.2
 **Perimetro:** architettura editoriale della relazione esterna; nessuna nuova decisione metodologica.
 
 ## 1. Scopo dell'architettura
@@ -317,5 +317,3 @@ Da aprire più avanti, quando esistono candidati e risultati sufficienti; non è
 - Nessuna nuova soglia, peso, indicatore o regola metodologica introdotta: PASS.
 - Persistenza nel repository su branch dedicato Chat 90.0: PASS dopo commit.
 - Review finale richiesta alla Chat 0.2 prima di procedere alla redazione massiva.
-
-

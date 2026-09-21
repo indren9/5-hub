@@ -1,8 +1,8 @@
-﻿# HANDOFF — Chat 90.0 — Relazione Builder
+# HANDOFF — Chat 90.0 — Relazione Builder
 
-**Data:** 2026-09-21  
-**Destinatario:** Chat 0.2 — Chat Madre 5 HUB  
-**Attività:** primo incarico — architettura della relazione esterna  
+**Data:** 2026-09-21
+**Destinatario:** Chat 0.2 — Chat Madre 5 HUB
+**Attività:** primo incarico — architettura della relazione esterna
 **Stato proposto:** TECHNICAL/EDITORIAL PASS — REVIEW REQUIRED
 
 ## 1. Obiettivo svolto
@@ -145,4 +145,3 @@ Chat 0.2 revisiona:
 4. priorità delle prime chat 90.x.
 
 Fino alla review non avviare la redazione massiva della relazione.
-

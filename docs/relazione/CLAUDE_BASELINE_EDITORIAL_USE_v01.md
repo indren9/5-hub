@@ -1,7 +1,7 @@
-﻿# USO EDITORIALE DELLA BASELINE STORICA CLAUDE v01
+# USO EDITORIALE DELLA BASELINE STORICA CLAUDE v01
 
-**Data:** 2026-09-21  
-**Ambito:** Chat 90.0 — Relazione Builder e future Chat 90.x  
+**Data:** 2026-09-21
+**Ambito:** Chat 90.0 — Relazione Builder e future Chat 90.x
 **Stato:** ACTIVE — istruzione editoriale dell'utente
 
 ## 1. Principio
@@ -56,4 +56,3 @@ Nell'Appendice di tracciabilità:
 
 Le baseline storiche già registrate nel DATA_REGISTRY restano HISTORICAL / NON_AUTHORITATIVE.
 La presente istruzione amplia l'uso editoriale consentito, ma non modifica il loro stato di validazione né la gerarchia delle fonti del progetto.
-
