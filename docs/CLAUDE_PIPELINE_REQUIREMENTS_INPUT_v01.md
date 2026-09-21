@@ -143,16 +143,17 @@ Effetto operativo nel MODEL_v2:
 - non condiziona la configurazione dei cinque Hub;
 - potenza, layout, sicurezza e connessione elettrica necessaria restano post-model/progettuali.
 
-### UDI-03 — AFIR/TEN-T criterio primario e vincolo della configurazione
+### UDI-03 — AFIR/TEN-T come vincolo della configurazione
 
-Con DEC-0069 l'utente ha approvato:
-- AFIR/TEN-T come **criterio primario** della qualità individuale dei candidati;
-- soglia H2 di 10 km stradali dalla TEN-T exit come condizione per poter conteggiare una localizzazione come infrastruttura H2 “lungo TEN-T”, non come hard filter universale;
-- verifica della conformità AFIR sulla **cinquina complessiva**, inclusa copertura TEN-T core e altri requisiti applicabili;
-- presenza di infrastrutture H2 esistenti/programmate come **criterio positivo separato**;
-- Monfalcone Lisert come opportunità di integrazione/potenziamento, senza assumerne automaticamente conformità AFIR o appartenenza alla cinquina.
+DEC-0069, raffinata da DEC-0072, stabilisce che:
+- la distanza dalla TEN-T non entra nello score individuale;
+- la soglia H2 di 10 km stradali dalla TEN-T exit serve solo a stabilire se una localizzazione può essere conteggiata ai fini della copertura AFIR;
+- la conformità AFIR opera come vincolo della cinquina complessiva, inclusa copertura TEN-T core e altri requisiti applicabili;
+- il criterio site-level sostitutivo è **flussi veicolari intercettabili**;
+- la presenza di infrastrutture H2 esistenti/programmate resta un criterio positivo separato;
+- Monfalcone Lisert resta un'opportunità di integrazione/potenziamento, senza assumerne automaticamente conformità AFIR o appartenenza alla cinquina.
 
-Formula raw, normalizzazione, peso e aggregazione restano pendenti.
+Formula raw e normalizzazione del criterio flussi restano pendenti.
 
 ### UDI-04 — architettura di scoring semplice
 
@@ -183,10 +184,10 @@ Non è imposto automaticamente il min-max per tutti gli indicatori.
 
 ### MPD-05 — indicatori specifici
 
-Proposte da non trattare come baseline finché non formalizzate in DQ-02/DQ-03:
+Indicatori ancora da formalizzare in DQ-02/DQ-03:
 - accessibilità/classe della strada servente;
 - domanda logistica e industriale;
-- flussi veicolari intercettabili;
+- **flussi veicolari intercettabili** — semantica già ACCEPTED con DEC-0072: maggiore traffico rilevante intercettabile = maggiore punteggio;
 - compatibilità territoriale generica;
 - distanza da cabina/sottostazione come proxy energetico;
 - presenza/prossimità di infrastrutture H2 preesistenti.

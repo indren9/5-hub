@@ -90,6 +90,20 @@ Condizioni per l'eventuale fallback:
 
 Le ipotesi top-10/top-5 e i conteggi 100.000/3.125 combinazioni restano esempi di fallback e non metodologia corrente.
 
+## DEC-0072 — AFIR senza score di distanza; criterio flussi veicolari
+
+**Stato:** ACCEPTED
+
+Decisione:
+- nessun punteggio individuale basato sulla distanza dalla TEN-T;
+- AFIR/TEN-T resta vincolo della cinquina;
+- il criterio site-level sostitutivo è il flusso veicolare intercettabile;
+- maggiore traffico rilevante intercettabile = maggiore punteggio;
+- formula raw, segmento/rete di riferimento, ruolo della prossimità/accessibilità e normalizzazione restano da definire.
+
+Motivazione:
+evitare doppio conteggio tra prossimità normativa alla TEN-T e conformità AFIR della configurazione.
+
 ## Decisioni ancora pendenti
 
 Restano da discutere separatamente:
