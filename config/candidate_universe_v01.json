@@ -1,0 +1,12 @@
+{
+  "universe_version": "v01",
+  "candidate_version": 1,
+  "operational_crs": "EPSG:6708",
+  "min_area_m2": 8000.0,
+  "source_dataset_current": "F3_SRC_FVG_PRGC_CURRENT_001",
+  "source_dataset_cer_ind": "F3_SRC_FVG_ZONING_IND_001",
+  "source_dataset_cer_com": "F3_SRC_FVG_ZONING_COM_001",
+  "output_root": "C:\\Users\\visen\\OneDrive\\UNIVER~1\\UniUD\\Tesi\\5_HUB_FVG\\04_geodatabases\\V2_1_CANDIDATE_UNIVERSE",
+  "source_cache_subdir": "_source_cache",
+  "uuid_namespace": "d1aa8414-4f87-5f72-bfa1-e5cb98ff031b"
+}

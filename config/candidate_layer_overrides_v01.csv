@@ -1,0 +1,9 @@
+municipality_code,mode,layer_rel,generator_class_override,reason,evidence
+030012,SELECT_FULL,Bordano\ZONAOMOG_6708.shp,,Reviewed low-name-signal full zoning layer,"Native ZONAOMOG layer; polygon zoning attributes"
+031008,SELECT_FULL,GradiscadIsonzo\ZTO1_6708.shp,,Reviewed low-name-signal full zoning layer,"Native ZTO layer; polygon zoning attributes"
+031020,SELECT_FULL,SanLorenzoIsontino\VAR_22\SL_ISO_vinc_e_varie_zone_om_6708.shp,,Reviewed low-name-signal full zoning layer,"Contains complete zone families including D2/D3/H3 and native zoning fields"
+032004,SELECT_FULL,SanDorligoDellaValle\PRGC_coordinato_var31_6708_6708.shp,,Reviewed low-name-signal full zoning layer,"File explicitly identifies coordinated PRGC variant 31"
+093037,SELECT_FULL,Sacile\VAR_83\ZTO_AGGV83_6708.shp,,Reviewed low-name-signal full zoning layer,"Native ZTO updated variant 83"
+032006,SELECT_FULL,Trieste\PO2\VAR_14_15_16\ZONIZZAZIONE.shp,,Resolve same-score version ambiguity,"Later bundled variant folder than VAR_13 within official archive"
+093009,SELECT_FULL,Caneva\VAR_38\zonizzazione_var_coord.shp,,Resolve same-score version ambiguity,"Coordinated zoning variant 38 preferred to older VAR_36 within official archive"
+030098,ADDITIVE_CLASS,Ruda\NUOVE_VARIANTI\Attivita_produttive.shp,G1_PRODUCTIVE,Category-specific current official layer,"Native layer explicitly named Attivita_produttive; no complete zoning layer identified in archive"
