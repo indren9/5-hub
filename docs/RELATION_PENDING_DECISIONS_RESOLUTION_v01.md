@@ -132,6 +132,19 @@ Decisione:
 
 La sensitivity sul raggio resta ammessa. Restano da verificare gli artifact canonici dei flussi e da definire normalizzazione finale e valori di importanza/peso.
 
+## DEC-0075 — HEAVY 2030 baseline dello score
+
+**Stato:** ACCEPTED
+
+Decisione:
+- `heavy_vehicles_day_2030` è la baseline HEAVY del criterio traffico;
+- `heavy_vehicles_day_2019` resta benchmark / sensitivity;
+- la ricostruzione edge-flow resta deterministica per `Network_Edge_ID` da `HEAVY_PATH_FLOWS_v01.csv`;
+- le limitazioni note dello scenario 2030, inclusa la mancata calibrazione locale su ANAS FVG, devono restare esplicite.
+
+Motivazione:
+allineamento temporale con l'orizzonte 2030 dei principali target H2 AFIR. Questa è una scelta metodologica del MODEL_v2, non un obbligo AFIR di usare traffico 2030.
+
 ## Decisioni ancora pendenti
 
 Restano da discutere separatamente:

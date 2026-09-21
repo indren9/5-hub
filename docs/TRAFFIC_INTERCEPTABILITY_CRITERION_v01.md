@@ -2,7 +2,7 @@
 
 **Data:** 2026-09-21
 **Stato:** ACCEPTED — raw formula closed
-**Autorità:** DEC-0072 + DEC-0073 + DEC-0074
+**Autorità:** DEC-0072 + DEC-0073 + DEC-0074 + DEC-0075
 
 ## 1. Scopo
 
@@ -55,11 +55,22 @@ La sensitivity potrà confrontare 5 km con raggi inferiori o superiori e misurar
 
 Il raggio baseline resta 5 km salvo futura successor decision.
 
-## 6. Questioni ancora aperte
+## 6. Input dati e orizzonte HEAVY
+
+Ricognizione Tesi 2026-09-22:
+- LIGHT: `DIRTY_EDGE_FLOWS_v01.csv`, campo `dirty_flow_veh_day`, rete OSM via `segment_uid`, unità veicoli/giorno; sorgente DEMONSTRATOR / NON CANONICAL, ancora REVIEW nel MODEL_v2;
+- HEAVY: `HEAVY_PATH_FLOWS_v01.csv`, ricostruzione deterministica per `Network_Edge_ID` sulla rete ETISplus/Speth.
+
+Con DEC-0075:
+- `heavy_vehicles_day_2030` = baseline HEAVY dello score;
+- `heavy_vehicles_day_2019` = benchmark / sensitivity.
+
+L'uso del 2030 è una scelta di coerenza temporale con l'orizzonte dei principali target H2 AFIR, non un obbligo normativo sul dato di traffico.
+
+## 7. Questioni ancora aperte
 
 Restano da definire o verificare:
-- artifact canonici dei flussi Light e Heavy;
-- unità esatta dei flussi;
-- associazione rete/edge ID;
+- approvazione esplicita del LIGHT Dirty FRLM come baseline operativa del MODEL_v2;
+- materializzazione e QA del full edge-flow HEAVY 2030;
 - normalizzazione finale dei due valori raw;
 - valori di importanza/peso.
