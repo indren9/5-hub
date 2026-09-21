@@ -189,7 +189,7 @@ Indicatori ancora da formalizzare in DQ-02/DQ-03:
 - domanda logistica e industriale;
 - **flussi veicolari intercettabili** — semantica ACCEPTED con DEC-0072, raggio baseline **5 km dal bordo del poligono** con DEC-0073 e formula raw chiusa con DEC-0074: `f(d)=1-d/5`, `V=q*f(d)`, valore candidato = massimo contributo tra gli archi entro 5 km, separatamente Light/Heavy; se non esistono archi utili entro 5 km il valore raw è 0. DEC-0075 fissa `heavy_vehicles_day_2030` come baseline HEAVY dello score e il 2019 come benchmark/sensitivity; DEC-0076 approva `DIRTY_EDGE_FLOWS_v01.csv` come baseline operativa LIGHT del MODEL_v2, con caveat DEMONSTRATOR / NON CANONICAL rispetto alla Tesi; DEC-0077 normalizza il flusso di ciascun edge come `q/q_max` sulla rispettiva rete completa LIGHT o HEAVY 2030 e applica poi il decadimento `1-d/5`, producendo direttamente uno score candidato in [0,1] senza seconda normalizzazione;
 - compatibilità territoriale generica;
-- distanza da cabina/sottostazione come proxy energetico;
+- **prossimità alla cabina primaria** — ACCEPTED con DEC-0078: `d_i` = distanza geometrica minima tra poligono candidato e cabina primaria più vicina nella baseline elettrica approvata DEC-0053; `d_max = max_i(d_i)` sull'intero universo candidati; `S_i_GRID = 1 - d_i/d_max`; nessuna soglia artificiale; prossimità = proxy di costo/complessità potenziale, non capacità disponibile o fattibilità reale;
 - presenza/prossimità di infrastrutture H2 preesistenti.
 
 Ogni indicatore dovrà specificare domanda decisionale, fonte, geometria, unità, formula raw, direzione, missing, ruolo HARD/SOFT/FLAG e limiti.

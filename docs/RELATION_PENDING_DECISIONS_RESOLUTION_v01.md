@@ -172,6 +172,20 @@ Decisione:
 
 La decisione completa la scala del criterio traffico senza modificare raggio, decadimento lineare o regola del massimo locale già approvati.
 
+## DEC-0078 — criterio elettrico di prossimità alla cabina primaria
+
+**Stato:** ACCEPTED
+
+Decisione:
+- `d_i` = distanza geometrica minima tra il poligono candidato e la cabina primaria più vicina;
+- distanza misurata dalla geometria del poligono, non dal centroide;
+- `d_max = max_i(d_i)` sull'intero universo candidati;
+- score: `S_i_GRID = 1 - d_i/d_max`;
+- nessuna soglia di distanza artificiale;
+- la distanza è solo proxy di costo/complessità potenziale della connessione.
+
+Restano fuori dal MODEL_v2: capacità disponibile, capacità residua, punto di connessione, opere necessarie, costo effettivo e fattibilità reale, da verificare post-model con il gestore.
+
 ## Decisioni ancora pendenti
 
 Restano da discutere separatamente:
