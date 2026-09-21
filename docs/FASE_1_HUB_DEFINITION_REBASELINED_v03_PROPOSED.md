@@ -25,7 +25,9 @@ Restano integralmente validi F1-D1…F1-D7:
 - il modello non predefinisce l'architettura H₂;
 - altri vettori energetici restano opzionali.
 
-Restano inoltre fuori scope layout, progettazione esecutiva e scelta tecnologica definitiva.## 3. Nuova interpretazione localizzativa
+Restano inoltre fuori scope layout, progettazione esecutiva e scelta tecnologica definitiva.
+
+## 3. Nuova interpretazione localizzativa
 
 Il modello deve verificare la coerenza territoriale con le funzioni dell'Hub alla scala strategica.
 
@@ -62,7 +64,9 @@ Non sono requisiti per chiudere il modello:
 - punto di connessione;
 - preventivo/costo;
 - studio tecnico di connessione;
-- configurazione esecutiva dell'approvvigionamento H₂.## 7. Sicurezza, spazio e fattibilità progettuale
+- configurazione esecutiva dell'approvvigionamento H₂.
+
+## 7. Sicurezza, spazio e fattibilità progettuale
 
 Il modello non certifica il rispetto esecutivo delle distanze di sicurezza o delle prescrizioni antincendio e non costruisce il layout dell'Hub.
 

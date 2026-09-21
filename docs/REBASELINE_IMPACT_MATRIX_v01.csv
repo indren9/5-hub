@@ -1,4 +1,4 @@
-﻿element_type,element_id,element_name,current_status,proposed_disposition,core_role_v2,rationale,roadmap_impact,user_approval_required,successor_or_note
+element_type,element_id,element_name,current_status,proposed_disposition,core_role_v2,rationale,roadmap_impact,user_approval_required,successor_or_note
 ROADMAP_PHASE,FASE-0,FASE-0,ROADMAP_v1,KEEP,governance,Infrastructure and traceability remain necessary.,Prerequisite v2.,NO,
 ROADMAP_PHASE,FASE-1,FASE-1,ROADMAP_v1,SIMPLIFY,functional_definition,Hub definition remains valid; pointwise feasibility requirements must be separated from core.,Propose F1 v03 successor without modifying v02.,YES,
 ROADMAP_PHASE,FASE-2,FASE-2,ROADMAP_v1,KEEP,unit_of_analysis,Polygon and lineage remain coherent with DEC-0061.,Prerequisite v2 unchanged.,NO,
@@ -262,7 +262,7 @@ REQUIREMENT,REQ-N2000-FORMAL,VINCA formale / corrispondenza progettuale definiti
 REQUIREMENT,REQ-HARD-SOFT-FLAG,Distinzione HARD / SOFT / FLAG,PROPOSED_BY_DEC0061_DISPATCH,KEEP,model_architecture,"Evita di confondere incompatibilità, preferenza e necessità di approfondimento.",Diventa contratto di V2-2 dopo approvazione.,YES,PROJECT_MODEL_CONTRACT_REBASELINE_v01
 CONTROL,CTRL-PLANNING-CURRENTNESS,PLANNING_CURRENTNESS_NOT_VERIFIED,ACCEPTED_FLAG,KEEP,flag,Incertezza di vigenza è informazione utile senza trasformarsi in esclusione.,Conservare nel core come flag.,YES,Successor to DEC-0048 removes mandatory final check from core
 CONTROL,CTRL-LOCAL-ROAD,LOCAL_ROAD_ACCESS_CHECK_REQUIRED,ACCEPTED_CONTROL,DEFER_POST_MODEL,post_model_access,Controllo locale richiede dettaglio non necessario per lo score strategico.,Può essere flag informativo nel core; verifica concreta post-model.,YES,Successor to DEC-0055
-CONTROL,CTRL-PAI-POINT,PAI_POINTWISE_CHECK_REQUIRED,ACCEPTED_CONTROL,DEFER_POST_MODEL,È una verifica sito-specifica nata come fallback operativo.,Non è gate di MODEL_v2.,YES,Successor to DEC-0058,
+CONTROL,CTRL-PAI-POINT,PAI_POINTWISE_CHECK_REQUIRED,ACCEPTED_CONTROL,DEFER_POST_MODEL,post_model_pai_check,È una verifica sito-specifica nata come fallback operativo.,Non è gate di MODEL_v2.,YES,Successor to DEC-0058
 CONTROL,CTRL-PPR-CHECK,PPR_CHECK_REQUIRED,ACCEPTED_FLAG,KEEP,flag,Segnala disciplina da approfondire senza esclusione/penalizzazione automatica.,Resta flag salvo futuro hard rule esplicito.,NO,None
 CONTROL,CTRL-DEROGA,DEROGA_REQUIRED prati stabili,ACCEPTED_FLAG,KEEP,flag,Flag coerente con DEC-0042; la deroga reale è successiva.,Resta flag; eventuale soft effect richiede DQ-02/DQ-03.,NO,None
 CONTROL,CTRL-N2000-PRESCREEN,Natura 2000 prescreen ruleset,REVIEW_PASSED_WITH_LIMITATIONS,SIMPLIFY,support_flag,"Automazione utile per classificare necessità di approfondimento, non per dichiarare VINCA o hard exclusion.",Usare come support/flag dopo governance ISS-0013.,YES,Integrate Chat 3.12 after decision

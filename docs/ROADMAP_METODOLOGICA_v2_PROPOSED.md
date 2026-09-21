@@ -26,7 +26,8 @@ Le verifiche post-model possono essere raccomandate, ma non sono condizioni per 
 
 ### V2-0 — Approvazione della re-baseline
 **Obiettivo:** rendere operativo il nuovo model contract e chiudere la transizione documentale dalla v1.
-**Input:** DEC-0061, Fasi 1–3, registri vivi, deliverable Chat 0.3.\n**Output:** baseline metodologica v2 approvata e disposizioni su DEC/ISS formalizzate.
+**Input:** DEC-0061, Fasi 1–3, registri vivi, deliverable Chat 0.3.
+**Output:** baseline metodologica v2 approvata e disposizioni su DEC/ISS formalizzate.
 **Decisioni necessarie:** approvazione utente di model contract, roadmap e successor decisions sostanziali.
 **Quality gate:** nessun conflitto implicito con ACCEPTED/FROZEN; nessuna decisione futura pre-approvata.
 **Artifact persistente:** PROJECT_MODEL_CONTRACT_REBASELINE + ROADMAP_METODOLOGICA_v2 + governance aggiornata dalla Chat Madre.
