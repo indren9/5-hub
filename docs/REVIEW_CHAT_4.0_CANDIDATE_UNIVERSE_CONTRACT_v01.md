@@ -1,8 +1,8 @@
 # REVIEW — Chat 4.0 — Candidate Universe Contract v01
 
-**Reviewer:** Chat 0.2 — Chat Madre 5 HUB  
-**Data:** 2026-09-21  
-**Stato:** TECHNICAL PASS / ONE METHODOLOGICAL AMENDMENT PROPOSED / USER DECISION REQUIRED  
+**Reviewer:** Chat 0.2 — Chat Madre 5 HUB
+**Data:** 2026-09-21
+**Stato:** TECHNICAL PASS / ONE METHODOLOGICAL AMENDMENT PROPOSED / USER DECISION REQUIRED
 **Decisione:** DQ-01 resta PROPOSED
 
 ## 1. Esito
