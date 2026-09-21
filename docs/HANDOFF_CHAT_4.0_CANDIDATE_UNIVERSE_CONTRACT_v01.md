@@ -94,7 +94,7 @@ Commit principale degli artifact decisionali:
 `0492bd079a4306a85d1232d2124183a63ca8e2c1`
 — `docs(v2-1): propose candidate universe contract`
 
-Il presente handoff viene versionato con commit di chiusura separato; il relativo hash è riportato nella risposta finale della Chat 4.0.## 7. Quality gate
+Il presente handoff viene versionato con commit di chiusura separato; il relativo hash è riportato nella risposta finale della Chat 4.0.`r`n`r`n## 7. Quality gate
 
 | Controllo | Esito |
 |---|---|

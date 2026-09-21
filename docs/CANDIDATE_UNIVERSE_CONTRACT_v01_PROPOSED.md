@@ -26,7 +26,7 @@ Restano fuori: indicatori, normalizzazioni, pesi, score, funzione obiettivo, ott
 
 Prevalgono, nell'ordine applicabile:
 - DEC-0061, DEC-0062, DEC-0063, DEC-0064;
-- PROJECT_MODEL_CONTRACT_REBASELINE_v01 — FROZEN;- ROADMAP_METODOLOGICA_v2 — ACCEPTED / OPERATIVE;
+- PROJECT_MODEL_CONTRACT_REBASELINE_v01 — FROZEN;`r`n- ROADMAP_METODOLOGICA_v2 — ACCEPTED / OPERATIVE;
 - FASE_1_HUB_DEFINITION_REBASELINED_v03 — FROZEN;
 - FASE_2_UNIT_ANALYSIS_CONSOLIDATED_v01 — FROZEN;
 - REBASELINE_APPROVAL_AND_PHASE3_CLOSE_v01 — ACCEPTED;
@@ -62,7 +62,7 @@ Razionale:
 ### Tier S1 — vettore urbanistico corrente verificato
 Usare il vettore ufficiale quando variante/piano e geometria risultano allineati e la currentness è verificata.
 
-Flag: `CURRENT_VECTOR_VERIFIED`.### Tier S2 — vettore ufficiale best-available con currentness non chiusa
+Flag: `CURRENT_VECTOR_VERIFIED`.`r`n`r`n### Tier S2 — vettore ufficiale best-available con currentness non chiusa
 Usare geometrie ufficiali Regione/IRDAT/Eagle/Comune quando il vettore è disponibile ma la vigenza/allineamento non è dimostrata integralmente.
 
 Flag obbligatori:
@@ -199,7 +199,7 @@ Motivazione:
 - il poligono è alternativa strategica, non area immediatamente edificabile;
 - una soglia prematura può eliminare aree che potrebbero essere aggregate, riconfigurate o valutate diversamente nella fase di ammissibilità.
 
-Per ogni candidato si calcola comunque `area_m2` e si producono distribuzioni/quantili diagnostici, inclusi conteggi sotto 5.000 m² solo come benchmark storico, senza esclusione.Una futura soglia di superficie richiederà:
+Per ogni candidato si calcola comunque `area_m2` e si producono distribuzioni/quantili diagnostici, inclusi conteggi sotto 5.000 m² solo come benchmark storico, senza esclusione.`r`n`r`nUna futura soglia di superficie richiederà:
 - fabbisogno spaziale Hub esplicitamente approvato;
 - distinzione tra area lorda del poligono e superficie effettivamente utilizzabile;
 - analisi di sensibilità;
@@ -252,7 +252,7 @@ Campi minimi:
 
 Proxy/currentness non modificano automaticamente score o ammissibilità in DQ-01.
 
-Il QA deve riportare candidati e superficie per Tier S1–S5 e per Comune, così da rendere visibile il bias territoriale introdotto dalla qualità disomogenea delle fonti.## 14. Lineage minimo obbligatorio
+Il QA deve riportare candidati e superficie per Tier S1–S5 e per Comune, così da rendere visibile il bias territoriale introdotto dalla qualità disomogenea delle fonti.`r`n`r`n## 14. Lineage minimo obbligatorio
 
 **CU-11 — PROPOSED.** Per ogni candidato devono essere ricostruibili almeno:
 

@@ -45,7 +45,7 @@ Non riguarda indicatori, score, pesi, ottimizzazione o selezione dei 5 Hub.
 **Completezza:** distorta.
 **Natura:** incompatibile con re-baseline core.
 
-**Raccomandazione PROPOSED:** A2.## 4. DQ01-B — fallback quando manca un vettore corrente allineato
+**Raccomandazione PROPOSED:** A2.`r`n`r`n## 4. DQ01-B — fallback quando manca un vettore corrente allineato
 
 ### B1 — nessun fallback
 Alta purezza, ma perdita sistematica di copertura.
@@ -104,7 +104,7 @@ Automatizzabile ma introduce una tolleranza arbitraria non supportata.
 
 **Raccomandazione PROPOSED:** D2.
 
-Regola chiave: contiguità o overlap non bastano a dimostrare che due geometrie siano la stessa alternativa.## 7. DQ01-E — superficie minima
+Regola chiave: contiguità o overlap non bastano a dimostrare che due geometrie siano la stessa alternativa.`r`n`r`n## 7. DQ01-E — superficie minima
 
 ### E1 — 5.000 m²
 **Pro:** coerente col comportamento storico osservato.
