@@ -1,4 +1,4 @@
-﻿# CANDIDATE UNIVERSE CONTRACT v01 — ACCEPTED
+# CANDIDATE UNIVERSE CONTRACT v01 — ACCEPTED
 
 **Chat:** 4.0 — Contratto dell'universo dei poligoni candidati
 **Data:** 2026-09-21
@@ -355,4 +355,3 @@ Pacchetto DQ-01 ACCEPTED:
 8. altri soli gate tecnici come hard prefilter;
 9. currentness/proxy sempre visibile e mai tradotto automaticamente in esclusione;
 10. candidate_id stabile + versioning + geometry hash + lineage completo.
-
