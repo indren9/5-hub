@@ -31,8 +31,8 @@ Gli artifact sopra non vengono riscritti retroattivamente per incorporare l'acce
 
 | Chat | Nome | Stato editoriale | Dipendenze | Output principale |
 |---|---|---|---|---|
-| 90.1 | Fonti esterne e bibliografia | DISPATCHED / SEED_STARTED | governance viva + fonti originali | EXTERNAL_SOURCE_REGISTER_v01.csv normalizzato/verificato + handoff |
-| 90.2 | Matrice di tracciabilità interna | DISPATCHED | SOT + PCR + baseline/review correnti | RELATION_TRACEABILITY_MATRIX_v02.csv + handoff |
+| 90.1 | Fonti esterne e bibliografia | ACCEPTED_WITH_DOCUMENTED_GAPS | aggiornamento incrementale | 52 fonti normalizzate + review 90.0 |
+| 90.2 | Matrice di tracciabilità interna | READY_TO_START | SOT + PCR + baseline/review correnti | RELATION_TRACEABILITY_MATRIX_v02.csv + handoff |
 | 90.3 | Redazione capitoli consolidati F1/F2 | DISPATCHED_WITH_DEPENDENCIES | seed fonti 90.1 + audit 90.2 | bozze consolidate capp. 1, 3, 4 + handoff |
 
 ## Regole operative
@@ -47,7 +47,7 @@ Gli artifact sopra non vengono riscritti retroattivamente per incorporare l'acce
 
 ## Prossimo controllo della Chat 90.0
 
-Dopo i primi handoff 90.1 e 90.2:
+Dopo l'handoff 90.2:
 - verificare coerenza tra fonte esterna e claim;
 - aggiornare readiness solo se lo stato scientifico lo consente;
 - autorizzare la stabilizzazione editoriale delle bozze 90.3;

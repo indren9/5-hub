@@ -1,4 +1,4 @@
-# EDITORIAL GAPS v01
+﻿# EDITORIAL GAPS v01
 
 **Data:** 2026-09-21
 **Owner editoriale:** Chat 90.0 — Relazione Builder
@@ -73,8 +73,9 @@ La relazione dovrà mantenere separati domanda/corridoi e accessibilità locale 
 
 ## 4. Gap bibliografici/editoriali
 
-### EG-015 — Registro fonti esterne non ancora normalizzato
-Occorre verificare per ogni fonte: titolo ufficiale, versione/data, URL, data di accesso, licenza e uso nella relazione.
+### EG-015 - Registro fonti esterne normalizzato per lo stato corrente
+Stato: MANAGED / NON_BLOCKING.
+Chat 90.1 ha normalizzato 52 record esterni con quality gate PASS_WITH_DOCUMENTED_GAPS. Il registro resta incrementale e deve essere aggiornato quando nuove fonti entrano nel progetto.
 
 ### EG-016 — Letteratura metodologica non ancora selezionabile
 La bibliografia su MCDM, normalizzazione, pesi, ottimizzazione e robustezza deve essere scelta solo dopo le relative decisioni metodologiche.
@@ -82,6 +83,16 @@ La bibliografia su MCDM, normalizzazione, pesi, ottimizzazione e robustezza deve
 ### EG-017 — Bozza RELAZIONE_QUADRO v01 non allineata a tutte le decisioni del 20 settembre
 Uso consentito: baseline editoriale e miniera di testo da riesaminare.
 Uso vietato: fonte autorevole per stato/metodo corrente.
+
+### EG-018 - Lineage esterna Light / ISTAT non chiusa byte-to-byte
+Origine editoriale: review Chat 90.1.
+Impatto: Cap. 5 e 9.
+Azione editoriale: descrivere la fonte ISTAT e il ruolo della baseline Light senza affermare un binding binario non dimostrato con lo specifico download ufficiale.
+
+### EG-019 - Snapshot OSM stradale Light non identificato con precisione bibliografica
+Origine editoriale: review Chat 90.1.
+Impatto: Cap. 5 e 9.
+Azione editoriale: non inventare timestamp o identificatore dell'estratto OSM che ha generato G_OSM_operativo_v01; usare soltanto la lineage realmente documentata.
 
 ## 5. Criterio di chiusura dei gap editoriali
 

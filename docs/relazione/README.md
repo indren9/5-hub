@@ -15,6 +15,7 @@ Questa cartella ospita gli artifact editoriali della Chat 90.0 — Relazione Bui
 - EXTERNAL_SOURCE_REGISTER_TEMPLATE_v01.csv — schema accettato del registro fonti.
 - EXTERNAL_SOURCE_REGISTER_v01.csv — registro di lavoro delle fonti esterne.
 - EXTERNAL_SOURCE_NOTES_v01.md — note di verifica e versioning delle fonti.
+- REVIEW_CHAT_90.1_EXTERNAL_SOURCES_v01.md — review editoriale 90.0 del workstream fonti esterne.
 - EDITORIAL_GAPS_v01.md — gap scientifici tradotti in conseguenze editoriali.
 
 ## Dispatch editoriali
