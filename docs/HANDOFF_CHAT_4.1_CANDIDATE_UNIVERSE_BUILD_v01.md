@@ -61,6 +61,9 @@ Distribuzione candidati per tier:
 
 Presenza tier per Comune: S1=4, S2=99, S3=4, S4=103, S5=5.
 
+Superficie lorda complessiva dei candidati: **251.227.636,615 m²**.
+Il dettaglio di conteggi e superfici per Comune, tier e G1–G5 è persistito in
+`CANDIDATE_DISTRIBUTION_QA_v01.csv`.
 
 I 5 Comuni senza geometria utilizzabile sono:
 **Preone, Stregna, Rivignano Teor, Treppo Ligosullo, Valvasone Arzene**.
@@ -95,6 +98,7 @@ Artifact principali:
 - `CANDIDATE_SOURCE_GAPS_v01.csv`;
 - `CANDIDATE_SOURCE_LAYER_SELECTION_v01.csv`;
 - `CANDIDATE_OVERLAP_QA_v01.csv`;
+- `CANDIDATE_DISTRIBUTION_QA_v01.csv`;
 - `V2_1_CANDIDATE_UNIVERSE_QA_v01.json`;
 - `CANDIDATE_UNIVERSE_MANIFEST_v01.json`;
 - inventari e cache sorgente necessari alla ricostruzione.
@@ -140,7 +144,7 @@ stato resolved/unresolved e conteggio delle feature sorgente.
 - manifest/hash: PASS;
 - campi DQ-02 assenti: PASS;
 - py_compile: PASS;
-- pytest: 4 passed;
+- pytest: 5 passed;
 - git diff --cached --check pre-commit: PASS.
 
 Machine QA: `all_required_checks_pass=true`.
@@ -149,7 +153,7 @@ Machine QA: `all_required_checks_pass=true`.
 ## 8. Hash principali
 
 Hash fisici:
-- GPKG: `78FF0CB21A60C05F7108D54918E7D0491F29A2DAFBE2E08ABA496F8509AB8DD7`;
+- GPKG: `57B51E3B381743554E105F8E1959674AE426A3F20D379BC709EFA8E8BE78969B`;
 - lineage: `6C11D43EBEA8FF60FF63582393632248DB65EB07340CBDF20B3BC8B7F69AA55A`;
 - exclusions: `2FBD7CC5B5B733FC7679706DFBF66E833BC259AC8A01CBAF9A8FC05A9E087D24`;
 - mapping: `4A80A85FBF3AE839C34D91E44E74812975269C4A2B0FB7467FD83ABAEBC4E002`.
@@ -185,11 +189,13 @@ i gap S5/S4, gli unresolved e gli overlap. Nessun nuovo codice DEC/ISS è stato 
 
 ## 11. Git e stato finale
 
-Commit implementazione:
-`7b9e806 — feat(v2-1): build candidate universe with DQ-01 QA`.
+Commit principali:
+- `7b9e806 — feat(v2-1): build candidate universe with DQ-01 QA`;
+- `614b3e3 — docs(v2-1): close chat 4.1 candidate universe build`;
+- `ebc4222 — qa(v2-1): add candidate distribution audit`.
 
-Il presente handoff viene versionato in un commit di chiusura separato.
-Il relativo hash viene riportato nel messaggio finale della Chat 4.1.
+Il presente handoff viene riallineato in un commit finale di chiusura dopo il refinement QA;
+il relativo hash è riportato nel messaggio finale della Chat 4.1.
 
 **QUALITY GATE CHAT 4.1: PROPOSED PASS.**
 
