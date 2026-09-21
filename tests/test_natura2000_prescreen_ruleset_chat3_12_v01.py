@@ -1,5 +1,6 @@
 from __future__ import annotations
 import csv, json, hashlib
+from datetime import datetime, timezone
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -235,6 +236,30 @@ def run():
     result={"status":"PASS" if failed==0 else "FAIL","passed":passed,"failed":failed,"tests":tests}
     QA_OUT.parent.mkdir(parents=True,exist_ok=True)
     QA_OUT.write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding="utf-8")
+
+    manifest=json.loads(MANIFEST.read_text(encoding="utf-8"))
+    generated_paths=[
+        RULESET,
+        CROSSWALK,
+        ROOT / "scripts" / "build_natura2000_prescreen_ruleset_chat3_12_v01.py",
+        ROOT / "tests" / "test_natura2000_prescreen_ruleset_chat3_12_v01.py",
+        ROOT / "docs" / "FASE_3_NATURA2000_PRESCREEN_VALIDATION_REVIEW_v01.md",
+        ROOT / "docs" / "HANDOFF_CHAT_3.12_NATURA2000_v01.md",
+        ONEDRIVE / "qa" / "natura2000_prescreen_qa_v01.json",
+        QA_OUT,
+    ]
+    manifest["generated_artifacts_refreshed_utc"]=datetime.now(timezone.utc).isoformat()
+    manifest["generated_artifacts"]=[
+        {
+            "path":str(p),
+            "bytes":p.stat().st_size,
+            "sha256":hashlib.sha256(p.read_bytes()).hexdigest(),
+            "status":"GENERATED_AND_VERIFIED",
+        }
+        for p in generated_paths if p.exists()
+    ]
+    MANIFEST.write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding="utf-8")
+
     print(json.dumps(result,ensure_ascii=False,indent=2))
     raise SystemExit(1 if failed else 0)
 

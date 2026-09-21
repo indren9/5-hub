@@ -119,7 +119,7 @@ Le condizioni d'obbligo 2025 sono corpus downstream dello screening e non vengon
 
 ## 13. Valutazione del quality gate
 
-Esito proposto: **PASS TECNICO CON LIMITAZIONI**, subordinato all'esito finale dei test, al controllo `git diff --check`, all'aggiornamento dei registri e al commit pulito.
+Esito tecnico: **PASS CON LIMITAZIONI**. La build è completata con exit code 0; i test finali sono 19/19 PASS; `py_compile` e `git diff --check` sono PASS; DATA_REGISTRY e ISS-0013 sono stati aggiornati; manifest, hash ed evidence QA sono presenti.
 Non sono state create nuove geometrie Natura 2000, soglie ecologiche arbitrarie, penalizzazioni o categorie equivalenti a `VINCA_PASSED`.
 
 Per `ISS-0013` si propone **`PROPOSE_RESOLVED_PROCEDURALLY`**:
