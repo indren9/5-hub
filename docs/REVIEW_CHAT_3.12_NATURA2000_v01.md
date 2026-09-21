@@ -1,8 +1,8 @@
 # REVIEW — Chat 3.12 — Natura 2000: pre-screening operativo
 
-**Reviewer:** Chat 0.2 — Chat Madre 5 HUB  
-**Data:** 2026-09-21  
-**Perimetro:** review indipendente tecnica; nessuna decisione di governance applicata  
+**Reviewer:** Chat 0.2 — Chat Madre 5 HUB
+**Data:** 2026-09-21
+**Perimetro:** review indipendente tecnica; nessuna decisione di governance applicata
 **Stato:** REVIEW_PASSED_WITH_LIMITATIONS — proposta specialistica supportata, in attesa di decisione utente/Chat 0.2
 
 ## 1. Esito sintetico
