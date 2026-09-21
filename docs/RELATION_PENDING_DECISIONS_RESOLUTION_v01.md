@@ -104,6 +104,20 @@ Decisione:
 Motivazione:
 evitare doppio conteggio tra prossimità normativa alla TEN-T e conformità AFIR della configurazione.
 
+## DEC-0073 — Raggio di ricerca flussi = 5 km
+
+**Stato:** ACCEPTED
+
+Decisione:
+- per ogni candidato si cercano gli archi con dati di flusso entro **5 km dal bordo del poligono**;
+- i 5 km costituiscono una finestra di ricerca, non uno score;
+- la distanza dovrà incidere tramite una funzione di penalizzazione ancora da definire;
+- è ammessa una sensitivity sul raggio per verificare la robustezza della scelta;
+- il raggio baseline resta 5 km salvo futura successor decision;
+- Light e Heavy restano distinti.
+
+Restano aperti la funzione di distanza, l'aggregazione tra più archi e la gestione dei candidati senza archi utili entro 5 km.
+
 ## Decisioni ancora pendenti
 
 Restano da discutere separatamente:

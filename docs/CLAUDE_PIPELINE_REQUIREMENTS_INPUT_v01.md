@@ -187,7 +187,7 @@ Non è imposto automaticamente il min-max per tutti gli indicatori.
 Indicatori ancora da formalizzare in DQ-02/DQ-03:
 - accessibilità/classe della strada servente;
 - domanda logistica e industriale;
-- **flussi veicolari intercettabili** — semantica già ACCEPTED con DEC-0072: maggiore traffico rilevante intercettabile = maggiore punteggio;
+- **flussi veicolari intercettabili** — semantica ACCEPTED con DEC-0072 e raggio di ricerca baseline **5 km dal bordo del poligono** con DEC-0073; maggiore traffico rilevante intercettabile = maggiore punteggio; la funzione di penalizzazione della distanza resta da definire;
 - compatibilità territoriale generica;
 - distanza da cabina/sottostazione come proxy energetico;
 - presenza/prossimità di infrastrutture H2 preesistenti.
