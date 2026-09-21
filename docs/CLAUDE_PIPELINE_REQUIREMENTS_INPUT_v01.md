@@ -193,23 +193,21 @@ Proposte da non trattare come baseline finché non formalizzate in DQ-02/DQ-03:
 
 Ogni indicatore dovrà specificare domanda decisionale, fonte, geometria, unità, formula raw, direzione, missing, ruolo HARD/SOFT/FLAG e limiti.
 
-### MPD-06 — cinque macro-aree
+### UDI-05 — macro-aree e top-k solo come fallback computazionale
 
-Proposta presente nello stralcio, **non approvata**:
-- dividere il FVG in cinque macro-aree;
-- bilanciarle con lunghezza TEN-T;
-- bilanciarle con quota di addetti manifatturieri;
-- presumibilmente selezionare un Hub per macro-area.
+Con DEC-0071 l'utente ha stabilito che la metodologia ordinaria **non** usa:
+- cinque macro-aree;
+- vincolo di un Hub per macro-area;
+- preselezione top-10/top-5.
 
-Stato: DQ-07/DQ-08. L'ultimo punto è un'assunzione implicita da rendere esplicita.
+Questi strumenti possono essere introdotti soltanto come **fallback computazionale** se la selezione delle cinquine sull'universo completo risultasse eccessivamente onerosa.
 
-### MPD-07 — top-k e combinazioni
+In tal caso devono essere:
+- esplicitamente motivati;
+- attivati solo dopo evidenza del problema computazionale;
+- sottoposti a confronto/sensitivity per valutare il rischio di perdere la soluzione migliore.
 
-Proposta presente nello stralcio, **non approvata**:
-- top-10 per macro-area → 10^5 = 100.000 combinazioni, se vale il vincolo uno-per-area;
-- alternativa top-5 → 5^5 = 3.125 combinazioni.
-
-Stato: DQ-09. Un pre-screen top-k può eliminare la soluzione globale migliore e deve essere giustificato/testato.
+I conteggi 10^5 = 100.000 e 5^5 = 3.125 restano esempi condizionati a tale fallback e non requisiti del MODEL_v2.
 
 ### MPD-08 — quantificazione del ruolo di Monfalcone Lisert
 

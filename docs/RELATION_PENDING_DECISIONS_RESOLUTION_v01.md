@@ -73,14 +73,28 @@ Formule:
 
 Restano pendenti valori concreti 1–5, formule raw e normalizzazioni criterio-specifiche.
 
+## DEC-0071 — Macro-aree e top-k solo come fallback computazionale
+
+**Stato:** ACCEPTED
+
+Decisione:
+la metodologia ordinaria di selezione delle cinquine non usa macro-aree, vincolo uno-per-area o preselezione top-k.
+
+Tali strumenti possono essere introdotti solo come ultima risorsa se la selezione sull'universo completo risulta eccessivamente onerosa dal punto di vista computazionale.
+
+Condizioni per l'eventuale fallback:
+- problema computazionale dimostrato;
+- semplificazione esplicitamente documentata;
+- confronto/sensitivity rispetto alla ricerca non ridotta o a benchmark adeguati;
+- quantificazione del rischio di perdere la soluzione migliore.
+
+Le ipotesi top-10/top-5 e i conteggi 100.000/3.125 combinazioni restano esempi di fallback e non metodologia corrente.
+
 ## Decisioni ancora pendenti
 
 Restano da discutere separatamente:
 - criteri e formule raw;
 - normalizzazioni criterio-specifiche;
 - valori concreti di importanza 1–5;
-- cinque macro-aree;
-- uno-per-macro-area;
-- top-k;
 - distanza minima 10 km tra Hub;
 - quantificazione del ruolo di Monfalcone Lisert.
