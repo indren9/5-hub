@@ -145,6 +145,19 @@ Decisione:
 Motivazione:
 allineamento temporale con l'orizzonte 2030 dei principali target H2 AFIR. Questa è una scelta metodologica del MODEL_v2, non un obbligo AFIR di usare traffico 2030.
 
+## DEC-0076 — LIGHT Dirty FRLM baseline operativa
+
+**Stato:** ACCEPTED
+
+Decisione:
+- `DIRTY_EDGE_FLOWS_v01.csv` è la baseline operativa LIGHT del criterio traffico nel MODEL_v2;
+- campo flusso: `dirty_flow_veh_day`;
+- join geometrico: `segment_uid` verso `G_OSM_operativo_segments_v01.segment_uid`;
+- unità: veicoli/giorno;
+- resta obbligatorio dichiarare che la sorgente è DEMONSTRATOR / NON CANONICAL rispetto alla Tesi e non rappresenta la matrice LIGHT finale/calibrata.
+
+La decisione non modifica raggio, formula raw o separazione Light/Heavy già approvati.
+
 ## Decisioni ancora pendenti
 
 Restano da discutere separatamente:

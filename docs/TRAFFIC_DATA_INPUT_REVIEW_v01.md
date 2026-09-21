@@ -48,7 +48,7 @@ DEMONSTRATOR / NON CANONICAL nella Tesi.
 Limitazione:
 non presentare il dataset come domanda LIGHT finale/calibrata della Tesi.
 
-La promozione del LIGHT Dirty FRLM a baseline operativa del criterio 5 HUB resta da approvare esplicitamente.
+Con DEC-0076 il LIGHT Dirty FRLM è promosso a baseline operativa ACCEPTED del criterio 5 HUB. Resta obbligatorio dichiararne la natura DEMONSTRATOR / NON CANONICAL rispetto alla Tesi.
 
 ## 3. HEAVY
 
@@ -123,6 +123,6 @@ Per ogni candidato:
 
 HEAVY 2030 come orizzonte baseline è ACCEPTED con DEC-0075.
 
-La sorgente LIGHT Dirty FRLM resta REVIEW fino ad approvazione esplicita per il MODEL_v2.
+La sorgente LIGHT Dirty FRLM è ACCEPTED come baseline operativa del MODEL_v2 con DEC-0076, mantenendo obbligatoriamente il caveat DEMONSTRATOR / NON CANONICAL rispetto alla Tesi.
 
 Il full edge-flow HEAVY deve essere materializzato e sottoposto a QA prima di essere registrato come artifact operativo definitivo del 5 HUB.

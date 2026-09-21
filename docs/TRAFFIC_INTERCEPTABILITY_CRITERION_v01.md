@@ -2,7 +2,7 @@
 
 **Data:** 2026-09-21
 **Stato:** ACCEPTED — raw formula closed
-**Autorità:** DEC-0072 + DEC-0073 + DEC-0074 + DEC-0075
+**Autorità:** DEC-0072 + DEC-0073 + DEC-0074 + DEC-0075 + DEC-0076
 
 ## 1. Scopo
 
@@ -58,7 +58,7 @@ Il raggio baseline resta 5 km salvo futura successor decision.
 ## 6. Input dati e orizzonte HEAVY
 
 Ricognizione Tesi 2026-09-22:
-- LIGHT: `DIRTY_EDGE_FLOWS_v01.csv`, campo `dirty_flow_veh_day`, rete OSM via `segment_uid`, unità veicoli/giorno; sorgente DEMONSTRATOR / NON CANONICAL, ancora REVIEW nel MODEL_v2;
+- LIGHT: `DIRTY_EDGE_FLOWS_v01.csv`, campo `dirty_flow_veh_day`, rete OSM via `segment_uid`, unità veicoli/giorno; con DEC-0076 è baseline operativa ACCEPTED del MODEL_v2, pur restando DEMONSTRATOR / NON CANONICAL rispetto alla Tesi;
 - HEAVY: `HEAVY_PATH_FLOWS_v01.csv`, ricostruzione deterministica per `Network_Edge_ID` sulla rete ETISplus/Speth.
 
 Con DEC-0075:
@@ -70,7 +70,6 @@ L'uso del 2030 è una scelta di coerenza temporale con l'orizzonte dei principal
 ## 7. Questioni ancora aperte
 
 Restano da definire o verificare:
-- approvazione esplicita del LIGHT Dirty FRLM come baseline operativa del MODEL_v2;
 - materializzazione e QA del full edge-flow HEAVY 2030;
 - normalizzazione finale dei due valori raw;
 - valori di importanza/peso.

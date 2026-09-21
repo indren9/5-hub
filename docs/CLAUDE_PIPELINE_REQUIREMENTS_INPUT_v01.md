@@ -187,7 +187,7 @@ Non è imposto automaticamente il min-max per tutti gli indicatori.
 Indicatori ancora da formalizzare in DQ-02/DQ-03:
 - accessibilità/classe della strada servente;
 - domanda logistica e industriale;
-- **flussi veicolari intercettabili** — semantica ACCEPTED con DEC-0072, raggio baseline **5 km dal bordo del poligono** con DEC-0073 e formula raw chiusa con DEC-0074: `f(d)=1-d/5`, `V=q*f(d)`, valore candidato = massimo contributo tra gli archi entro 5 km, separatamente Light/Heavy; se non esistono archi utili entro 5 km il valore raw è 0. DEC-0075 fissa `heavy_vehicles_day_2030` come baseline HEAVY dello score e il 2019 come benchmark/sensitivity;
+- **flussi veicolari intercettabili** — semantica ACCEPTED con DEC-0072, raggio baseline **5 km dal bordo del poligono** con DEC-0073 e formula raw chiusa con DEC-0074: `f(d)=1-d/5`, `V=q*f(d)`, valore candidato = massimo contributo tra gli archi entro 5 km, separatamente Light/Heavy; se non esistono archi utili entro 5 km il valore raw è 0. DEC-0075 fissa `heavy_vehicles_day_2030` come baseline HEAVY dello score e il 2019 come benchmark/sensitivity; DEC-0076 approva `DIRTY_EDGE_FLOWS_v01.csv` come baseline operativa LIGHT del MODEL_v2, con caveat DEMONSTRATOR / NON CANONICAL rispetto alla Tesi;
 - compatibilità territoriale generica;
 - distanza da cabina/sottostazione come proxy energetico;
 - presenza/prossimità di infrastrutture H2 preesistenti.
