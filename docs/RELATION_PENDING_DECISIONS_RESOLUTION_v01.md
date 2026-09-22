@@ -55,23 +55,16 @@ Restano pendenti formula raw, normalizzazione, peso, aggregazione e formalizzazi
 
 ## DEC-0070 — Architettura di scoring
 
-**Stato:** ACCEPTED
+**Stato:** ACCEPTED / REFINED BY DEC-0086
 
-Decisione:
+Decisione originaria preservata:
 - una volta definito l'universo candidato non è prevista una seconda fase ordinaria di eliminazione site-level;
 - ogni criterio riceve importanza intera 1–5;
 - i valori di importanza vengono convertiti in pesi percentuali normalizzati;
 - gli indicatori vengono normalizzati prima dell'aggregazione;
-- score candidato = media pesata dei criteri normalizzati;
-- score cinquina = media aritmetica degli score dei cinque candidati;
 - la cinquina deve comunque rispettare i vincoli di configurazione approvati.
 
-Formule:
-- `w_j = r_j / Σ r_j`;
-- `S_i = Σ_j (w_j × z_ij)`;
-- `Q = (1/5) × Σ_i S_i`.
-
-Restano pendenti valori concreti 1–5, formule raw e normalizzazioni criterio-specifiche.
+La formulazione originaria `S_i = Σ_j(w_j z_ij)` seguita da `Q=(1/5)Σ_iS_i` è stata raffinata da DEC-0086 perché il MODEL_v2 include anche un criterio configuration-level di copertura territoriale. La formulazione operativa corrente è quindi quella definita in DEC-0086 / `SCORING_ARCHITECTURE_MODEL_v2_v02.md`.
 
 ## DEC-0071 — Macro-aree e top-k solo come fallback computazionale
 
@@ -275,12 +268,27 @@ Decisione:
 - testbed e `ANNOUNCED_UNVERIFIED` non entrano nello score core;
 - al 2026-09-22 nessun core site è `OPERATIONAL`.
 
+## DEC-0086 — architettura della funzione obiettivo della cinquina
+
+**Stato:** ACCEPTED
+
+Decisione:
+- il MODEL_v2 resta single-objective;
+- per ogni criterio site-level `j` si calcola sulla cinquina `Z_j(H)=(1/5)Σ_{i∈H} z_ij`;
+- la copertura territoriale è un criterio distinto calcolato direttamente sulla configurazione e rappresentato da `Z_COV(H)`;
+- tutti i criteri entrano una sola volta nella ponderazione finale;
+- funzione obiettivo: `Q(H)=[Σ_j r_j Z_j(H)+r_COV Z_COV(H)]/[Σ_j r_j+r_COV]`, equivalente a pesi normalizzati;
+- nessun secondo obiettivo autonomo e nessun fronte di Pareto;
+- i valori concreti di importanza 1–5 restano sospesi;
+- formula raw e normalizzazione di `Z_COV(H)` restano da definire separatamente.
+
 ## Decisioni ancora pendenti
 
 La review dei nuovi appunti è sostanzialmente chiusa sul piano dei criteri site-level: formule raw e normalizzazioni dei criteri numerici attualmente ammessi sono state definite con DEC-0077, DEC-0078, DEC-0080, DEC-0084 e DEC-0085.
 
 Restano da discutere separatamente:
-- valori concreti di importanza 1–5 dei criteri;
+- formula raw e normalizzazione del criterio di copertura territoriale;
+- valori concreti di importanza 1–5 dei criteri, esplicitamente sospesi;
 - formalizzazione computazionale dei vincoli AFIR/TEN-T a livello di configurazione dei 5 Hub;
 - eventuale distanza minima tra Hub (la soglia storica di 10 km non è approvata);
 - modalità con cui Monfalcone/Lisert può contribuire alla conformità AFIR della configurazione, senza assumerla automaticamente AFIR-compliant.

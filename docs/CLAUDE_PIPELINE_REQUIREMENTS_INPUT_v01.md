@@ -153,32 +153,35 @@ DEC-0069, raffinata da DEC-0072, stabilisce che:
 - la presenza di infrastrutture H2 esistenti/programmate resta un criterio positivo separato;
 - Monfalcone Lisert resta un'opportunità di integrazione/potenziamento, senza assumerne automaticamente conformità AFIR o appartenenza alla cinquina.
 
-Formula raw e normalizzazione del criterio flussi restano pendenti.
+Formula raw e normalizzazione del criterio flussi sono chiuse con DEC-0074 e DEC-0077; LIGHT/HEAVY restano separati secondo le decisioni successive.
 
-### UDI-04 — architettura di scoring semplice
+### UDI-04 — architettura single-objective della cinquina
 
-Con DEC-0070 l'utente ha approvato:
+DEC-0070 è raffinata da DEC-0086.
+
+Architettura ACCEPTED:
 - nessuna seconda fase ordinaria di eliminazione site-level dopo la costruzione dell'universo candidato;
-- importanza di ogni criterio su scala intera **1–5**;
-- conversione in peso percentuale: `w_j = r_j / Σ r_j`;
-- normalizzazione dei valori dei criteri prima dell'aggregazione;
-- score candidato: `S_i = Σ_j (w_j × z_ij)`;
-- score cinquina: `Q = (1/5) × Σ_i S_i`;
+- importanza di ogni criterio su scala intera **1–5**, con valori concreti attualmente sospesi;
+- per ogni criterio site-level `j`, valore di cinquina `Z_j(H)=(1/5)Σ_{i∈H} z_ij`;
+- la copertura territoriale è un criterio configuration-level distinto `Z_COV(H)`;
+- tutti i criteri entrano una sola volta nella ponderazione finale;
+- funzione obiettivo unica: `Q(H)=[Σ_j r_j Z_j(H)+r_COV Z_COV(H)]/[Σ_j r_j+r_COV]`;
+- nessun secondo obiettivo autonomo e nessun fronte di Pareto;
 - confronto delle cinquine solo dopo verifica dei vincoli di configurazione applicabili.
 
-Restano pendenti valori concreti 1–5, formule raw e normalizzazioni criterio-specifiche.
+Restano pendenti la formula raw/normalizzazione della copertura territoriale e i valori concreti di importanza 1–5.
 
 ## METHODOLOGY_PENDING_DECISION
 
 ### MPD-04 — dettagli ancora aperti dello scoring
 
-DEC-0070 ha approvato l'architettura generale dello scoring.
+DEC-0070, raffinata da DEC-0086, definisce l'architettura generale dello scoring.
 
-Restano da definire:
-- formule raw dei singoli indicatori;
-- trasformazioni/normalizzazioni criterio-specifiche;
-- valori concreti di importanza 1–5;
-- trattamento missing/outlier.
+Per i criteri numerici site-level attualmente ammessi, formule raw e normalizzazioni sono state chiuse dalle decisioni successive. Restano da definire:
+- formula raw del criterio di copertura territoriale della cinquina;
+- normalizzazione di `Z_COV(H)`;
+- valori concreti di importanza 1–5, attualmente sospesi;
+- eventuali regole generali di gestione missing/outlier se emergeranno casi non già disciplinati dai singoli criteri.
 
 Non è imposto automaticamente il min-max per tutti gli indicatori.
 
