@@ -310,7 +310,13 @@ Decisione:
 - la distribuzione geografica della cinquina è valutata tramite `Z_COV(H)` secondo DEC-0087;
 - resta soltanto il requisito logico che la cinquina contenga cinque candidati/localizzazioni distinti, senza trasformarlo in una soglia chilometrica.
 
+## Chat 5.2 — gap di delimitazione dei nodi urbani
+
+**Stato:** PASS / ACCEPTED AS EVIDENCE; `ISS-0017` OPEN.
+
+Trieste e Udine sono nodi urbani TEN-T verificati, ma al 22/09/2026 non è stata identificata una delimitazione territoriale ufficiale direttamente utilizzabile come confine giuridico AFIR H2. Il Comune capoluogo, il punto TENtec e buffer arbitrari non devono essere usati come sostituti impliciti. La futura composizione LAU italiana potrà essere riesaminata, ma la sua applicabilità ad AFIR dovrà essere dimostrata separatamente.
+
 Restano da discutere separatamente:
 - valori concreti di importanza 1–5 dei criteri, esplicitamente sospesi;
-- formalizzazione computazionale dei vincoli AFIR/TEN-T a livello di configurazione dei 5 Hub;
+- formalizzazione computazionale dei componenti AFIR/TEN-T della configurazione che sono effettivamente computabili;
 - modalità con cui Monfalcone/Lisert può contribuire alla conformità AFIR della configurazione, senza assumerla automaticamente AFIR-compliant.

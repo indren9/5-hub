@@ -39,6 +39,8 @@ Devono essere verificati almeno, quando applicabili:
 - copertura dei nodi urbani TEN-T pertinenti;
 - requisiti tecnici necessari affinché una stazione venga conteggiata ai fini AFIR.
 
+Per Trieste e Udine la Chat 5.2 ha verificato al 22/09/2026 `NO_LEGAL_SPATIAL_BOUNDARY_IDENTIFIED`: il requisito urban-node resta normativamente rilevante ma non è ancora traducibile in un test GIS territoriale fondato su un perimetro ufficiale. Non usare automaticamente Comune capoluogo, punto TENtec o buffer come proxy. Il gap è tracciato in `ISS-0017`.
+
 Il requisito dei 200 km è una distanza massima di copertura, non una distanza minima tra Hub.
 
 ## 5. Infrastrutture H2 esistenti/programmate
