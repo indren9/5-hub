@@ -30,13 +30,29 @@ Esempi di criteri site-level attualmente ammessi:
 
 ## 3. Copertura territoriale
 
-La copertura territoriale è un criterio di configurazione e produce:
+La copertura territoriale è un criterio di configurazione e produce `Z_COV(H)`.
 
-`Z_COV(H)`
+Con DEC-0087, su una griglia regolare del FVG, per ogni cella `g` con centro `c_g` si calcola:
 
-con scala normalizzata da definire separatamente.
+`d_g(H) = min_{h∈H} d(c_g,h)`
 
-La formula raw della copertura e il relativo metodo di normalizzazione non sono ancora approvati da DEC-0086.
+dove `d` è la distanza geometrica minima euclidea, in CRS metrico, tra il centro della cella e il poligono Hub.
+
+Le celle di confine sono pesate per la sola area `a_g` ricadente nel FVG:
+
+`D_COV(H) = Σ_g a_g d_g(H) / Σ_g a_g`.
+
+Il benchmark geografico è:
+
+`D_COV* = min_{|H|=5} D_COV(H)`
+
+sull'universo candidati.
+
+Lo score normalizzato è:
+
+`Z_COV(H) = D_COV* / D_COV(H)`.
+
+La dimensione operativa della griglia resta un parametro tecnico da definire con verifica di convergenza/sensitivity.
 
 ## 4. Funzione obiettivo finale
 

@@ -97,7 +97,8 @@ ACCEPTED:
 
 SUSPENDED / PENDING:
 - valori concreti di importanza 1–5;
-- formula raw della copertura territoriale;
-- normalizzazione di `Z_COV(H)`;
+- dimensione operativa della griglia della copertura, da fissare con verifica di convergenza/sensitivity;
 - formalizzazione computazionale completa dei vincoli AFIR/TEN-T;
 - eventuale trattamento finale della storica soglia minima 10 km Hub–Hub.
+
+Con DEC-0087 formula raw e normalizzazione di `Z_COV(H)` sono ACCEPTED.

@@ -282,12 +282,25 @@ Decisione:
 - i valori concreti di importanza 1–5 restano sospesi;
 - formula raw e normalizzazione di `Z_COV(H)` restano da definire separatamente.
 
+## DEC-0087 — copertura territoriale della cinquina
+
+**Stato:** ACCEPTED
+
+Decisione:
+- il FVG viene rappresentato tramite griglia regolare;
+- per ogni cella `g`, con centro `c_g`, si calcola `d_g(H)=min_{h∈H} d(c_g,h)`, con distanza euclidea minima in CRS metrico dal centro cella al poligono Hub;
+- le celle di confine sono pesate per la sola area `a_g` ricadente nel FVG;
+- `D_COV(H)=Σ_g a_g d_g(H)/Σ_g a_g`;
+- `D_COV*=min_{|H|=5}D_COV(H)` sull'universo candidati;
+- `Z_COV(H)=D_COV*/D_COV(H)`;
+- la metrica misura distribuzione geografica pura, non accessibilità, domanda o popolazione;
+- la dimensione operativa della griglia resta parametro tecnico da definire con verifica di convergenza/sensitivity.
+
 ## Decisioni ancora pendenti
 
-La review dei nuovi appunti è sostanzialmente chiusa sul piano dei criteri site-level: formule raw e normalizzazioni dei criteri numerici attualmente ammessi sono state definite con DEC-0077, DEC-0078, DEC-0080, DEC-0084 e DEC-0085.
+La review dei nuovi appunti è sostanzialmente chiusa sul piano dei criteri site-level e della copertura territoriale della cinquina.
 
 Restano da discutere separatamente:
-- formula raw e normalizzazione del criterio di copertura territoriale;
 - valori concreti di importanza 1–5 dei criteri, esplicitamente sospesi;
 - formalizzazione computazionale dei vincoli AFIR/TEN-T a livello di configurazione dei 5 Hub;
 - eventuale distanza minima tra Hub (la soglia storica di 10 km non è approvata);
