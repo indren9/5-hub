@@ -98,7 +98,8 @@ ACCEPTED:
 SUSPENDED / PENDING:
 - valori concreti di importanza 1–5;
 - dimensione operativa della griglia della copertura, da fissare con verifica di convergenza/sensitivity;
-- formalizzazione computazionale completa dei vincoli AFIR/TEN-T;
-- eventuale trattamento finale della storica soglia minima 10 km Hub–Hub.
+- formalizzazione computazionale completa dei vincoli AFIR/TEN-T.
 
 Con DEC-0087 formula raw e normalizzazione di `Z_COV(H)` sono ACCEPTED.
+
+Con DEC-0088 la storica soglia minima di 10 km Hub–Hub è eliminata dal MODEL_v2: non è né HARD constraint né criterio. La distribuzione geografica è già rappresentata da `Z_COV(H)`.

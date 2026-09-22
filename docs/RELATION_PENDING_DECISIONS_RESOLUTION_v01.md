@@ -300,8 +300,17 @@ Decisione:
 
 La review dei nuovi appunti è sostanzialmente chiusa sul piano dei criteri site-level e della copertura territoriale della cinquina.
 
+## DEC-0088 — eliminazione della distanza minima Hub–Hub
+
+**Stato:** ACCEPTED
+
+Decisione:
+- non si applica alcun vincolo generale `d(h_i,h_j) ≥ 10 km` tra gli Hub selezionati;
+- la soglia storica di 10 km non deriva da AFIR e non entra né come HARD constraint né come score;
+- la distribuzione geografica della cinquina è valutata tramite `Z_COV(H)` secondo DEC-0087;
+- resta soltanto il requisito logico che la cinquina contenga cinque candidati/localizzazioni distinti, senza trasformarlo in una soglia chilometrica.
+
 Restano da discutere separatamente:
 - valori concreti di importanza 1–5 dei criteri, esplicitamente sospesi;
 - formalizzazione computazionale dei vincoli AFIR/TEN-T a livello di configurazione dei 5 Hub;
-- eventuale distanza minima tra Hub (la soglia storica di 10 km non è approvata);
 - modalità con cui Monfalcone/Lisert può contribuire alla conformità AFIR della configurazione, senza assumerla automaticamente AFIR-compliant.

@@ -62,11 +62,13 @@ Monfalcone Lisert resta un caso rilevante:
 - non automaticamente AFIR-compliant;
 - non automaticamente uno dei cinque Hub.
 
-## 7. Distinzione da requisito 10 km tra Hub
+## 7. Distanza minima tra Hub
 
-Il requisito proposto di distanza minima 10 km tra i cinque Hub resta distinto dai 10 km AFIR dalla TEN-T exit.
+Con DEC-0088 la storica soglia minima di 10 km tra i cinque Hub è eliminata dal MODEL_v2.
 
-DEC-0072 non approva il minimo 10 km tra Hub.
+Non costituisce né requisito AFIR, né HARD constraint, né criterio di scoring. La distribuzione territoriale della cinquina è valutata tramite il criterio `Z_COV(H)` approvato con DEC-0087.
+
+Resta distinta e invariata la soglia AFIR di 10 km stradali dalla nearest TEN-T exit per stabilire se una stazione H2 può essere considerata «lungo TEN-T».
 
 ## 8. Effetto sulla decision queue
 
@@ -77,9 +79,6 @@ ACCEPTED:
 - infrastruttura H2 esistente/programmata = criterio positivo separato.
 
 PENDING:
-- formula raw del criterio flussi;
-- segmento/rete di riferimento;
-- eventuale combinazione tra flusso e prossimità/accessibilità;
-- normalizzazione;
-- peso;
-- formalizzazione computazionale del vincolo AFIR di configurazione.
+- formalizzazione computazionale del vincolo AFIR di configurazione;
+- gestione operativa del requisito urban-node alla luce del gap di delimitazione ufficiale verificato da Chat 5.2;
+- ruolo concreto di Monfalcone/Lisert nella copertura AFIR, senza assumerne automaticamente la conformità.

@@ -72,9 +72,9 @@ Non si deve:
 ## 5. Decisioni ancora sospese
 
 - valori concreti di importanza 1–5;
-- formula raw della copertura territoriale;
-- normalizzazione di `Z_COV(H)`;
-- eventuale trattamento finale del requisito storico di distanza minima 10 km tra Hub.
+- dimensione operativa della griglia, da fissare con verifica di convergenza/sensitivity.
+
+Con DEC-0087 formula raw e normalizzazione di `Z_COV(H)` sono ACCEPTED. Con DEC-0088 la soglia storica minima di 10 km tra Hub è eliminata dal MODEL_v2.
 
 ## 6. Relazione con AFIR
 

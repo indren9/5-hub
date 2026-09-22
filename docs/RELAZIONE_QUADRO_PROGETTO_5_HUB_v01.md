@@ -541,11 +541,12 @@ Dovranno essere definite e approvate, se applicabili:
 - copertura territoriale;
 - copertura di nodi urbani;
 - obblighi o funzioni TEN-T;
-- distanza minima tra Hub;
 - eventuale distanza massima richiesta da normativa;
 - copertura della domanda;
 - equilibrio territoriale;
 - funzione obiettivo.
+
+Con DEC-0088 non è prevista una soglia minima generale Hub–Hub: la distribuzione territoriale è trattata tramite il criterio `Z_COV(H)` approvato con DEC-0087.
 
 Output previsto: SHORTLIST_5_v01.
 

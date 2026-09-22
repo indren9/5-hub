@@ -80,9 +80,10 @@ https://eur-lex.europa.eu/eli/reg/2023/1804/2026-01-08
 
 ### UR-01 — distanza minima tra Hub
 
-- Lo stralcio utente dichiara come requisito di commessa una **distanza minima di 10 km tra i cinque Hub**.
-- Questo requisito è distinto dai 10 km AFIR che definiscono la posizione H2 «lungo TEN-T».
-- Stato: **PENDING USER APPROVAL / DQ-07-DQ-08**. Non applicare finché non è formalmente integrato nel configuration contract.
+- Lo stralcio utente riportava una **distanza minima di 10 km tra i cinque Hub** come requisito di commessa.
+- Con DEC-0088 tale soglia è **DEPRECATED / NOT APPLIED** nel MODEL_v2: non è HARD constraint né criterio di scoring.
+- La distribuzione territoriale viene trattata tramite `Z_COV(H)` secondo DEC-0087.
+- Questo non modifica i 10 km AFIR dalla nearest TEN-T exit, che hanno significato normativo distinto.
 
 ### UR-02 — pipeline Claude
 
