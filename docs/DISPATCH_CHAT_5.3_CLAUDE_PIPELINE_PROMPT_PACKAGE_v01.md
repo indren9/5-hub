@@ -225,7 +225,7 @@ Non può:
 Il prompt finale deve richiedere almeno:
 - tabella completa dei candidati con valori raw e score normalizzati per criterio;
 - valori di cinquina per ciascun criterio;
-- `D_COV` e `Z_COV`; 
+- `D_COV` e `Z_COV`;
 - stato dei vincoli AFIR/TEN-T;
 - score finale `Q(H)` per le configurazioni confrontate o per la shortlist rilevante;
 - identificazione della cinquina selezionata;
