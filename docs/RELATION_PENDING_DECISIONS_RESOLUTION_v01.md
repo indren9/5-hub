@@ -233,6 +233,22 @@ Decisione:
 - lo score sarà la media pesata per superficie delle classi intersecate;
 - la mappatura concreta classe→score resta da chiudere dopo verifica delle classi effettivamente disponibili.
 
+## DEC-0084 — scala PGRA/alluvioni
+
+**Stato:** ACCEPTED
+
+Decisione:
+- fuori P1–P3B = `1,00`;
+- P1 / P1_ST / P1_SM = `0,75`;
+- P2 = `0,50`;
+- P3A = `0,25`;
+- P3B = `0,00`;
+- score candidato = media pesata per superficie delle classi intersecate;
+- sulle sovrapposizioni prevale la classe peggiore;
+- `AA` (Zona di Attenzione) e `F` (Area fluviale) restano informazioni/flag separati e non entrano nella graduatoria.
+
+`P1_ST` e `P1_SM` sono sottotipi della P1 moderata secondo lo stile ufficiale SIGMA corrente.
+
 ## DEC-0083 — PAI/frane sospeso
 
 **Stato:** ACCEPTED / SUSPENDED
