@@ -39,7 +39,7 @@ Devono essere verificati almeno, quando applicabili:
 - copertura dei nodi urbani TEN-T pertinenti;
 - requisiti tecnici necessari affinché una stazione venga conteggiata ai fini AFIR.
 
-Per Trieste e Udine la Chat 5.2 ha verificato al 22/09/2026 `NO_LEGAL_SPATIAL_BOUNDARY_IDENTIFIED`: il requisito urban-node resta normativamente rilevante ma non è ancora traducibile in un test GIS territoriale fondato su un perimetro ufficiale. Non usare automaticamente Comune capoluogo, punto TENtec o buffer come proxy. Il gap è tracciato in `ISS-0017`.
+Per Trieste e Udine la Chat 5.2 ha verificato al 22/09/2026 `NO_LEGAL_SPATIAL_BOUNDARY_IDENTIFIED`. Con DEC-0089 il MODEL_v2 adotta esplicitamente una proxy progettuale: Comune di Trieste = proxy operativa del nodo urbano di Trieste; Comune di Udine = proxy operativa del nodo urbano di Udine. La cinquina deve quindi includere almeno un Hub in ciascuno dei due Comuni. Questa è un'assunzione progettuale e non una dichiarazione sul perimetro legale TEN-T/AFIR. `ISS-0017` è risolta proceduralmente ma la limitazione resta documentata.
 
 Il requisito dei 200 km è una distanza massima di copertura, non una distanza minima tra Hub.
 
@@ -58,11 +58,15 @@ Formula raw, normalizzazione e peso restano da definire.
 
 ## 6. Monfalcone Lisert
 
-Monfalcone Lisert resta un caso rilevante:
-- infrastruttura H2 di contesto verificata;
-- possibile opportunità di integrazione/potenziamento;
-- non automaticamente AFIR-compliant;
-- non automaticamente uno dei cinque Hub.
+Con DEC-0090 Monfalcone/Lisert è trattata pienamente come area/infrastruttura H2 di riferimento per la localizzazione.
+
+Nel MODEL_v2:
+- si verifica sul candidato selezionato la compliance territoriale AFIR lato distanza stradale dalla nearest TEN-T exit secondo la regola `<=10 km`;
+- il fatto che l'impianto Lisert documentato resti sotto `1 t/giorno` è mantenuto come limitation / design requirement, non come filtro localizzativo;
+- il modello non dimensiona la capacità aggiuntiva necessaria;
+- un Hub può essere localizzato nello stesso poligono dell'infrastruttura esistente, come integrazione/potenziamento, oppure in un poligono distinto vicino con la stessa funzione strategica;
+- in entrambi i casi la verifica territoriale AFIR si applica al candidato Hub;
+- il requisito tecnico `>=1 t/giorno` resta DEFER_POST_MODEL per progettazione/dimensionamento e non entra nello score o nell'universo candidati.
 
 ## 7. Distanza minima tra Hub
 

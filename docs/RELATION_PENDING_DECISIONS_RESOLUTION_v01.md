@@ -310,13 +310,18 @@ Decisione:
 - la distribuzione geografica della cinquina è valutata tramite `Z_COV(H)` secondo DEC-0087;
 - resta soltanto il requisito logico che la cinquina contenga cinque candidati/localizzazioni distinti, senza trasformarlo in una soglia chilometrica.
 
-## Chat 5.2 — gap di delimitazione dei nodi urbani
+## DEC-0089 — proxy progettuale dei nodi urbani
 
-**Stato:** PASS / ACCEPTED AS EVIDENCE; `ISS-0017` OPEN.
+**Stato:** ACCEPTED
 
-Trieste e Udine sono nodi urbani TEN-T verificati, ma al 22/09/2026 non è stata identificata una delimitazione territoriale ufficiale direttamente utilizzabile come confine giuridico AFIR H2. Il Comune capoluogo, il punto TENtec e buffer arbitrari non devono essere usati come sostituti impliciti. La futura composizione LAU italiana potrà essere riesaminata, ma la sua applicabilità ad AFIR dovrà essere dimostrata separatamente.
+A seguito della Chat 5.2, il MODEL_v2 usa il confine amministrativo del Comune di Trieste come proxy operativa del nodo urbano di Trieste e il Comune di Udine come proxy operativa del nodo urbano di Udine. La cinquina deve contenere almeno un Hub in ciascuno dei due Comuni. La scelta è una assunzione progettuale esplicita e non una dichiarazione sul perimetro legale AFIR/TEN-T. `ISS-0017` è RESOLVED PROCEDURALLY; la limitazione resta documentata e va riaperta se emerge una delimitazione ufficiale applicabile.
+
+## DEC-0090 — ruolo Monfalcone/Lisert
+
+**Stato:** ACCEPTED
+
+Per Monfalcone/Lisert il MODEL_v2 verifica la compliance territoriale AFIR lato distanza stradale alla nearest TEN-T exit (`<=10 km`). L'impianto Lisert documentato resta sotto `1 t/giorno`, ma il deficit di capacità è un requisito di progettazione/dimensionamento post-model e non un filtro localizzativo. Un Hub può essere nello stesso poligono dell'infrastruttura esistente, come integrazione/potenziamento, oppure in un poligono distinto vicino con la stessa funzione strategica. In entrambi i casi la verifica territorialmente rilevante nel modello si applica al candidato selezionato.
 
 Restano da discutere separatamente:
 - valori concreti di importanza 1–5 dei criteri, esplicitamente sospesi;
-- formalizzazione computazionale dei componenti AFIR/TEN-T della configurazione che sono effettivamente computabili;
-- modalità con cui Monfalcone/Lisert può contribuire alla conformità AFIR della configurazione, senza assumerla automaticamente AFIR-compliant.
+- formalizzazione computazionale della copertura TEN-T core / requisito massimo 200 km a livello di configurazione.
