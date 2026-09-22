@@ -260,6 +260,21 @@ Decisione:
 - nessuna penalità o proxy sostitutiva viene introdotta;
 - il criterio potrà essere riaperto solo con una baseline vettoriale ufficiale o equivalente sufficientemente completa e versionata.
 
+## DEC-0085 — baseline e score H2 core
+
+**Stato:** ACCEPTED
+
+Decisione:
+- `H2_FVG_INFRASTRUCTURE_INVENTORY_v01.csv` è baseline fattuale H2 del MODEL_v2;
+- target spaziali iniziali dello score: Trieste, Monfalcone/Lisert, Porpetto, ABS;
+- `d_i^H2 = min_j(d_ij)` sui target point-ready;
+- `d_max^H2 = max_i(d_i^H2)` sull'universo candidati;
+- `S_i^H2 = 1 - d_i^H2/d_max^H2`;
+- nessuna soglia, nessun peso per status e nessun bonus per numero di siti;
+- SOLHX resta nella baseline ma fuori dai calcoli di distanza finché non viene localizzato puntualmente;
+- testbed e `ANNOUNCED_UNVERIFIED` non entrano nello score core;
+- al 2026-09-22 nessun core site è `OPERATIONAL`.
+
 ## Decisioni ancora pendenti
 
 Restano da discutere separatamente:

@@ -2,7 +2,7 @@
 
 **Data review:** 2026-09-22
 **Reviewer:** Chat 0.2 — Chat Madre 5 HUB
-**Stato:** REVIEW COMPLETE — TECHNICAL PASS / METHODOLOGICAL ACCEPTANCE PENDING
+**Stato:** ACCEPTED AS MODEL_v2 FACTUAL BASELINE — DEC-0085
 **Input:** Chat 5.1 — Inventario infrastrutture H2 FVG
 
 ## 1. Esito review indipendente
@@ -69,13 +69,15 @@ Gap principale:
 
 Ulteriori aggiornamenti di stato per Trieste, Monfalcone e Porpetto sono monitoraggi currentness, non blocker della baseline fattuale.
 
-## 6. Proposta alla decisione utente
+## 6. Decisione utente — DEC-0085
 
-PROPOSED, non ACCEPTED:
-1. accettare l'inventario Chat 5.1 come baseline fattuale H2 del MODEL_v2;
-2. usare come target spaziali iniziali solo i quattro core site point-ready: Trieste, Monfalcone, Porpetto, ABS;
-3. mantenere SOLHX nella baseline fattuale ma fuori dai calcoli di distanza fino a localizzazione primaria più precisa;
-4. mantenere testbed e announced/unverified come contesto, non come target del criterio core;
-5. preservare sempre lo status; nessun record è OPERATIONAL al 2026-09-22.
+ACCEPTED:
+1. l'inventario Chat 5.1 è baseline fattuale H2 del MODEL_v2;
+2. i target spaziali iniziali dello score sono i quattro core site point-ready: Trieste, Monfalcone/Lisert, Porpetto e ABS;
+3. SOLHX resta nella baseline fattuale ma fuori dai calcoli di distanza fino a localizzazione primaria più precisa;
+4. testbed e announced/unverified restano contesto e non target dello score core;
+5. lo status viene sempre preservato; nessun record è OPERATIONAL al 2026-09-22;
+6. il criterio usa la distanza dal core site point-ready più vicino, normalizzata con `S_H2 = 1 - d_H2/d_max_H2` sull'intero universo candidati;
+7. nessuna soglia, nessun peso per status e nessun bonus per numero di siti.
 
-Formula, aggregazione e peso restano decisioni separate.
+Il peso/importanza del criterio sarà assegnato successivamente dall'utente insieme agli altri criteri.
