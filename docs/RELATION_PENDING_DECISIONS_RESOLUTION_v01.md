@@ -277,9 +277,10 @@ Decisione:
 
 ## Decisioni ancora pendenti
 
+La review dei nuovi appunti è sostanzialmente chiusa sul piano dei criteri site-level: formule raw e normalizzazioni dei criteri numerici attualmente ammessi sono state definite con DEC-0077, DEC-0078, DEC-0080, DEC-0084 e DEC-0085.
+
 Restano da discutere separatamente:
-- criteri e formule raw;
-- normalizzazioni criterio-specifiche;
-- valori concreti di importanza 1–5;
-- distanza minima 10 km tra Hub;
-- quantificazione del ruolo di Monfalcone Lisert.
+- valori concreti di importanza 1–5 dei criteri;
+- formalizzazione computazionale dei vincoli AFIR/TEN-T a livello di configurazione dei 5 Hub;
+- eventuale distanza minima tra Hub (la soglia storica di 10 km non è approvata);
+- modalità con cui Monfalcone/Lisert può contribuire alla conformità AFIR della configurazione, senza assumerla automaticamente AFIR-compliant.
