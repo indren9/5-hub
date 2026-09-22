@@ -66,7 +66,7 @@ Il raggio baseline resta 5 km salvo futura successor decision.
 ## 6. Input dati e orizzonte HEAVY
 
 Ricognizione Tesi 2026-09-22:
-- LIGHT: `DIRTY_EDGE_FLOWS_v01.csv`, campo `dirty_flow_veh_day`, rete OSM via `segment_uid`, unità veicoli/giorno; con DEC-0076 è baseline operativa ACCEPTED del MODEL_v2, pur restando DEMONSTRATOR / NON CANONICAL rispetto alla Tesi;
+- LIGHT: `DIRTY_EDGE_FLOWS_v01.csv`, campo `dirty_flow_veh_day`, rete OSM via `segment_uid`, unità veicoli/giorno medio annuo; con DEC-0076 è baseline operativa ACCEPTED del MODEL_v2, pur restando DEMONSTRATOR / NON CANONICAL rispetto alla Tesi;
 - HEAVY: `HEAVY_PATH_FLOWS_v01.csv`, ricostruzione deterministica per `Network_Edge_ID` sulla rete ETISplus/Speth.
 
 Con DEC-0075:

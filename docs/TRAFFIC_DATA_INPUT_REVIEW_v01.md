@@ -20,7 +20,7 @@ Campo flusso:
 `dirty_flow_veh_day`
 
 Unità:
-veicoli/giorno.
+veicoli/giorno medio annuo.
 
 Identificativi:
 `edge_id`, `edge_uid`, `segment_uid`, `way_id`, `seq`, `u`, `v`, `way_direction`.
@@ -59,7 +59,7 @@ Percorso:
 `C:\Users\visen\OneDrive\Università\UniUD\Tesi\TESI_THESIS_STORAGE\04_FROZEN_CHECKPOINTS\HEAVY_6_0\HEAVY_0B_delivery_v01.zip`
 
 Stato sorgente:
-FROZEN / VERIFIED.
+HEAVY 6.0 = CLOSED / FROZEN; `SPETH_FOR_DELIVERY = ACCEPT_WITH_LIMITATIONS`.
 
 File:
 `HEAVY_PATH_FLOWS_v01.csv`.
@@ -82,7 +82,14 @@ Geometria:
 layer `speth_geometry_edges` nel GeoPackage
 `C:\Users\visen\OneDrive\Università\UniUD\Tesi\TESI_THESIS_STORAGE\03_CANONICAL_DATA\QGIS_PRESENTATION\HEAVY_SPETH_v02\HEAVY_SPETH_PRESENTATION_v02.gpkg`.
 
+Join: `Network_Edge_ID`.
+
 CRS: EPSG:32632.
+
+Stato del GPKG di presentazione: `CURRENT / DERIVED / NOT_FROZEN`.
+
+La geometria originale ETISplus è disponibile anche in EPSG:4326 nel package audit:
+`...\HEAVY_0A_audit\SPETH_FVG_ORIGINAL_GEOMETRY_AUDIT.zip`.
 
 ### Orizzonte approvato — DEC-0075
 
